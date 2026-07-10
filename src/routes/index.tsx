@@ -72,7 +72,7 @@ function Index() {
         {stats.map((s) => (
           <div key={s.label}>
             <p className="font-display text-6xl tracking-tight text-copper md:text-7xl">
-              {s.value}
+              <CountUp value={s.value} />
             </p>
             <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
           </div>
