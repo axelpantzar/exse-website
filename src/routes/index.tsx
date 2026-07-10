@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "../assets/hero-scrap-metal.jpg";
 import { PillLink } from "../components/ui/PillButton";
+import { CountUp } from "../components/CountUp";
 
 export const Route = createFileRoute("/")({
   component: Index,
