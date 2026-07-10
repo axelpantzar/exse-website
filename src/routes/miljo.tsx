@@ -55,9 +55,6 @@ function MiljoPage() {
       {/* Hero */}
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
-          <p className="mb-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Miljö & kvalitet
-          </p>
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
             Återvinning byggd på data, inte gissningar
           </h1>
