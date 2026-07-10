@@ -79,10 +79,7 @@ function Index() {
       {/* About */}
       <section className="mt-24 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Om EXSE
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
+          <h2 className="font-display text-4xl leading-tight md:text-5xl">
             Erfarenhet som gör skillnad i hela återvinningskedjan
           </h2>
         </div>
@@ -121,10 +118,7 @@ function Index() {
 
       {/* Sustainability CTA */}
       <section className="mt-28 overflow-hidden rounded-3xl bg-primary p-10 text-primary-foreground md:p-16">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary-foreground/60">
-          Kvalitets- & miljöpolicy
-        </p>
-        <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight md:text-5xl">
+        <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
           Hållbarhet är inte ett tillägg — det är hela vår affär
         </h2>
         <p className="mt-6 max-w-2xl text-primary-foreground/70">
@@ -145,10 +139,7 @@ function Index() {
       {/* Floorball teaser */}
       <section className="mt-28 grid gap-10 rounded-3xl border border-border/70 p-10 md:grid-cols-2 md:p-14">
         <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Sekundär verksamhet
-          </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">
+          <h2 className="font-display text-4xl md:text-5xl">
             Excellent Floorball
           </h2>
         </div>

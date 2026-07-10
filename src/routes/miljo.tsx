@@ -112,10 +112,7 @@ function MiljoPage() {
           />
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Data & analysanläggning
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
+          <h2 className="font-display text-4xl leading-tight md:text-5xl">
             Analysanläggningen i Arboga
           </h2>
           <div className="mt-6 space-y-5 text-lg text-foreground/80">
@@ -134,10 +131,7 @@ function MiljoPage() {
 
       {/* Chain */}
       <section className="mt-28">
-        <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          Återvinningskedjan
-        </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-4">
           {chain.map((step) => (
             <article
               key={step.n}
