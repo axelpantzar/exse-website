@@ -99,20 +99,14 @@ function KontaktPage() {
 
       <section className="mt-24 grid gap-8 md:grid-cols-2">
         <div className="rounded-3xl border border-border/70 bg-card p-10">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Besöks- & postadress
-          </p>
-          <h3 className="mt-4 font-display text-2xl">EXSE AB</h3>
+          <h3 className="font-display text-2xl">EXSE AB</h3>
           <address className="mt-3 not-italic text-foreground/80">
             Kyrkvägen 17<br />
             703 75 Örebro
           </address>
         </div>
         <div className="rounded-3xl border border-border/70 bg-card p-10">
-          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            El-Kretsens Analysanläggning
-          </p>
-          <h3 className="mt-4 font-display text-2xl">Arboga</h3>
+          <h3 className="font-display text-2xl">Arboga</h3>
           <address className="mt-3 not-italic text-foreground/80">
             Strängen 13<br />
             732 31 Arboga
