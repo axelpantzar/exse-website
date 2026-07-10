@@ -26,9 +26,6 @@ function SportPage() {
     <div className="mx-auto max-w-6xl px-6">
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
-          <p className="mb-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Sekundär verksamhet
-          </p>
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
             Excellent Floorball
           </h1>
