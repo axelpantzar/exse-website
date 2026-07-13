@@ -67,7 +67,7 @@ function Index() {
       {/* Stats */}
       <section className="mt-20 grid grid-cols-1 gap-10 border-y border-border/60 py-14 md:grid-cols-3">
         {stats.map((s) => (
-          <div key={s.label}>
+          <div key={s.label} className="text-center">
             <p className="font-display text-6xl tracking-tight text-copper md:text-7xl">
               <CountUp value={s.value} />
             </p>

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "../assets/floorball.jpg";
+import floorballHero from "../assets/floorball-hero.webp.asset.json";
+const heroImg = floorballHero.url;
 import { PillAnchor } from "../components/ui/PillButton";
 
 export const Route = createFileRoute("/sport")({
