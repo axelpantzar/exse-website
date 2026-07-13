@@ -137,7 +137,7 @@ function Index() {
       </section>
 
       {/* Floorball teaser */}
-      <section className="mt-28 grid gap-10 rounded-3xl border border-border/70 p-10 md:grid-cols-2 md:p-14">
+      <section className="mt-28 grid gap-10 rounded-3xl border border-border/70 bg-card p-10 shadow md:grid-cols-2 md:p-14">
         <div>
           <h2 className="font-display text-4xl md:text-5xl">
             Excellent Floorball
