@@ -3,6 +3,7 @@ import heroImg from "../assets/hero-scrap-metal.jpg";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
+import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/")({
@@ -50,91 +51,95 @@ function Index() {
       {/* Hero */}
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
-          <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
+          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
             {t({ sv: "Här blir skrot till statistik", en: "Where scrap becomes statistics" })}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+          </Reveal>
+          <Reveal delay={120} as="p" className="mt-8 max-w-xl text-lg text-muted-foreground">
             {t({
               sv: "EXSE AB förvandlar elavfall till mätbart, hållbart värde. Med decennier av erfarenhet och en modern analysanläggning i Arboga levererar vi spårbarhet i varje led.",
               en: "EXSE AB turns electronic waste into measurable, sustainable value. With decades of experience and a modern analysis facility in Arboga, we deliver traceability at every step.",
             })}
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          </Reveal>
+          <Reveal delay={240} className="mt-10 flex flex-wrap gap-3">
             <PillLink to="/miljo">
               {t({ sv: "Utforska miljöarbetet", en: "Explore our environmental work" })}
             </PillLink>
             <PillLink to="/kontakt" variant="outline" showArrow={false}>
               {t({ sv: "Kontakta oss", en: "Contact us" })}
             </PillLink>
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mt-16 overflow-hidden rounded-3xl">
+        <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
             src={heroImg}
             alt={t({ sv: "Närbild på sorterat metallskrot i premiumbelysning", en: "Close-up of sorted metal scrap in premium lighting" })}
             width={1600}
             height={1000}
-            className="h-[420px] w-full object-cover md:h-[560px]"
+            className="h-[420px] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02] md:h-[560px]"
           />
-        </div>
+        </Reveal>
       </section>
 
-      {/* Stats */}
-      <section className="mt-20 grid grid-cols-1 gap-10 border-y border-border/60 py-14 md:grid-cols-3">
-        {stats.map((s) => (
-          <div key={s.label} className="text-center">
-            <p className="font-display text-6xl tracking-tight text-copper md:text-7xl">
-              <CountUp value={s.value} />
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
-          </div>
-        ))}
+      {/* Stats — dark inverted section for contrast punch */}
+      <section className="mt-20 overflow-hidden rounded-3xl bg-foreground text-background">
+        <div className="grid grid-cols-1 gap-10 px-8 py-16 md:grid-cols-3 md:px-14">
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 120} className="text-center">
+              <p className="font-display text-6xl tracking-tight text-copper md:text-7xl">
+                <CountUp value={s.value} />
+              </p>
+              <p className="mt-3 text-sm text-background/70">{s.label}</p>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* About */}
       <section className="mt-24 grid gap-10 md:grid-cols-12">
-        <div className="md:col-span-5">
+        <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
             {t({
-              sv: "Om EXSE",
-              en: "About EXSE",
+              sv: "Erfarenhet som gör skillnad i hela återvinningskedjan",
+              en: "Experience that makes a difference across the recycling chain",
             })}
           </h2>
-        </div>
+        </Reveal>
         <div className="space-y-6 text-lg text-foreground/80 md:col-span-7 md:pt-2">
-          <p>
+          <Reveal as="p" delay={120}>
             {t({
               sv: "EXSE AB är en framstående aktör med en gedigen historia inom miljö och sport. Över 25 år inom elektronikåtervinning och över 40 år inom innebandy har gett oss pålitlighet, kvalitet och långsiktighet.",
               en: "EXSE AB is a leading player with a solid history in both environment and sport. Over 25 years in electronics recycling and more than 40 years in floorball have given us reliability, quality and a long-term perspective.",
             })}
-          </p>
-          <p>
+          </Reveal>
+          <Reveal as="p" delay={220}>
             {t({
               sv: "Vi arbetar på uppdrag av externa verksamhetsutövare med sortering, analyser, revisioner och statistik för elektriska och elektroniska produkter. I varje del av arbetet står kvalitet och miljömedvetenhet i centrum.",
               en: "We work on behalf of external operators with sorting, analyses, audits and statistics for electrical and electronic products. Quality and environmental awareness stay at the centre of everything we do.",
             })}
-          </p>
+          </Reveal>
         </div>
       </section>
 
       {/* Services */}
       <section className="mt-28">
-        <h2 className="font-display text-4xl md:text-5xl">
+        <Reveal as="h2" className="font-display text-4xl md:text-5xl">
           {t({ sv: "Vad vi gör", en: "What we do" })}
-        </h2>
+        </Reveal>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {services.map((s) => (
-            <article
+          {services.map((s, i) => (
+            <Reveal
               key={s.n}
-              className="rounded-3xl border border-border/70 bg-card p-8 transition-colors hover:border-copper/50"
+              delay={i * 120}
+              as="article"
+              className="group rounded-3xl border border-border/70 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-copper/50 hover:shadow-lg"
             >
-              <p className="font-display text-5xl text-copper/80">{s.n}</p>
+              <p className="font-display text-5xl text-copper/80 transition-colors group-hover:text-copper">{s.n}</p>
               <h3 className="mt-6 text-xl">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {s.body}
               </p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -142,9 +147,12 @@ function Index() {
       {/* Certifications */}
       <Certifications />
 
-      {/* Paired cards: Miljö + Excellent Floorball */}
+      {/* Paired cards: Miljö (light) + Excellent Floorball (dark) */}
       <section className="mt-28 grid gap-8 md:grid-cols-2">
-        <article className="rounded-3xl border border-border/70 bg-card p-10 shadow md:p-12">
+        <Reveal
+          as="article"
+          className="rounded-3xl border border-border/70 bg-card p-10 shadow transition-transform duration-300 hover:-translate-y-1 md:p-12"
+        >
           <h2 className="font-display text-4xl md:text-5xl">
             {t({ sv: "Miljö & återvinning", en: "Environment & recycling" })}
           </h2>
@@ -159,22 +167,26 @@ function Index() {
               {t({ sv: "Läs mer om miljöarbetet →", en: "Read about our environmental work →" })}
             </PillLink>
           </div>
-        </article>
+        </Reveal>
 
-        <article className="rounded-3xl border border-border/70 bg-card p-10 shadow md:p-12">
+        <Reveal
+          delay={120}
+          as="article"
+          className="rounded-3xl bg-foreground p-10 text-background shadow-lg transition-transform duration-300 hover:-translate-y-1 md:p-12"
+        >
           <h2 className="font-display text-4xl md:text-5xl">Excellent Floorball</h2>
-          <p className="mt-6 text-lg text-foreground/80">
+          <p className="mt-6 text-lg text-background/80">
             {t({
               sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
               en: "Alongside recycling, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
             })}
           </p>
           <div className="mt-6">
-            <PillLink to="/sport" variant="outline" showArrow={false}>
-              {t({ sv: "Till sporten →", en: "To the sport →" })}
+            <PillLink to="/sport">
+              {t({ sv: "Till sporten", en: "To the sport" })}
             </PillLink>
           </div>
-        </article>
+        </Reveal>
       </section>
     </div>
   );

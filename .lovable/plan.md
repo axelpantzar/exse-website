@@ -1,39 +1,61 @@
-# Plan: Certifikat, parade kort och språkväxling
+# Mer liv via kontrast och scroll-animationer
 
-## 1. Certifikat på startsidan
+Behåll färgpaletten (varm off-white + koppar). Ge sidan liv genom starkare kontrast mellan sektioner och scroll-animationer som avslöjar innehållet när det kommer in i vyn. Byt även rubriken på "Om EXSE".
 
-Ladda upp de 5 certifikat-bilderna som Lovable-assets (UC Högsta Kreditvärdighet, ISO 9001, ISO 14001, ISO 45001, WEEE/EN 50625-1) och rendera dem i en ny sektion på `/` under "Vad vi gör" och före CTA-sektionen.
+## Rubrikbyte
 
-- Rubrik: "Certifieringar & kvalitet" (EN: "Certifications & quality")
-- Kort textrad som förklarar att EXSE arbetar systematiskt med kvalitet, miljö och arbetsmiljö — omskriven från exse.se:s kvalitets- och miljöpolicy (inte direkt kopierad)
-- Layout: 5 logotyper i en luftig rad (grid-cols-2 mobil → grid-cols-5 desktop) på varm off-white bakgrund, `rounded-2xl` container, gråskala + hover→färg, med bildtext under (t.ex. "ISO 9001 — Kvalitet")
+I `src/routes/index.tsx` byts h2 i About-sektionen från "Om EXSE" tillbaka till **"Erfarenhet som gör skillnad i hela återvinningskedjan"** (SV) / "Experience that makes a difference across the recycling chain" (EN).
 
-## 2. Parade kort: Miljö + Excellent Floorball
+## Kontrast mellan sektioner
 
-Ersätt dagens ensamma "Excellent Floorball"-kort på `/` med två sida-vid-sida-kort med identisk struktur (rubrik → text → pill-knapp):
+Idag är nästan varje yta samma off-white med tunn border. Vi växlar visuellt tunga och lätta sektioner så flödet får rytm — utan att införa nya färger:
 
-- **Miljö & återvinning** — kort omskriven text baserad på exse.se ("över 25 år inom elektronikåtervinning, sortering, analys, statistik") → knapp "Läs mer om miljöarbetet" → `/miljo`
-- **Excellent Floorball** — nuvarande text → knapp "Till sporten" → `/sport`
+- Hero — off-white (som nu).
+- Stats — invertera: mörk `bg-foreground` med off-white siffror och koppar-accent på enheten. Blir sidans första "punch".
+- Om EXSE — off-white (som nu), med den nya rubriken.
+- Vad vi gör — service-korten får tydligare djup: tjockare border, större koppar-numrering, `shadow` vid hover, lyft `-translate-y-1`.
+- Certifieringar — mörk `bg-foreground` sektion, certifikaten på mörk yta för stark kontrast mitt på sidan.
+- Miljö & Excellent Floorball-korten — behåll vita kort, men lägg det ena i mörk variant så duon blir en ljus + en mörk istället för två identiskt ljusa.
 
-Grid: `md:grid-cols-2`, samma `rounded-3xl border bg-card shadow p-10` som floorball-kortet har idag. Den befintliga stora mörka "Hållbarhet är inte ett tillägg"-CTA:n tas bort så vi inte har två miljö-CTA:er efter varandra.
+Miljö-sidan och sport-sidan får samma behandling: CTA-blocket på miljö är redan mörkt (`bg-primary`), vi lägger till samma mörka behandling på "Analysanläggningen i Arboga"-blocket så att sidan får minst en mörk paus.
 
-## 3. Språkväxling sv/en
+## Scroll-animationer
 
-Lättviktig lösning utan router-omskrivning:
+Använd inbyggda Tailwind-keyframes (`animate-fade-in`, `animate-scale-in`) tillsammans med en liten återanvändbar `Reveal`-wrapper baserad på `IntersectionObserver` (samma mönster som `CountUp` redan använder — ingen ny dependency).
 
-- Ny `LanguageContext` (`src/i18n/LanguageContext.tsx`) med `lang: "sv" | "en"`, persist i `localStorage` (läses i `useEffect` för att undvika hydration-mismatch — default `sv` vid SSR)
-- Ordbok `src/i18n/dict.ts` med alla strängar för alla 4 rutter + nav/footer, nycklade per sektion. Engelsk text skrivs om fritt utifrån exse.se/en/home (om oss, floorball, miljö) — ingen ordagrann kopia
-- `useT()`-hook returnerar `t("home.hero.title")`
-- `LanguageToggle`-komponent (SV | EN pill) placeras i `SiteNav` (desktop höger om länkarna, mobil i hamburger-menyn)
-- Alla hårdkodade svenska strängar i `index.tsx`, `miljo.tsx`, `sport.tsx`, `kontakt.tsx`, `SiteNav.tsx`, `SiteFooter.tsx` byts mot `t()`-anrop
-- `<html lang>` uppdateras via effekt i root-layouten
+`src/components/Reveal.tsx`:
+- Props: `as`, `delay` (ms), `className`, `children`.
+- Startar med `opacity-0 translate-y-4`.
+- När elementet skär vyn (threshold 0.15, `once: true`) togglas `animate-fade-in` på och slut-state blir `opacity-100 translate-y-0`.
+- Respekterar `prefers-reduced-motion` genom att direkt sätta slut-state utan animation.
+
+Appliceras på:
+- Hero-rubrik, hero-underrubrik, hero-knappar (staggered delays 0, 120, 240 ms).
+- Stats-sektionen som helhet (fade+scale-in, CountUp triggas som idag när den blir synlig).
+- Varje kort i "Vad vi gör" med stagger 0/120/240 ms.
+- Certifikat-raden med stagger 60 ms per logga.
+- De två parade korten (Miljö + Floorball) med stagger.
+- Alla h2:or och första stycken på miljö-, sport- och kontakt-sidorna.
+- Kontakt-personkorten med kort stagger.
+
+## Interaktions-detaljer
+
+- Hover-lyft på alla kort: `transition-transform hover:-translate-y-1 hover:shadow` (inte skala, för premium-känslan).
+- Länkar i footer/nav får `story-link` underline-animation.
+- Hero-bilden får en långsam zoom-in när den first-time avslöjas (`animate-scale-in` med `duration-700`).
 
 ## Filer som ändras/skapas
 
-- **Nya:** `src/i18n/LanguageContext.tsx`, `src/i18n/dict.ts`, `src/i18n/useT.ts`, `src/components/LanguageToggle.tsx`, `src/components/Certifications.tsx`, 5 asset-JSON:er för certifikaten
-- **Ändras:** `src/routes/__root.tsx` (Provider + `<html lang>`), `src/routes/index.tsx` (parade kort + Certifications), `src/routes/miljo.tsx`, `src/routes/sport.tsx`, `src/routes/kontakt.tsx`, `src/components/SiteNav.tsx`, `src/components/SiteFooter.tsx`
+- **Ny:** `src/components/Reveal.tsx`
+- **Ändras:**
+  - `src/routes/index.tsx` — rubrikbyte, `Reveal`-wrappers, mörka stats- och certifierings-sektioner, ett mörkt kort i duon.
+  - `src/routes/miljo.tsx` — `Reveal`-wrappers, mörk "Analysanläggningen i Arboga"-variant.
+  - `src/routes/sport.tsx` — `Reveal`-wrappers.
+  - `src/routes/kontakt.tsx` — `Reveal`-wrappers på person-korten.
+  - `src/components/Certifications.tsx` — mörk bakgrundsvariant, `Reveal` med stagger.
 
 ## Utanför scope
 
-- Ingen URL-baserad språkroute (`/en/...`) — språkval hanteras i klient-state. Kan läggas till senare om SEO på engelska behövs.
-- Ingen ny översättning av bloggposter eller innehåll som inte redan finns på sajten.
+- Ingen ny färgpalett, inga gradients, ingen ny typografi.
+- Ingen ny dependency (framer-motion utesluts — vi använder Tailwind + IntersectionObserver).
+- Ingen omstuvning av innehåll utöver rubrikbytet.

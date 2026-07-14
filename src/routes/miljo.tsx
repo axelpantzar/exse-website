@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "../assets/recycling-sorting.jpg";
 import labImg from "../assets/analysis-lab.jpg";
 import { PillLink } from "../components/ui/PillButton";
+import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/miljo")({
@@ -69,18 +70,18 @@ function MiljoPage() {
     <div className="mx-auto max-w-6xl px-6">
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
-          <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
+          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
             {t({ sv: "Här blir skrot till statistik", en: "Where scrap becomes statistics" })}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={120} className="mt-8 max-w-xl text-lg text-muted-foreground">
             {t({
               sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från analysanläggningen i Arboga, byggd på över 18 års insamlad data.",
               en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from the analysis facility in Arboga, built on more than 18 years of collected data.",
             })}
-          </p>
+          </Reveal>
         </div>
 
-        <div className="mt-16 overflow-hidden rounded-3xl">
+        <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
             src={heroImg}
             alt={t({ sv: "Sorteringsanläggning för metallåtervinning", en: "Metal recycling sorting facility" })}
@@ -88,83 +89,90 @@ function MiljoPage() {
             height={1000}
             className="h-[420px] w-full object-cover md:h-[560px]"
           />
-        </div>
+        </Reveal>
       </section>
 
       <section className="mt-24">
-        <h2 className="max-w-2xl font-display text-4xl md:text-5xl">
+        <Reveal as="h2" className="max-w-2xl font-display text-4xl md:text-5xl">
           {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
-        </h2>
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {services.map((s, i) => (
-            <article
+            <Reveal
               key={s.title}
-              className="rounded-3xl border border-border/70 bg-card p-8"
+              as="article"
+              delay={i * 100}
+              className="rounded-3xl border border-border/70 bg-card p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
             >
               <p className="font-display text-sm text-copper">0{i + 1}</p>
               <h3 className="mt-3 text-2xl">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {s.body}
               </p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="mt-28 grid gap-10 md:grid-cols-2 md:items-center">
-        <div className="overflow-hidden rounded-3xl">
-          <img
-            src={labImg}
-            alt={t({ sv: "Analyslaboratorium där metallprover undersöks", en: "Analysis laboratory where metal samples are examined" })}
-            width={1600}
-            height={1000}
-            loading="lazy"
-            className="h-[420px] w-full object-cover md:h-[520px]"
-          />
-        </div>
-        <div>
-          <h2 className="font-display text-4xl leading-tight md:text-5xl">
-            {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
-          </h2>
-          <div className="mt-6 space-y-5 text-lg text-foreground/80">
-            <p>
-              {t({
-                sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
-                en: "Here we run the tests and analyses that turn scrap into statistics. The results give our clients confidence in the material's composition, quality and value.",
-              })}
-            </p>
-            <p>
-              {t({
-                sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja, från första vägning till slutgiltig rapport.",
-                en: "By combining measurement data with audit, we create a transparent chain, from the first weighing to the final report.",
-              })}
-            </p>
+      {/* Dark contrast block */}
+      <section className="mt-28 overflow-hidden rounded-3xl bg-foreground text-background">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <Reveal className="overflow-hidden md:h-full">
+            <img
+              src={labImg}
+              alt={t({ sv: "Analyslaboratorium där metallprover undersöks", en: "Analysis laboratory where metal samples are examined" })}
+              width={1600}
+              height={1000}
+              loading="lazy"
+              className="h-[420px] w-full object-cover md:h-[520px]"
+            />
+          </Reveal>
+          <div className="px-8 py-10 md:px-12 md:py-16">
+            <Reveal as="h2" className="font-display text-4xl leading-tight md:text-5xl">
+              {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
+            </Reveal>
+            <div className="mt-6 space-y-5 text-lg text-background/80">
+              <Reveal as="p" delay={120}>
+                {t({
+                  sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
+                  en: "Here we run the tests and analyses that turn scrap into statistics. The results give our clients confidence in the material's composition, quality and value.",
+                })}
+              </Reveal>
+              <Reveal as="p" delay={220}>
+                {t({
+                  sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja, från första vägning till slutgiltig rapport.",
+                  en: "By combining measurement data with audit, we create a transparent chain, from the first weighing to the final report.",
+                })}
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="mt-28">
         <div className="grid gap-6 md:grid-cols-4">
-          {chain.map((step) => (
-            <article
+          {chain.map((step, i) => (
+            <Reveal
               key={step.n}
-              className="rounded-3xl border border-border/70 bg-card p-6"
+              as="article"
+              delay={i * 100}
+              className="rounded-3xl border border-border/70 bg-card p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
             >
               <p className="font-display text-4xl text-copper/80">{step.n}</p>
               <h3 className="mt-4 text-lg">{step.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{step.body}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mt-28 rounded-3xl bg-primary p-10 text-primary-foreground md:p-16">
-        <h2 className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
+        <Reveal as="h2" className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
           {t({ sv: "Vill du veta hur vi kan hantera ert material?", en: "Want to know how we can handle your material?" })}
-        </h2>
-        <div className="mt-8">
+        </Reveal>
+        <Reveal delay={120} className="mt-8">
           <PillLink to="/kontakt">{t({ sv: "Kontakta oss", en: "Contact us" })}</PillLink>
-        </div>
+        </Reveal>
       </section>
     </div>
   );
