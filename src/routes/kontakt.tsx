@@ -4,13 +4,13 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — EXSE AB" },
+      { title: "Kontakt | EXSE AB" },
       {
         name: "description",
         content:
           "Kontakta EXSE AB. Frågor om återvinning, analys eller statistik? Hör av dig till rätt person i teamet.",
       },
-      { property: "og:title", content: "Kontakt — EXSE AB" },
+      { property: "og:title", content: "Kontakt | EXSE AB" },
       {
         property: "og:description",
         content: "Kontakta rätt person i EXSE-teamet.",

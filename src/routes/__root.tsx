@@ -80,17 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EXSE AB — Här blir skrot till statistik" },
+      { title: "EXSE AB | Här blir skrot till statistik" },
       {
         name: "description",
         content:
-          "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Sortering, revision och analys — med full spårbarhet i varje led.",
+          "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Sortering, revision och analys | med full spårbarhet i varje led.",
       },
-      { property: "og:title", content: "EXSE AB — Här blir skrot till statistik" },
+      { property: "og:title", content: "EXSE AB | Här blir skrot till statistik" },
       {
         property: "og:description",
         content:
-          "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Sortering, revision och analys — med full spårbarhet i varje led.",
+          "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Sortering, revision och analys | med full spårbarhet i varje led.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
