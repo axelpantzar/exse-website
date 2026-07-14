@@ -16,8 +16,48 @@ export const Route = createFileRoute("/kontakt")({
         property: "og:description",
         content: "Kontakta rätt person i EXSE-teamet.",
       },
+      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/kontakt" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/kontakt" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "EXSE AB",
+            telephone: "+46-76-803-44-00",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Kyrkvägen 17",
+              postalCode: "703 75",
+              addressLocality: "Örebro",
+              addressCountry: "SE",
+            },
+            url: "https://radiant-rebuild-bot.lovable.app/kontakt",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "EXSE AB — Arboga",
+            telephone: "+46-10-330-00-80",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Strängen 13",
+              postalCode: "732 31",
+              addressLocality: "Arboga",
+              addressCountry: "SE",
+            },
+            url: "https://radiant-rebuild-bot.lovable.app/kontakt",
+          },
+        ]),
+      },
     ],
   }),
+
   component: KontaktPage,
 });
 
