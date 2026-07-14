@@ -162,7 +162,7 @@ function Index() {
             })}
           </p>
           <div className="mt-6">
-            <PillLink to="/miljo" variant="outline" showArrow={false}>
+            <PillLink to="/miljo" showArrow={false}>
               {t({ sv: "Läs mer om miljöarbetet →", en: "Read about our environmental work →" })}
             </PillLink>
           </div>
