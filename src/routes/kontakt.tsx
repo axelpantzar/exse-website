@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -21,19 +22,20 @@ export const Route = createFileRoute("/kontakt")({
 
 type Person = {
   name: string;
-  role: string;
+  roleSv: string;
+  roleEn: string;
   mobile?: string;
   tel?: string;
   email: string;
 };
 
 const people: Person[] = [
-  { name: "Christer Olsson", role: "VD", mobile: "+46 76 803 44 00", email: "christer@exse.se" },
-  { name: "Haidar Ali", role: "Statistiksamordnare, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
-  { name: "Mikael Ahlén", role: "Systemcontroller, Arboga", mobile: "+46 70 965 11 40", email: "mikael@exse.se" },
-  { name: "Camilla Nordlund", role: "Teknisk Controller, Arboga", tel: "+46 76 803 69 59", email: "camilla@exse.se" },
-  { name: "Sebastian Pettersson", role: "Test- & miljösamordningscontroller, Arboga", tel: "+46 70 757 52 13", email: "sebastian@exse.se" },
-  { name: "Doaa Al-Rahmani", role: "Assistent statistiksamordnare, Arboga", email: "doaa@exse.se" },
+  { name: "Christer Olsson", roleSv: "VD", roleEn: "CEO", mobile: "+46 76 803 44 00", email: "christer@exse.se" },
+  { name: "Haidar Ali", roleSv: "Statistiksamordnare, Arboga", roleEn: "Statistics Coordinator, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
+  { name: "Mikael Ahlén", roleSv: "Systemcontroller, Arboga", roleEn: "Systems Controller, Arboga", mobile: "+46 70 965 11 40", email: "mikael@exse.se" },
+  { name: "Camilla Nordlund", roleSv: "Teknisk Controller, Arboga", roleEn: "Technical Controller, Arboga", tel: "+46 76 803 69 59", email: "camilla@exse.se" },
+  { name: "Sebastian Pettersson", roleSv: "Test- & miljösamordningscontroller, Arboga", roleEn: "Test & Environmental Coordination Controller, Arboga", tel: "+46 70 757 52 13", email: "sebastian@exse.se" },
+  { name: "Doaa Al-Rahmani", roleSv: "Assistent statistiksamordnare, Arboga", roleEn: "Assistant Statistics Coordinator, Arboga", email: "doaa@exse.se" },
 ];
 
 function telHref(v: string) {
@@ -41,16 +43,19 @@ function telHref(v: string) {
 }
 
 function KontaktPage() {
+  const t = useT();
   return (
     <div className="mx-auto max-w-6xl px-6">
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
-            Kontakta oss
+            {t({ sv: "Kontakta oss", en: "Contact us" })}
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Har du frågor om återvinning, analys eller statistik? Hör av dig
-            till rätt person i teamet nedan.
+            {t({
+              sv: "Har du frågor om återvinning, analys eller statistik? Hör av dig till rätt person i teamet nedan.",
+              en: "Questions about recycling, analysis or statistics? Reach out to the right person on the team below.",
+            })}
           </p>
         </div>
       </section>
@@ -62,11 +67,15 @@ function KontaktPage() {
             className="rounded-3xl border border-border/70 bg-card p-8"
           >
             <h2 className="font-display text-2xl">{p.name}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{p.role}</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {t({ sv: p.roleSv, en: p.roleEn })}
+            </p>
             <dl className="mt-6 space-y-2 text-sm">
               {p.mobile && (
                 <div>
-                  <dt className="inline text-muted-foreground">Mobil: </dt>
+                  <dt className="inline text-muted-foreground">
+                    {t({ sv: "Mobil: ", en: "Mobile: " })}
+                  </dt>
                   <dd className="inline">
                     <a href={telHref(p.mobile)} className="hover:text-copper">
                       {p.mobile}
@@ -76,7 +85,9 @@ function KontaktPage() {
               )}
               {p.tel && (
                 <div>
-                  <dt className="inline text-muted-foreground">Tel: </dt>
+                  <dt className="inline text-muted-foreground">
+                    {t({ sv: "Tel: ", en: "Tel: " })}
+                  </dt>
                   <dd className="inline">
                     <a href={telHref(p.tel)} className="hover:text-copper">
                       {p.tel}
@@ -85,7 +96,9 @@ function KontaktPage() {
                 </div>
               )}
               <div>
-                <dt className="inline text-muted-foreground">E-post: </dt>
+                <dt className="inline text-muted-foreground">
+                  {t({ sv: "E-post: ", en: "Email: " })}
+                </dt>
                 <dd className="inline">
                   <a href={`mailto:${p.email}`} className="hover:text-copper">
                     {p.email}
@@ -112,7 +125,7 @@ function KontaktPage() {
             732 31 Arboga
           </address>
           <p className="mt-4 text-sm">
-            <span className="text-muted-foreground">Tel: </span>
+            <span className="text-muted-foreground">{t({ sv: "Tel: ", en: "Tel: " })}</span>
             <a href="tel:+460103300080" className="hover:text-copper">
               +46 (0)10-330 00 80
             </a>

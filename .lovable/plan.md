@@ -1,47 +1,39 @@
-# Recreate exse-ab-website-design.vercel.app
+# Plan: Certifikat, parade kort och språkväxling
 
-A Swedish 4-page website for EXSE AB (metal recycling + floorball side venture). Premium editorial feel with a floating pill-shaped nav, large serif-free display headings, warm neutral background, and dark/copper photography.
+## 1. Certifikat på startsidan
 
-## Pages & routes
+Ladda upp de 5 certifikat-bilderna som Lovable-assets (UC Högsta Kreditvärdighet, ISO 9001, ISO 14001, ISO 45001, WEEE/EN 50625-1) och rendera dem i en ny sektion på `/` under "Vad vi gör" och före CTA-sektionen.
 
-- `/` — Home: hero "Här blir skrot till statistik" + stats (40+, 100%, 2) + about + "Vad vi gör" 3-step + hållbarhet CTA + Excellent Floorball teaser
-- `/miljo` — Environment: hero + 4 services grid + Arboga analysanläggning section + 4-step återvinningskedja + CTA
-- `/sport` — Excellent Floorball: hero + text + external link
-- `/kontakt` — Contact: 6 team member cards + two address blocks
+- Rubrik: "Certifieringar & kvalitet" (EN: "Certifications & quality")
+- Kort textrad som förklarar att EXSE arbetar systematiskt med kvalitet, miljö och arbetsmiljö — omskriven från exse.se:s kvalitets- och miljöpolicy (inte direkt kopierad)
+- Layout: 5 logotyper i en luftig rad (grid-cols-2 mobil → grid-cols-5 desktop) på varm off-white bakgrund, `rounded-2xl` container, gråskala + hover→färg, med bildtext under (t.ex. "ISO 9001 — Kvalitet")
 
-Shared: floating rounded nav (logo left, links right), footer.
+## 2. Parade kort: Miljö + Excellent Floorball
 
-## Design
+Ersätt dagens ensamma "Excellent Floorball"-kort på `/` med två sida-vid-sida-kort med identisk struktur (rubrik → text → pill-knapp):
 
-- Background: warm off-white `#fcfbf8`
-- Text: near-black
-- Accent: copper/rust from EXSE logo
-- Typography: bold sans display (large), regular sans body — distinctive pairing, not Inter
-- Buttons: black pill primary with arrow, outlined pill secondary
-- Large rounded image cards (rounded-3xl)
-- Numbered step blocks with big muted "01/02/03" markers
+- **Miljö & återvinning** — kort omskriven text baserad på exse.se ("över 25 år inom elektronikåtervinning, sortering, analys, statistik") → knapp "Läs mer om miljöarbetet" → `/miljo`
+- **Excellent Floorball** — nuvarande text → knapp "Till sporten" → `/sport`
 
-## Images
+Grid: `md:grid-cols-2`, samma `rounded-3xl border bg-card shadow p-10` som floorball-kortet har idag. Den befintliga stora mörka "Hållbarhet är inte ett tillägg"-CTA:n tas bort så vi inte har två miljö-CTA:er efter varandra.
 
-Generate 4 hero images via imagegen (fast tier, jpg under src/assets):
-1. Close-up sorted copper/steel scrap metal, premium moody lighting (home hero)
-2. Industrial metal recycling sorting facility (miljö hero)
-3. Analysis laboratory with metal samples (miljö mid-section)
-4. Floorball player in action during a match (sport hero)
+## 3. Språkväxling sv/en
 
-Logo: recreate "EXSE AB SPORT · MILJÖ" wordmark as inline SVG with copper sphere accent.
+Lättviktig lösning utan router-omskrivning:
 
-## Technical
+- Ny `LanguageContext` (`src/i18n/LanguageContext.tsx`) med `lang: "sv" | "en"`, persist i `localStorage` (läses i `useEffect` för att undvika hydration-mismatch — default `sv` vid SSR)
+- Ordbok `src/i18n/dict.ts` med alla strängar för alla 4 rutter + nav/footer, nycklade per sektion. Engelsk text skrivs om fritt utifrån exse.se/en/home (om oss, floorball, miljö) — ingen ordagrann kopia
+- `useT()`-hook returnerar `t("home.hero.title")`
+- `LanguageToggle`-komponent (SV | EN pill) placeras i `SiteNav` (desktop höger om länkarna, mobil i hamburger-menyn)
+- Alla hårdkodade svenska strängar i `index.tsx`, `miljo.tsx`, `sport.tsx`, `kontakt.tsx`, `SiteNav.tsx`, `SiteFooter.tsx` byts mot `t()`-anrop
+- `<html lang>` uppdateras via effekt i root-layouten
 
-- TanStack Start route files: `src/routes/index.tsx`, `miljo.tsx`, `sport.tsx`, `kontakt.tsx`
-- Update `__root.tsx`: real meta (title "EXSE AB — Här blir skrot till statistik"), add floating nav + footer wrapping `<Outlet />`
-- Each leaf route sets its own `head()` with unique title/description/og
-- Update `src/styles.css`: warm background token, copper accent token, add display font via `<link>` in root head (e.g. Instrument Serif or Fraunces for warmth + Geist/Manrope for body — pick a non-generic pair)
-- All colors via semantic tokens in styles.css, no hardcoded hex in components
-- Replace placeholder home content
+## Filer som ändras/skapas
 
-## Out of scope
+- **Nya:** `src/i18n/LanguageContext.tsx`, `src/i18n/dict.ts`, `src/i18n/useT.ts`, `src/components/LanguageToggle.tsx`, `src/components/Certifications.tsx`, 5 asset-JSON:er för certifikaten
+- **Ändras:** `src/routes/__root.tsx` (Provider + `<html lang>`), `src/routes/index.tsx` (parade kort + Certifications), `src/routes/miljo.tsx`, `src/routes/sport.tsx`, `src/routes/kontakt.tsx`, `src/components/SiteNav.tsx`, `src/components/SiteFooter.tsx`
 
-- No backend (contact form uses mailto links like the original)
-- No CMS
-- English translation — content stays in Swedish
+## Utanför scope
+
+- Ingen URL-baserad språkroute (`/en/...`) — språkval hanteras i klient-state. Kan läggas till senare om SEO på engelska behövs.
+- Ingen ny översättning av bloggposter eller innehåll som inte redan finns på sajten.

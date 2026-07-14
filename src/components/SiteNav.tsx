@@ -2,20 +2,23 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-
-const links = [
-  { to: "/miljo", label: "Miljö" },
-  { to: "/sport", label: "Sport" },
-  { to: "/kontakt", label: "Kontakt" },
-] as const;
+import { LanguageToggle } from "./LanguageToggle";
+import { useT } from "../i18n/LanguageContext";
 
 export function SiteNav() {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const links = [
+    { to: "/miljo", label: t({ sv: "Miljö", en: "Environment" }) },
+    { to: "/sport", label: t({ sv: "Sport", en: "Sport" }) },
+    { to: "/kontakt", label: t({ sv: "Kontakt", en: "Contact" }) },
+  ] as const;
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
@@ -24,24 +27,27 @@ export function SiteNav() {
           <Logo />
         </Link>
 
-        <ul className="hidden items-center gap-1 text-sm md:flex">
-          {links.map((l) => (
-            <li key={l.to}>
-              <Link
-                to={l.to}
-                className="rounded-full px-4 py-2 text-foreground/70 transition-colors hover:text-foreground"
-                activeProps={{ className: "text-foreground font-medium" }}
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-2 md:flex">
+          <ul className="flex items-center gap-1 text-sm">
+            {links.map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="rounded-full px-4 py-2 text-foreground/70 transition-colors hover:text-foreground"
+                  activeProps={{ className: "text-foreground font-medium" }}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <LanguageToggle className="ml-1" />
+        </div>
 
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Stäng meny" : "Öppna meny"}
+          aria-label={open ? t({ sv: "Stäng meny", en: "Close menu" }) : t({ sv: "Öppna meny", en: "Open menu" })}
           aria-expanded={open}
           className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-accent md:hidden"
         >
@@ -64,6 +70,9 @@ export function SiteNav() {
               </li>
             ))}
           </ul>
+          <div className="mt-2 flex justify-center border-t border-border/50 pt-3">
+            <LanguageToggle />
+          </div>
         </div>
       )}
     </header>
