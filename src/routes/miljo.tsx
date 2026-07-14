@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroAsset from "../assets/miljo-hero.jpg.asset.json";
-import labImg from "../assets/analysis-lab.jpg";
 import { PillLink } from "../components/ui/PillButton";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
@@ -84,7 +82,7 @@ function MiljoPage() {
 
         <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
-            src={heroAsset.url}
+            src="/exse-miljo-hero.jpg"
             alt={t({ sv: "Sorteringsanläggning för metallåtervinning", en: "Metal recycling sorting facility" })}
             width={1600}
             height={1000}
@@ -127,7 +125,7 @@ function MiljoPage() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <Reveal>
             <img
-              src={labImg}
+              src="/exse-analysis-lab.jpg"
               alt={t({ sv: "Analyslaboratorium där metallprover undersöks", en: "Analysis laboratory where metal samples are examined" })}
               width={1600}
               height={1000}

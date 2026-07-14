@@ -1,8 +1,3 @@
-import ucAsset from "../assets/cert-uc.png.asset.json";
-import iso9001Asset from "../assets/cert-iso9001.png.asset.json";
-import iso14001Asset from "../assets/cert-iso14001.png.asset.json";
-import iso45001Asset from "../assets/cert-iso45001.png.asset.json";
-import weeeAsset from "../assets/cert-weee.png.asset.json";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
 
@@ -10,11 +5,11 @@ export function Certifications() {
   const t = useT();
 
   const items = [
-    { src: iso9001Asset.url, label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }) },
-    { src: iso14001Asset.url, label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
-    { src: iso45001Asset.url, label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
-    { src: weeeAsset.url, label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
-    { src: ucAsset.url, label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
+    { src: "/cert-iso9001.png", label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }) },
+    { src: "/cert-iso14001.png", label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
+    { src: "/cert-iso45001.png", label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
+    { src: "/cert-en50625.png", label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
+    { src: "/cert-uc.png", label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
   ];
 
   return (
