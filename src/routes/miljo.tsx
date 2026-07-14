@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "../assets/recycling-sorting.jpg";
 import labImg from "../assets/analysis-lab.jpg";
 import { PillLink } from "../components/ui/PillButton";
+import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/miljo")({
