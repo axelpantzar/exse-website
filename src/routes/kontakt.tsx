@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useT } from "../i18n/LanguageContext";
 import { Reveal } from "../components/Reveal";
+import { Navigation } from "lucide-react";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
