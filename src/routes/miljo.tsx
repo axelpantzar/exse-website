@@ -213,11 +213,17 @@ function MiljoPage() {
           {t({ sv: "Så fungerar återvinningskedjan", en: "How the recycling chain works" })}
         </Reveal>
 
-        <div className="relative mt-16 sm:mt-20 md:mt-24">
-          {/* Sticky vertical copper line */}
+        <div ref={timelineRef} className="relative mt-14 sm:mt-20 md:mt-24">
+          {/* Base vertical line */}
           <div
             aria-hidden
-            className="absolute left-8 top-0 bottom-0 w-px bg-copper/30 sm:left-10 md:left-14"
+            className="absolute left-8 top-0 bottom-0 w-px bg-copper/20 sm:left-10 md:left-14"
+          />
+          {/* Filled progress line, follows scroll */}
+          <div
+            aria-hidden
+            className="absolute left-8 top-0 w-px bg-copper transition-[height] duration-150 ease-out sm:left-10 md:left-14"
+            style={{ height: `${progress * 100}%` }}
           />
 
           <ol className="relative">
@@ -226,22 +232,22 @@ function MiljoPage() {
                 key={step.n}
                 as="li"
                 delay={i * 80}
-                className="relative flex min-h-[75vh] items-center py-12 sm:min-h-[80vh] sm:py-16 md:min-h-[85vh]"
+                className="relative py-10 sm:py-14 md:py-16"
               >
                 {/* Step number circle */}
                 <span
                   aria-hidden
-                  className="absolute left-8 top-1/2 z-10 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-lg text-copper shadow-sm sm:left-10 sm:h-20 sm:w-20 sm:text-xl md:left-14 md:h-24 md:w-24 md:text-2xl"
+                  className="absolute left-8 top-10 z-10 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-base text-copper shadow-sm sm:left-10 sm:top-14 sm:h-16 sm:w-16 sm:text-lg md:left-14 md:top-16 md:h-20 md:w-20 md:text-xl"
                 >
                   {step.n}
                 </span>
 
                 {/* Content */}
-                <div className="pl-24 sm:pl-32 md:pl-44">
-                  <h3 className="font-display text-4xl leading-none tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                <div className="pl-20 sm:pl-28 md:pl-40">
+                  <h3 className="font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
                     {step.title}
                   </h3>
-                  <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg md:text-xl">
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
                     {step.body}
                   </p>
                 </div>
@@ -249,6 +255,7 @@ function MiljoPage() {
             ))}
           </ol>
         </div>
+
       </section>
 
       <section className="mt-28 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-16">
