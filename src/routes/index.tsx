@@ -181,7 +181,7 @@ function Index() {
             })}
           </p>
           <div className="mt-6">
-            <PillLink to="/sport">
+            <PillLink to="/sport" variant="light">
               {t({ sv: "Till sporten", en: "To the sport" })}
             </PillLink>
           </div>
