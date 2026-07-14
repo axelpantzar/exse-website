@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://radiant-rebuild-bot.lovable.app/sitemap.xml

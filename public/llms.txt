@@ -1,0 +1,12 @@
+# EXSE AB
+
+> Erfarenhet som gör skillnad i hela återvinningskedjan. Över 25 år inom elektronik- och metallåtervinning med full spårbarhet, samt 40 år inom innebandy via Excellent Floorball.
+
+EXSE AB förvandlar metallavfall till mätbart, hållbart värde genom mottagning, sortering, analys och återföring med full spårbarhet. Analysanläggning i Arboga, huvudkontor i Örebro.
+
+## Pages
+
+- [Start](/): Översikt över EXSE, statistik och verksamheten.
+- [Miljö](/miljo): Återvinningskedjan, analysanläggningen i Arboga och miljöarbete.
+- [Excellent Floorball](/sport): Innebandyverksamheten och 40 år i sporten.
+- [Kontakt](/kontakt): Kontaktpersoner och adresser i Örebro och Arboga.
