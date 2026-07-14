@@ -115,19 +115,19 @@ function MiljoPage() {
       </section>
 
       {/* Arboga facility */}
-      <section className="mt-28 overflow-hidden rounded-3xl border border-border/70 bg-card">
+      <section className="mt-28">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <Reveal className="overflow-hidden md:h-full">
+          <Reveal>
             <img
               src={labImg}
               alt={t({ sv: "Analyslaboratorium där metallprover undersöks", en: "Analysis laboratory where metal samples are examined" })}
               width={1600}
               height={1000}
               loading="lazy"
-              className="h-[420px] w-full object-cover md:h-[520px]"
+              className="h-[420px] w-full rounded-3xl object-cover md:h-[520px]"
             />
           </Reveal>
-          <div className="px-8 py-10 md:px-12 md:py-16">
+          <div>
             <Reveal as="h2" className="font-display text-4xl leading-tight md:text-5xl">
               {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
             </Reveal>
