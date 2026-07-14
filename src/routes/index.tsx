@@ -110,16 +110,30 @@ function Index() {
       </section>
 
       {/* Stats */}
-      <section className="mt-24 sm:mt-32 md:mt-40">
+      <section ref={statsRef} className="mt-24 sm:mt-32 md:mt-40">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 md:gap-10">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 120} className="text-center">
               <p className="font-display text-5xl tracking-tight text-copper sm:text-6xl md:text-7xl">
-                <CountUp value={s.value} />
+                <CountUp
+                  value={s.value}
+                  progress={statsProgress}
+                  index={i}
+                  total={stats.length}
+                />
               </p>
               <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
             </Reveal>
           ))}
+        </div>
+
+        {/* Scroll-driven progress line, mirrors the timeline */}
+        <div className="relative mt-12 h-px bg-border/60 sm:mt-16">
+          <div
+            aria-hidden
+            className="absolute left-0 top-0 h-full bg-copper transition-[width] duration-150 ease-out"
+            style={{ width: `${statsProgress * 100}%` }}
+          />
         </div>
       </section>
 
