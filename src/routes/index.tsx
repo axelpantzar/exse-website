@@ -50,7 +50,7 @@ function Index() {
       {/* Hero */}
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
-          <Reveal as="h1" className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl lg:text-8xl">
+          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
             {t({ sv: "Här blir skrot till statistik", en: "Where scrap becomes statistics" })}
           </Reveal>
           <Reveal delay={120} as="p" className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
