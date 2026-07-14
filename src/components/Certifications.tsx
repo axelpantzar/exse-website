@@ -1,8 +1,12 @@
+import { useState } from "react";
+import { Pause, Play } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
 
 export function Certifications() {
   const t = useT();
+  const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   const items = [
     { src: "/cert-iso9001.png", label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }) },
@@ -11,6 +15,8 @@ export function Certifications() {
     { src: "/cert-en50625.png", label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
     { src: "/cert-uc.png", label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
   ];
+
+  const isRunning = !paused && !hovered;
 
   return (
     <section className="mt-28 sm:mt-36 md:mt-44">
@@ -28,40 +34,80 @@ export function Certifications() {
         </Reveal>
       </div>
 
-      {/* Infinite marquee on all screen sizes */}
+      {/* Controls */}
+      <div className="mt-8 flex items-center justify-between gap-4 md:mt-10">
+        <div className="flex items-center gap-2 text-sm text-foreground/70">
+          <span
+            className={`inline-block h-2.5 w-2.5 rounded-full transition-colors ${
+              isRunning ? "bg-primary animate-pulse" : "bg-foreground/30"
+            }`}
+            aria-hidden
+          />
+          <span>
+            {isRunning
+              ? t({ sv: "Loop aktiv", en: "Loop active" })
+              : t({ sv: "Pausad", en: "Paused" })}
+          </span>
+        </div>
+        <button
+          type="button"
+          onClick={() => setPaused((p) => !p)}
+          aria-pressed={paused}
+          aria-label={
+            paused
+              ? t({ sv: "Starta loop", en: "Start loop" })
+              : t({ sv: "Pausa loop", en: "Pause loop" })
+          }
+          className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-4 py-2 text-sm transition-colors hover:bg-foreground hover:text-background"
+        >
+          {paused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+          <span>
+            {paused
+              ? t({ sv: "Starta", en: "Start" })
+              : t({ sv: "Pausa", en: "Pause" })}
+          </span>
+        </button>
+      </div>
+
+      {/* Infinite marquee */}
       <div
-        className="relative mt-10 overflow-hidden md:mt-12"
+        className="relative mt-6 overflow-hidden md:mt-8"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           WebkitMaskImage:
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
-        <ul className="flex w-max animate-marquee gap-8 md:gap-14">
+        <ul
+          className="flex w-max animate-marquee gap-6 md:gap-10"
+          style={{ animationPlayState: isRunning ? "running" : "paused" }}
+        >
           {[...items, ...items].map((c, i) => (
             <li
               key={`${c.label}-${i}`}
               className="flex shrink-0 flex-col items-center text-center"
               aria-hidden={i >= items.length ? true : undefined}
             >
-              <div className="flex h-56 w-56 items-center justify-center rounded-2xl bg-muted/40 p-5 md:h-80 md:w-80 lg:h-96 lg:w-96">
+              <div className="flex h-40 w-40 items-center justify-center rounded-2xl bg-muted/40 p-4 sm:h-48 sm:w-48 md:h-56 md:w-56 lg:h-64 lg:w-64">
                 <img
                   src={c.src}
                   alt={c.label}
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
                 />
               </div>
-              <p className="mt-4 w-56 text-sm leading-snug text-muted-foreground md:mt-5 md:w-80 md:text-base lg:w-96">
+              <p className="mt-3 w-40 text-xs leading-snug text-muted-foreground sm:w-48 sm:text-sm md:mt-4 md:w-56 md:text-base lg:w-64">
                 {c.label}
               </p>
             </li>
           ))}
         </ul>
       </div>
-
     </section>
   );
 }
-
