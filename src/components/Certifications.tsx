@@ -18,14 +18,14 @@ export function Certifications() {
   ];
 
   return (
-    <section className="mt-28 overflow-hidden rounded-3xl bg-foreground p-8 text-background md:p-14">
+    <section className="mt-28">
       <div className="grid gap-10 md:grid-cols-12 md:items-end">
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
             {t({ sv: "Certifieringar & kvalitet", en: "Certifications & quality" })}
           </h2>
         </Reveal>
-        <Reveal as="p" delay={120} className="text-lg text-background/80 md:col-span-7">
+        <Reveal as="p" delay={120} className="text-lg text-foreground/80 md:col-span-7">
           {t({
             sv: "Vi arbetar systematiskt med kvalitet, miljö och arbetsmiljö i varje del av verksamheten, från mottagning och sortering till analys och rapportering.",
             en: "We work systematically with quality, environmental and occupational health management across every part of the operation, from intake and sorting to analysis and reporting.",
@@ -41,15 +41,15 @@ export function Certifications() {
             delay={i * 80}
             className="flex flex-col items-center text-center"
           >
-            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-background/5 p-3 md:h-28 md:w-28">
+            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3 md:h-28 md:w-28">
               <img
                 src={c.src}
                 alt={c.label}
                 loading="lazy"
-                className="max-h-full max-w-full object-contain brightness-0 invert opacity-80 transition-all duration-300 hover:opacity-100"
+                className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
               />
             </div>
-            <p className="mt-4 text-xs leading-snug text-background/70">{c.label}</p>
+            <p className="mt-4 text-xs leading-snug text-muted-foreground">{c.label}</p>
           </Reveal>
         ))}
       </ul>

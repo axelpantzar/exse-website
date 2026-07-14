@@ -81,15 +81,15 @@ function Index() {
         </Reveal>
       </section>
 
-      {/* Stats — dark inverted section for contrast punch */}
-      <section className="mt-20 overflow-hidden rounded-3xl bg-foreground text-background">
-        <div className="grid grid-cols-1 gap-10 px-8 py-16 md:grid-cols-3 md:px-14">
+      {/* Stats */}
+      <section className="mt-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 120} className="text-center">
               <p className="font-display text-6xl tracking-tight text-copper md:text-7xl">
                 <CountUp value={s.value} />
               </p>
-              <p className="mt-3 text-sm text-background/70">{s.label}</p>
+              <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
             </Reveal>
           ))}
         </div>

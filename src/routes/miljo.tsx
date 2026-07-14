@@ -114,8 +114,8 @@ function MiljoPage() {
         </div>
       </section>
 
-      {/* Dark contrast block */}
-      <section className="mt-28 overflow-hidden rounded-3xl bg-foreground text-background">
+      {/* Arboga facility */}
+      <section className="mt-28 overflow-hidden rounded-3xl border border-border/70 bg-card">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <Reveal className="overflow-hidden md:h-full">
             <img
@@ -131,7 +131,7 @@ function MiljoPage() {
             <Reveal as="h2" className="font-display text-4xl leading-tight md:text-5xl">
               {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
             </Reveal>
-            <div className="mt-6 space-y-5 text-lg text-background/80">
+            <div className="mt-6 space-y-5 text-lg text-foreground/80">
               <Reveal as="p" delay={120}>
                 {t({
                   sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",

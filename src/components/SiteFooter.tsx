@@ -11,8 +11,8 @@ export function SiteFooter() {
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             {t({
-              sv: "Metallåtervinning byggd på mätning, analys och full spårbarhet.",
-              en: "Metal recycling built on measurement, analysis and full traceability.",
+              sv: "Erfarenhet som gör skillnad i hela återvinningskedjan. Över 25 år inom elektronikåtervinning och 40 år inom innebandy.",
+              en: "Experience that makes a difference across the recycling chain. More than 25 years in electronics recycling and 40 years in floorball.",
             })}
           </p>
         </div>
