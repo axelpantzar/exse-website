@@ -13,9 +13,9 @@ function Index() {
   const t = useT();
 
   const stats = [
-    { value: "40+", label: t({ sv: "År av branscherfarenhet", en: "Years of industry experience" }) },
-    { value: "100%", label: t({ sv: "Spårbar materialkedja", en: "Traceable material chain" }) },
-    { value: "2", label: t({ sv: "Anläggningar i Sverige", en: "Facilities in Sweden" }) },
+    { value: "25+", label: t({ sv: "År inom elektronikåtervinning", en: "Years in electronics recycling" }) },
+    { value: "40+", label: t({ sv: "År inom innebandy", en: "Years in floorball" }) },
+    { value: "18+", label: t({ sv: "År av insamlad data", en: "Years of collected data" }) },
   ];
 
   const services = [
@@ -23,24 +23,24 @@ function Index() {
       n: "01",
       title: t({ sv: "Sortering & insamling", en: "Sorting & intake" }),
       body: t({
-        sv: "Vi tar emot och sorterar metallskrot med precision. Varje fraktion vägs, märks och förbereds för återvinning.",
-        en: "We receive and sort metal scrap with precision. Every fraction is weighed, labelled and prepared for recycling.",
+        sv: "Vi tar emot och sorterar elavfall och metallskrot med precision. Varje fraktion vägs, märks och förbereds för återvinning.",
+        en: "We receive and sort electronic waste and metal scrap with precision. Every fraction is weighed, labelled and prepared for recycling.",
       }),
     },
     {
       n: "02",
       title: t({ sv: "Statistik & revision", en: "Statistics & audit" }),
       body: t({
-        sv: "Allt material dokumenteras och revideras. Du får tydliga rapporter och full insyn i flöden och kvalitet.",
-        en: "All material is documented and audited. You get clear reports and full visibility into flows and quality.",
+        sv: "Vi kontrollerar, sammanställer och förtydligar data från olika system. Revisionerna bidrar till bättre lagefterlevnad och tydligare återvinningsmål.",
+        en: "We control, compile and clarify data from different systems. Our audits contribute to better legal compliance and clearer recycling goals.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Tester & analys", en: "Testing & analysis" }),
+      title: t({ sv: "Tester & analyser", en: "Testing & analysis" }),
       body: t({
-        sv: "I vår analysanläggning i Arboga genomför vi tester som omvandlar skrot till mätbar, tillförlitlig data.",
-        en: "In our analysis facility in Arboga we run tests that turn scrap into measurable, reliable data.",
+        sv: "I analysanläggningen i Arboga demonteras och vägs produkter komponent för komponent, så att vi kan se sammansättning och värde i återvinningskedjan.",
+        en: "At the Arboga facility products are dismantled and weighed component by component, giving a clear picture of composition and value in the recycling chain.",
       }),
     },
   ];
@@ -55,8 +55,8 @@ function Index() {
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
             {t({
-              sv: "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Med decennier av erfarenhet och en modern analysanläggning levererar vi spårbarhet i varje led.",
-              en: "EXSE AB turns metal waste into measurable, sustainable value. With decades of experience and a modern analysis facility, we deliver traceability at every step.",
+              sv: "EXSE AB förvandlar elavfall till mätbart, hållbart värde. Med decennier av erfarenhet och en modern analysanläggning i Arboga levererar vi spårbarhet i varje led.",
+              en: "EXSE AB turns electronic waste into measurable, sustainable value. With decades of experience and a modern analysis facility in Arboga, we deliver traceability at every step.",
             })}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
@@ -97,22 +97,22 @@ function Index() {
         <div className="md:col-span-5">
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
             {t({
-              sv: "Erfarenhet som gör skillnad i hela återvinningskedjan",
-              en: "Experience that makes a difference across the recycling chain",
+              sv: "Om EXSE",
+              en: "About EXSE",
             })}
           </h2>
         </div>
         <div className="space-y-6 text-lg text-foreground/80 md:col-span-7 md:pt-2">
           <p>
             {t({
-              sv: "EXSE AB har en gedigen historia inom både miljö och sport — över 25 år inom elektronikåtervinning och över 40 år inom innebandy. Vi står för pålitlighet, kvalitet och långsiktigt arbete.",
-              en: "EXSE AB has a solid history in both environment and sport — over 25 years in electronics recycling and over 40 years in floorball. We stand for reliability, quality and long-term commitment.",
+              sv: "EXSE AB är en framstående aktör med en gedigen historia inom miljö och sport. Över 25 år inom elektronikåtervinning och över 40 år inom innebandy har gett oss pålitlighet, kvalitet och långsiktighet.",
+              en: "EXSE AB is a leading player with a solid history in both environment and sport. Over 25 years in electronics recycling and more than 40 years in floorball have given us reliability, quality and a long-term perspective.",
             })}
           </p>
           <p>
             {t({
-              sv: "Vår analysanläggning i Arboga är hjärtat i arbetet. Där omvandlas inkommande material till data som våra uppdragsgivare kan lita på, hela vägen från mottagning till slutrapport.",
-              en: "Our analysis facility in Arboga is the heart of the operation. There, incoming material is turned into data our clients can rely on — from intake to final report.",
+              sv: "Vi arbetar på uppdrag av externa verksamhetsutövare med sortering, analyser, revisioner och statistik för elektriska och elektroniska produkter. I varje del av arbetet står kvalitet och miljömedvetenhet i centrum.",
+              en: "We work on behalf of external operators with sorting, analyses, audits and statistics for electrical and electronic products. Quality and environmental awareness stay at the centre of everything we do.",
             })}
           </p>
         </div>
@@ -151,7 +151,7 @@ function Index() {
           <p className="mt-6 text-lg text-foreground/80">
             {t({
               sv: "Med över 25 år i elektronikåtervinningsbranschen hanterar, kontrollerar och analyserar vi elektronikskrot på ett ansvarsfullt sätt. Vår långa närvaro är en garant för hög standard inom miljövänlig återvinning.",
-              en: "With more than 25 years in the electronics recycling industry, we handle, control and analyse electronic scrap responsibly. Our long-standing presence is a guarantee for high standards in sustainable recycling.",
+              en: "With more than 25 years in the electronics recycling industry, we handle, control and analyse electronic scrap responsibly. Our long standing presence is a guarantee for high standards in sustainable recycling.",
             })}
           </p>
           <div className="mt-6">
@@ -165,8 +165,8 @@ function Index() {
           <h2 className="font-display text-4xl md:text-5xl">Excellent Floorball</h2>
           <p className="mt-6 text-lg text-foreground/80">
             {t({
-              sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy — med över 40 års engagemang, erfarenhet och passion för sporten.",
-              en: "Alongside recycling, we run a dedicated floorball venture — with more than 40 years of commitment, experience and passion for the sport.",
+              sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
+              en: "Alongside recycling, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
             })}
           </p>
           <div className="mt-6">

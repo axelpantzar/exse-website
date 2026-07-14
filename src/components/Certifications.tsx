@@ -11,19 +11,19 @@ export function Certifications() {
   const items = [
     {
       src: iso9001Asset.url,
-      label: t({ sv: "ISO 9001 — Kvalitet", en: "ISO 9001 — Quality" }),
+      label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }),
     },
     {
       src: iso14001Asset.url,
-      label: t({ sv: "ISO 14001 — Miljö", en: "ISO 14001 — Environment" }),
+      label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }),
     },
     {
       src: iso45001Asset.url,
-      label: t({ sv: "ISO 45001 — Arbetsmiljö", en: "ISO 45001 — Occupational H&S" }),
+      label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }),
     },
     {
       src: weeeAsset.url,
-      label: t({ sv: "EN 50625-1 — WEEE", en: "EN 50625-1 — WEEE" }),
+      label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }),
     },
     {
       src: ucAsset.url,
@@ -41,8 +41,8 @@ export function Certifications() {
         </div>
         <p className="text-lg text-foreground/80 md:col-span-7">
           {t({
-            sv: "Vi arbetar systematiskt med kvalitet, miljö och arbetsmiljö i varje del av verksamheten — från mottagning och sortering till analys och rapportering.",
-            en: "We work systematically with quality, environmental and occupational health management across every part of the operation — from intake and sorting to analysis and reporting.",
+            sv: "Vi arbetar systematiskt med kvalitet, miljö och arbetsmiljö i varje del av verksamheten, från mottagning och sortering till analys och rapportering.",
+            en: "We work systematically with quality, environmental and occupational health management across every part of the operation, from intake and sorting to analysis and reporting.",
           })}
         </p>
       </div>

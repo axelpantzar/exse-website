@@ -7,17 +7,17 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/miljo")({
   head: () => ({
     meta: [
-      { title: "Miljö — EXSE AB" },
+      { title: "Miljö | EXSE AB" },
       {
         name: "description",
         content:
-          "Miljöarbetet är kärnan i EXSE. Sortering, statistik & revision, tester och elektronikåtervinning — med full spårbarhet.",
+          "På analysanläggningen i Arboga blir elavfall till statistik. Sortering, revision, tester och full spårbarhet.",
       },
-      { property: "og:title", content: "Miljö — EXSE AB" },
+      { property: "og:title", content: "Miljö | EXSE AB" },
       {
         property: "og:description",
         content:
-          "Återvinning byggd på data, inte gissningar. Full spårbarhet från mottagning till slutrapport.",
+          "Här blir skrot till statistik. Kunskap från över 18 års insamlad data om elavfall i Sverige.",
       },
     ],
   }),
@@ -31,29 +31,29 @@ function MiljoPage() {
     {
       title: t({ sv: "Sortering", en: "Sorting" }),
       body: t({
-        sv: "Inkommande metall delas upp i rena fraktioner. Noggrann sortering är grunden för hög återvinningsgrad och rätt materialvärde.",
-        en: "Incoming metal is separated into clean fractions. Careful sorting is the foundation for high recycling rates and correct material value.",
+        sv: "Omkring två procent av all insamlad småelektronik tar omvägen via vår anläggning för att bli statistik och kunskap. Kunskapen används för att förbehandlare ska få rätt ersättning för sitt arbete och för att se hur elavfallet förändras över tid.",
+        en: "Around two percent of all collected small electronics takes the detour through our facility to become statistics and knowledge. The insight is used to give pre treatment partners the right compensation for their work and to see how e waste changes over time.",
       }),
     },
     {
       title: t({ sv: "Statistik & revision", en: "Statistics & audit" }),
       body: t({
-        sv: "Vi dokumenterar och reviderar varje flöde. Rapporterna ger spårbarhet och underlag för både kunder och myndigheter.",
-        en: "We document and audit every flow. The reports provide traceability and a basis for both clients and authorities.",
+        sv: "Statistiksamordnarens uppdrag är att kontrollera, sammanställa och förtydliga den data som uppstår i olika datasystem. Våra revisioner av återvinnare bidrar till förbättrad lagefterlevnad och tydligare återvinningsmål i Sverige.",
+        en: "Our statistics coordinator controls, compiles and clarifies the data that emerges from different systems. Our audits of recyclers contribute to improved legal compliance and clearer recycling goals in Sweden.",
       }),
     },
     {
       title: t({ sv: "Tester & analyser", en: "Testing & analysis" }),
       body: t({
-        sv: "I analysanläggningen i Arboga genomför vi materialtester som säkerställer kvalitet och korrekt klassning.",
-        en: "In the Arboga analysis facility we run material tests that ensure quality and correct classification.",
+        sv: "På anläggningen gör vi djupare studier av enskilda produkter och produktgrupper. Vi utför tester, analyser och demontering av elavfall för att förstå produkternas sammansättning och värde i återvinningskedjan.",
+        en: "At the facility we make deeper studies of single products and product groups. We run tests, analyses and dismantling of e waste to understand product composition and value in the recycling chain.",
       }),
     },
     {
       title: t({ sv: "Elektronikåtervinning", en: "Electronics recycling" }),
       body: t({
         sv: "Uttjänt elektronik demonteras och materialåtervinns säkert, med fokus på att återföra värdefulla metaller till kretsloppet.",
-        en: "End-of-life electronics are safely dismantled and recycled, with a focus on returning valuable metals to the loop.",
+        en: "End of life electronics are safely dismantled and recycled, with a focus on returning valuable metals to the loop.",
       }),
     },
   ];
@@ -70,12 +70,12 @@ function MiljoPage() {
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
-            {t({ sv: "Återvinning byggd på data, inte gissningar", en: "Recycling built on data, not guesswork" })}
+            {t({ sv: "Här blir skrot till statistik", en: "Where scrap becomes statistics" })}
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
             {t({
-              sv: "Miljöarbetet är kärnan i EXSE. Vi förenar effektiv återvinning med mätning, analys och full spårbarhet — så att varje ton metall hanteras ansvarsfullt och redovisas öppet.",
-              en: "Environmental work is at the core of EXSE. We combine efficient recycling with measurement, analysis and full traceability — so every ton of metal is handled responsibly and reported transparently.",
+              sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från analysanläggningen i Arboga, byggd på över 18 års insamlad data.",
+              en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from the analysis facility in Arboga, built on more than 18 years of collected data.",
             })}
           </p>
         </div>
@@ -135,8 +135,8 @@ function MiljoPage() {
             </p>
             <p>
               {t({
-                sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja — från första vägning till slutgiltig rapport.",
-                en: "By combining measurement data with audit, we create a transparent chain — from the first weighing to the final report.",
+                sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja, från första vägning till slutgiltig rapport.",
+                en: "By combining measurement data with audit, we create a transparent chain, from the first weighing to the final report.",
               })}
             </p>
           </div>

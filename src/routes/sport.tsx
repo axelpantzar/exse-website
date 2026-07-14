@@ -7,13 +7,13 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/sport")({
   head: () => ({
     meta: [
-      { title: "Sport — Excellent Floorball | EXSE AB" },
+      { title: "Sport | Excellent Floorball | EXSE AB" },
       {
         name: "description",
         content:
-          "Excellent Floorball — EXSE:s sportprofil inom innebandy med över 40 års engagemang.",
+          "Excellent Floorball | EXSE:s sportprofil inom innebandy med över 40 års engagemang.",
       },
-      { property: "og:title", content: "Excellent Floorball — EXSE AB" },
+      { property: "og:title", content: "Excellent Floorball | EXSE AB" },
       {
         property: "og:description",
         content: "En egen profil, samma engagemang. Över 40 år inom innebandy.",
@@ -66,8 +66,8 @@ function SportPage() {
           </p>
           <p>
             {t({
-              sv: "Med en djup förankring inom innebandy och över 40 år av engagemang har vi byggt både omfattande erfarenhet och en djup förståelse för sportens krav — vilket gör oss till en pålitlig partner för den som söker kvalitet inom innebandy.",
-              en: "With deep roots in floorball and more than 40 years of dedication, we've built both extensive experience and a deep understanding of the sport's demands — making us a reliable partner for anyone seeking quality within floorball.",
+              sv: "Med en djup förankring inom innebandy och över 40 år av engagemang har vi byggt både omfattande erfarenhet och en djup förståelse för sportens krav, vilket gör oss till en pålitlig partner för den som söker kvalitet inom innebandy.",
+              en: "With deep roots in floorball and more than 40 years of dedication, we've built both extensive experience and a deep understanding of the sport's demands, making us a reliable partner for anyone seeking quality within floorball.",
             })}
           </p>
           <p>{t({ sv: "Besök gärna vår separata hemsida för att läsa mer.", en: "Visit our dedicated website to read more." })}</p>
