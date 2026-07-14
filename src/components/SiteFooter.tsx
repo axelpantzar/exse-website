@@ -38,7 +38,7 @@ export function SiteFooter() {
           </address>
         </div>
       </div>
-      <div className="border-t border-border/60 px-6 py-6 text-center text-xs text-muted-foreground">
+      <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
         © {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}
       </div>
     </footer>
