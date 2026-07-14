@@ -88,6 +88,17 @@ function directionsHref(address: string) {
   return `geo:0,0?q=${encodeURIComponent(address)}`;
 }
 
+function openNativeDirections(address: string) {
+  const encoded = encodeURIComponent(address);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  if (isIOS) {
+    window.location.href = `https://maps.apple.com/?daddr=${encoded}`;
+  } else {
+    window.location.href = `geo:0,0?q=${encoded}`;
+  }
+}
+
 function KontaktPage() {
   const t = useT();
   return (
