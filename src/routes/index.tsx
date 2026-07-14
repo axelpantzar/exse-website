@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -10,6 +11,34 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsProgress, setStatsProgress] = useState(0);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+
+    const onScroll = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // Start filling when the section top reaches ~70% down the viewport,
+      // finish when the section bottom reaches ~30% up.
+      const start = vh * 0.7;
+      const end = vh * 0.3;
+      const total = rect.height + (start - end);
+      const scrolled = start - rect.top;
+      const p = Math.max(0, Math.min(1, scrolled / total));
+      setStatsProgress(p);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
   const t = useT();
 
   const stats = [
@@ -81,16 +110,30 @@ function Index() {
       </section>
 
       {/* Stats */}
-      <section className="mt-24 sm:mt-32 md:mt-40">
+      <section ref={statsRef} className="mt-24 sm:mt-32 md:mt-40">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 md:gap-10">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 120} className="text-center">
               <p className="font-display text-5xl tracking-tight text-copper sm:text-6xl md:text-7xl">
-                <CountUp value={s.value} />
+                <CountUp
+                  value={s.value}
+                  progress={statsProgress}
+                  index={i}
+                  total={stats.length}
+                />
               </p>
               <p className="mt-3 text-sm text-muted-foreground">{s.label}</p>
             </Reveal>
           ))}
+        </div>
+
+        {/* Scroll-driven progress line, mirrors the timeline */}
+        <div className="relative mt-12 h-px bg-border/60 sm:mt-16">
+          <div
+            aria-hidden
+            className="absolute left-0 top-0 h-full bg-copper transition-[width] duration-150 ease-out"
+            style={{ width: `${statsProgress * 100}%` }}
+          />
         </div>
       </section>
 
