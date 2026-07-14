@@ -13,7 +13,7 @@ export const Route = createFileRoute("/miljo")({
       {
         name: "description",
         content:
-          "På analysanläggningen i Arboga blir elavfall till statistik. Sortering, revision, tester och full spårbarhet.",
+          "På El-Kretsens analysanläggning i Arboga blir elavfall till statistik. Sortering, revision, tester och full spårbarhet.",
       },
       { property: "og:title", content: "Miljö | EXSE AB" },
       {
