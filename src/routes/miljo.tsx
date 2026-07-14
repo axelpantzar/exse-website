@@ -84,7 +84,7 @@ function MiljoPage() {
 
         <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
-            src={heroImg}
+            src={heroAsset.url}
             alt={t({ sv: "Sorteringsanläggning för metallåtervinning", en: "Metal recycling sorting facility" })}
             width={1600}
             height={1000}
