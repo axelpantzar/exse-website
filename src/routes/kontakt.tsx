@@ -164,6 +164,13 @@ function KontaktPage() {
             Kyrkvägen 17<br />
             703 75 Örebro
           </address>
+          <a
+            href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-copper bg-copper px-4 py-2 text-sm font-medium text-white transition hover:bg-copper/90"
+          >
+            <Navigation className="h-4 w-4" />
+            {t({ sv: "Vägbeskrivning", en: "Directions" })}
+          </a>
         </div>
         <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
           <h3 className="font-display text-xl sm:text-2xl">Arboga</h3>
@@ -177,6 +184,13 @@ function KontaktPage() {
               +46 (0)10-330 00 80
             </a>
           </p>
+          <a
+            href={directionsHref("Strängen 13, 732 31 Arboga, Sweden")}
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-copper bg-copper px-4 py-2 text-sm font-medium text-white transition hover:bg-copper/90"
+          >
+            <Navigation className="h-4 w-4" />
+            {t({ sv: "Vägbeskrivning", en: "Directions" })}
+          </a>
         </div>
       </section>
     </div>
