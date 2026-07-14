@@ -11,34 +11,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [statsProgress, setStatsProgress] = useState(0);
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      // Start filling when the section top reaches ~70% down the viewport,
-      // finish when the section bottom reaches ~30% up.
-      const start = vh * 0.7;
-      const end = vh * 0.3;
-      const total = rect.height + (start - end);
-      const scrolled = start - rect.top;
-      const p = Math.max(0, Math.min(1, scrolled / total));
-      setStatsProgress(p);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
   const t = useT();
 
   const stats = [
