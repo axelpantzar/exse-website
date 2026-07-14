@@ -127,7 +127,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <SiteNav />
-        <main className="pt-28">
+        <main className="pt-24 sm:pt-28">
           <Outlet />
         </main>
         <SiteFooter />
