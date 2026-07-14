@@ -66,13 +66,13 @@ function MiljoPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-6">
-      <section className="pt-8 md:pt-16">
+    <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
-          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
+          <Reveal as="h1" className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
             {t({ sv: "En transparent återvinningskedja", en: "A transparent recycling chain" })}
           </Reveal>
-          <Reveal as="p" delay={120} className="mt-8 max-w-xl text-lg text-muted-foreground">
+          <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
               sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från analysanläggningen i Arboga, byggd på över 18 års insamlad data.",
               en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from the analysis facility in Arboga, built on more than 18 years of collected data.",
@@ -80,32 +80,32 @@ function MiljoPage() {
           </Reveal>
         </div>
 
-        <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
+        <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
             src="/exse-miljo-hero.jpg"
             alt={t({ sv: "Sorteringsanläggning för metallåtervinning", en: "Metal recycling sorting facility" })}
             width={1600}
             height={1000}
-            className="h-[420px] w-full object-cover md:h-[560px]"
+            className="h-[260px] w-full object-cover sm:h-[380px] md:h-[520px] lg:h-[600px]"
           />
         </Reveal>
       </section>
 
-      <section className="mt-24">
-        <Reveal as="h2" className="max-w-2xl font-display text-4xl md:text-5xl">
+      <section className="mt-20 sm:mt-24 md:mt-28">
+        <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {services.map((s, i) => (
             <Reveal
               key={s.title}
               as="article"
               delay={i * 100}
-              className="rounded-3xl border border-border/70 bg-card p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
+              className="rounded-3xl border border-border/70 bg-card p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow sm:p-8"
             >
-              <h3 className="font-display text-2xl md:text-3xl">{s.title}</h3>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl">{s.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {s.body}
               </p>
             </Reveal>
@@ -115,8 +115,8 @@ function MiljoPage() {
 
 
       {/* Arboga facility */}
-      <section className="mt-28">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+      <section className="mt-20 sm:mt-24 md:mt-28">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
           <Reveal>
             <img
               src="/exse-analysis-lab.jpg"
@@ -124,14 +124,14 @@ function MiljoPage() {
               width={1600}
               height={1000}
               loading="lazy"
-              className="h-[420px] w-full rounded-3xl object-cover md:h-[520px]"
+              className="h-[260px] w-full rounded-2xl object-cover sm:h-[380px] sm:rounded-3xl md:h-[520px]"
             />
           </Reveal>
           <div>
-            <Reveal as="h2" className="font-display text-4xl leading-tight md:text-5xl">
+            <Reveal as="h2" className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
               {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
             </Reveal>
-            <div className="mt-6 space-y-5 text-lg text-foreground/80">
+            <div className="mt-5 space-y-4 text-base text-foreground/80 sm:mt-6 sm:space-y-5 sm:text-lg">
               <Reveal as="p" delay={120}>
                 {t({
                   sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
@@ -150,27 +150,27 @@ function MiljoPage() {
       </section>
 
       {/* Recycling chain timeline */}
-      <section className="mt-28">
-        <Reveal as="h2" className="max-w-2xl font-display text-4xl md:text-5xl">
+      <section className="mt-20 sm:mt-24 md:mt-28">
+        <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Så fungerar återvinningskedjan", en: "How the recycling chain works" })}
         </Reveal>
 
-        <ol className="relative mt-14 border-l border-copper/30 pl-8 md:pl-12">
+        <ol className="relative mt-10 border-l border-copper/30 pl-6 sm:mt-14 sm:pl-8 md:pl-12">
           {chain.map((step, i) => (
             <Reveal
               key={step.n}
               as="li"
               delay={i * 120}
-              className="relative pb-14 last:pb-0"
+              className="relative pb-10 last:pb-0 sm:pb-14"
             >
               <span
                 aria-hidden
-                className="absolute -left-8 md:-left-12 top-1 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-sm text-copper"
+                className="absolute -left-6 top-1 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-xs text-copper sm:-left-8 sm:h-10 sm:w-10 sm:text-sm md:-left-12"
               >
                 {step.n}
               </span>
-              <h3 className="font-display text-2xl md:text-3xl">{step.title}</h3>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl">{step.title}</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {step.body}
               </p>
             </Reveal>
@@ -178,11 +178,11 @@ function MiljoPage() {
         </ol>
       </section>
 
-      <section className="mt-28 rounded-3xl bg-primary p-10 text-primary-foreground md:p-16">
-        <Reveal as="h2" className="max-w-3xl font-display text-4xl leading-tight md:text-5xl">
+      <section className="mt-20 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-24 sm:p-10 md:mt-28 md:p-16">
+        <Reveal as="h2" className="max-w-3xl font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
           {t({ sv: "Vill du veta hur vi kan hantera ert material?", en: "Want to know how we can handle your material?" })}
         </Reveal>
-        <Reveal delay={120} className="mt-8">
+        <Reveal delay={120} className="mt-6 sm:mt-8">
           <PillLink to="/kontakt" variant="light">{t({ sv: "Kontakta oss", en: "Contact us" })}</PillLink>
         </Reveal>
       </section>

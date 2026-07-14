@@ -5,8 +5,8 @@ import { useT } from "../i18n/LanguageContext";
 export function SiteFooter() {
   const t = useT();
   return (
-    <footer className="mt-32 border-t border-border/60 bg-background">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
+    <footer className="mt-24 border-t border-border/60 bg-background sm:mt-32">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-6 sm:py-16 md:grid-cols-3 lg:px-8">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -38,7 +38,7 @@ export function SiteFooter() {
           </address>
         </div>
       </div>
-      <div className="border-t border-border/60 px-6 py-6 text-center text-xs text-muted-foreground">
+      <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
         © {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}
       </div>
     </footer>
