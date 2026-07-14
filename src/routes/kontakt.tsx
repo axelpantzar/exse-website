@@ -46,13 +46,13 @@ function telHref(v: string) {
 function KontaktPage() {
   const t = useT();
   return (
-    <div className="mx-auto max-w-6xl px-6">
-      <section className="pt-8 md:pt-16">
+    <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
-          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
+          <Reveal as="h1" className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
             {t({ sv: "Kontakta oss", en: "Contact us" })}
           </Reveal>
-          <Reveal as="p" delay={120} className="mt-8 max-w-xl text-lg text-muted-foreground">
+          <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
               sv: "Har du frågor om återvinning, analys eller statistik? Hör av dig till rätt person i teamet nedan.",
               en: "Questions about recycling, analysis or statistics? Reach out to the right person on the team below.",
@@ -61,26 +61,26 @@ function KontaktPage() {
         </div>
       </section>
 
-      <section className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-12 grid gap-5 sm:mt-16 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {people.map((p, i) => (
           <Reveal
             key={p.email}
             as="article"
             delay={i * 80}
-            className="rounded-3xl border border-border/70 bg-card p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
+            className="rounded-3xl border border-border/70 bg-card p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow sm:p-8"
           >
-            <h2 className="font-display text-2xl">{p.name}</h2>
+            <h2 className="font-display text-xl sm:text-2xl">{p.name}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               {t({ sv: p.roleSv, en: p.roleEn })}
             </p>
-            <dl className="mt-6 space-y-2 text-sm">
+            <dl className="mt-5 space-y-2 text-sm sm:mt-6">
               {p.mobile && (
                 <div>
                   <dt className="inline text-muted-foreground">
                     {t({ sv: "Mobil: ", en: "Mobile: " })}
                   </dt>
                   <dd className="inline">
-                    <a href={telHref(p.mobile)} className="hover:text-copper">
+                    <a href={telHref(p.mobile)} className="break-all hover:text-copper">
                       {p.mobile}
                     </a>
                   </dd>
@@ -92,7 +92,7 @@ function KontaktPage() {
                     {t({ sv: "Tel: ", en: "Tel: " })}
                   </dt>
                   <dd className="inline">
-                    <a href={telHref(p.tel)} className="hover:text-copper">
+                    <a href={telHref(p.tel)} className="break-all hover:text-copper">
                       {p.tel}
                     </a>
                   </dd>
@@ -103,7 +103,7 @@ function KontaktPage() {
                   {t({ sv: "E-post: ", en: "Email: " })}
                 </dt>
                 <dd className="inline">
-                  <a href={`mailto:${p.email}`} className="hover:text-copper">
+                  <a href={`mailto:${p.email}`} className="break-all hover:text-copper">
                     {p.email}
                   </a>
                 </dd>
@@ -113,16 +113,16 @@ function KontaktPage() {
         ))}
       </section>
 
-      <section className="mt-24 grid gap-8 md:grid-cols-2">
-        <div className="rounded-3xl border border-border/70 bg-card p-10">
-          <h3 className="font-display text-2xl">EXSE AB</h3>
+      <section className="mt-20 grid gap-6 sm:mt-24 sm:gap-8 md:grid-cols-2">
+        <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
+          <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
           <address className="mt-3 not-italic text-foreground/80">
             Kyrkvägen 17<br />
             703 75 Örebro
           </address>
         </div>
-        <div className="rounded-3xl border border-border/70 bg-card p-10">
-          <h3 className="font-display text-2xl">Arboga</h3>
+        <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
+          <h3 className="font-display text-xl sm:text-2xl">Arboga</h3>
           <address className="mt-3 not-italic text-foreground/80">
             Strängen 13<br />
             732 31 Arboga
