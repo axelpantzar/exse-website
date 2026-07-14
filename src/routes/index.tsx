@@ -150,18 +150,20 @@ function Index() {
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:mt-44 md:grid-cols-2">
         <Reveal
           as="article"
-          className="rounded-3xl border border-border/70 bg-card p-7 shadow transition-transform duration-300 hover:-translate-y-1 sm:p-10 md:p-12"
+          className="flex h-full flex-col rounded-3xl border border-border/70 bg-card p-7 shadow transition-transform duration-300 hover:-translate-y-1 sm:p-10 md:p-12"
         >
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
-            {t({ sv: "Miljö & återvinning", en: "Environment & recycling" })}
-          </h2>
-          <p className="mt-5 text-base text-foreground/80 sm:mt-6 sm:text-lg">
-            {t({
-              sv: "Med över 25 år i elektronikåtervinningsbranschen hanterar, kontrollerar och analyserar vi elektronikskrot på ett ansvarsfullt sätt. Vår långa närvaro är en garant för hög standard inom miljövänlig återvinning.",
-              en: "With more than 25 years in the electronics recycling industry, we handle, control and analyse electronic scrap responsibly. Our long standing presence is a guarantee for high standards in sustainable recycling.",
-            })}
-          </p>
-          <div className="mt-6">
+          <div className="flex-1">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
+              {t({ sv: "Miljö & återvinning", en: "Environment & recycling" })}
+            </h2>
+            <p className="mt-5 text-base text-foreground/80 sm:mt-6 sm:text-lg">
+              {t({
+                sv: "Med över 25 år i elektronikåtervinningsbranschen hanterar, kontrollerar och analyserar vi elektronikskrot på ett ansvarsfullt sätt. Vår långa närvaro är en garant för hög standard inom miljövänlig återvinning.",
+                en: "With more than 25 years in the electronics recycling industry, we handle, control and analyse electronic scrap responsibly. Our long standing presence is a guarantee for high standards in sustainable recycling.",
+              })}
+            </p>
+          </div>
+          <div className="mt-auto pt-6">
             <PillLink to="/miljo" showArrow={false}>
               {t({ sv: "Läs mer om miljöarbetet →", en: "Read about our environmental work →" })}
             </PillLink>
@@ -171,16 +173,18 @@ function Index() {
         <Reveal
           delay={120}
           as="article"
-          className="rounded-3xl bg-foreground p-7 text-background shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:p-10 md:p-12"
+          className="flex h-full flex-col rounded-3xl bg-foreground p-7 text-background shadow-lg transition-transform duration-300 hover:-translate-y-1 sm:p-10 md:p-12"
         >
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">Excellent Floorball</h2>
-          <p className="mt-5 text-base text-background/80 sm:mt-6 sm:text-lg">
-            {t({
-              sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
-              en: "Alongside recycling, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
-            })}
-          </p>
-          <div className="mt-6">
+          <div className="flex-1">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">Excellent Floorball</h2>
+            <p className="mt-5 text-base text-background/80 sm:mt-6 sm:text-lg">
+              {t({
+                sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
+                en: "Alongside recycling, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
+              })}
+            </p>
+          </div>
+          <div className="mt-auto pt-6">
             <PillLink to="/sport" variant="light">
               {t({ sv: "Till sporten", en: "To the sport" })}
             </PillLink>
