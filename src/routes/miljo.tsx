@@ -155,27 +155,42 @@ function MiljoPage() {
           {t({ sv: "Så fungerar återvinningskedjan", en: "How the recycling chain works" })}
         </Reveal>
 
-        <ol className="relative mt-10 border-l border-copper/30 pl-6 sm:mt-14 sm:pl-8 md:pl-12">
-          {chain.map((step, i) => (
-            <Reveal
-              key={step.n}
-              as="li"
-              delay={i * 120}
-              className="relative pb-10 last:pb-0 sm:pb-14"
-            >
-              <span
-                aria-hidden
-                className="absolute -left-6 top-1 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-xs text-copper sm:-left-8 sm:h-10 sm:w-10 sm:text-sm md:-left-12"
+        <div className="relative mt-16 sm:mt-20 md:mt-24">
+          {/* Sticky vertical copper line */}
+          <div
+            aria-hidden
+            className="absolute left-8 top-0 bottom-0 w-px bg-copper/30 sm:left-10 md:left-14"
+          />
+
+          <ol className="relative">
+            {chain.map((step, i) => (
+              <Reveal
+                key={step.n}
+                as="li"
+                delay={i * 80}
+                className="relative flex min-h-[75vh] items-center py-12 sm:min-h-[80vh] sm:py-16 md:min-h-[85vh]"
               >
-                {step.n}
-              </span>
-              <h3 className="font-display text-xl sm:text-2xl md:text-3xl">{step.title}</h3>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {step.body}
-              </p>
-            </Reveal>
-          ))}
-        </ol>
+                {/* Step number circle */}
+                <span
+                  aria-hidden
+                  className="absolute left-8 top-1/2 z-10 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-lg text-copper shadow-sm sm:left-10 sm:h-20 sm:w-20 sm:text-xl md:left-14 md:h-24 md:w-24 md:text-2xl"
+                >
+                  {step.n}
+                </span>
+
+                {/* Content */}
+                <div className="pl-24 sm:pl-32 md:pl-44">
+                  <h3 className="font-display text-4xl leading-none tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg md:text-xl">
+                    {step.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </section>
 
       <section className="mt-28 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-16">
