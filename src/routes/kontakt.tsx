@@ -49,23 +49,25 @@ function KontaktPage() {
     <div className="mx-auto max-w-6xl px-6">
       <section className="pt-8 md:pt-16">
         <div className="max-w-3xl">
-          <h1 className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
+          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
             {t({ sv: "Kontakta oss", en: "Contact us" })}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+          </Reveal>
+          <Reveal as="p" delay={120} className="mt-8 max-w-xl text-lg text-muted-foreground">
             {t({
               sv: "Har du frågor om återvinning, analys eller statistik? Hör av dig till rätt person i teamet nedan.",
               en: "Questions about recycling, analysis or statistics? Reach out to the right person on the team below.",
             })}
-          </p>
+          </Reveal>
         </div>
       </section>
 
       <section className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {people.map((p) => (
-          <article
+        {people.map((p, i) => (
+          <Reveal
             key={p.email}
-            className="rounded-3xl border border-border/70 bg-card p-8"
+            as="article"
+            delay={i * 80}
+            className="rounded-3xl border border-border/70 bg-card p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
           >
             <h2 className="font-display text-2xl">{p.name}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
