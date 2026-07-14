@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { LanguageProvider } from "../i18n/LanguageContext";
 
 function NotFoundComponent() {
   return (
@@ -124,11 +125,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteNav />
-      <main className="pt-28">
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <LanguageProvider>
+        <SiteNav />
+        <main className="pt-28">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
