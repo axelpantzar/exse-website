@@ -173,8 +173,8 @@ function MiljoPage() {
 
 
       {/* Arboga facility */}
-      <section className="mt-28 rounded-3xl border border-border/70 bg-card p-6 sm:mt-36 sm:p-10 md:mt-44 md:p-12">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
+      <section className="mt-28 sm:mt-36 md:mt-44">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16">
           <Reveal>
             <img
               src="/exse-analysis-lab.jpg"
