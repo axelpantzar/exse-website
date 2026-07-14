@@ -28,7 +28,41 @@ export function Certifications() {
         </Reveal>
       </div>
 
-      <ul className="mt-10 grid grid-cols-2 gap-5 sm:mt-12 sm:grid-cols-3 sm:gap-6 md:grid-cols-5">
+      {/* Mobile: infinite marquee */}
+      <div
+        className="relative mt-10 overflow-hidden md:hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
+      >
+        <ul className="flex w-max animate-marquee gap-6">
+          {[...items, ...items].map((c, i) => (
+            <li
+              key={`${c.label}-${i}`}
+              className="flex shrink-0 flex-col items-center text-center"
+              aria-hidden={i >= items.length ? true : undefined}
+            >
+              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3">
+                <img
+                  src={c.src}
+                  alt={c.label}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain opacity-90"
+                />
+              </div>
+              <p className="mt-3 w-24 text-xs leading-snug text-muted-foreground">
+                {c.label}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Tablet + desktop: static grid */}
+      <ul className="mt-12 hidden grid-cols-3 gap-6 md:grid md:grid-cols-5">
         {items.map((c, i) => (
           <Reveal
             key={c.label}
@@ -36,7 +70,7 @@ export function Certifications() {
             delay={i * 80}
             className="flex flex-col items-center text-center"
           >
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/40 p-3 sm:h-24 sm:w-24 md:h-28 md:w-28">
+            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3 md:h-28 md:w-28">
               <img
                 src={c.src}
                 alt={c.label}
@@ -44,10 +78,11 @@ export function Certifications() {
                 className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
               />
             </div>
-            <p className="mt-3 text-xs leading-snug text-muted-foreground sm:mt-4">{c.label}</p>
+            <p className="mt-4 text-xs leading-snug text-muted-foreground">{c.label}</p>
           </Reveal>
         ))}
       </ul>
+
     </section>
   );
 }
