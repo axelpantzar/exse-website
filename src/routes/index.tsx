@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "../assets/hero-scrap-metal.jpg";
+import heroAsset from "../assets/hero-tv.jpg.asset.json";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -72,8 +72,8 @@ function Index() {
 
         <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
-            src={heroImg}
-            alt={t({ sv: "Närbild på sorterat metallskrot i premiumbelysning", en: "Close-up of sorted metal scrap in premium lighting" })}
+            src={heroAsset.url}
+            alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
             width={1600}
             height={1000}
             className="h-[420px] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02] md:h-[560px]"
