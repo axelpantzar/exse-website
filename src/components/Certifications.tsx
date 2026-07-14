@@ -38,14 +38,14 @@ export function Certifications() {
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        <ul className="flex w-max animate-marquee gap-6 md:gap-10">
+        <ul className="flex w-max animate-marquee gap-8 md:gap-14">
           {[...items, ...items].map((c, i) => (
             <li
               key={`${c.label}-${i}`}
               className="flex shrink-0 flex-col items-center text-center"
               aria-hidden={i >= items.length ? true : undefined}
             >
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3 md:h-32 md:w-32">
+              <div className="flex h-44 w-44 items-center justify-center rounded-2xl bg-muted/40 p-4 md:h-56 md:w-56">
                 <img
                   src={c.src}
                   alt={c.label}
@@ -53,7 +53,7 @@ export function Certifications() {
                   className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
                 />
               </div>
-              <p className="mt-3 w-24 text-xs leading-snug text-muted-foreground md:mt-4 md:w-32 md:text-sm">
+              <p className="mt-4 w-44 text-sm leading-snug text-muted-foreground md:mt-5 md:w-56 md:text-base">
                 {c.label}
               </p>
             </li>
