@@ -115,39 +115,25 @@ function Index() {
       {/* Stats */}
       <section className="mt-24 sm:mt-32 md:mt-40">
         <div ref={statsRef}>
-          <ol className="space-y-16 sm:space-y-24 md:space-y-32">
-            {stats.map((s, i) => {
-              const segment = 1 / stats.length;
-              const local = Math.max(
-                0,
-                Math.min(1, (statsProgress - i * segment) / segment)
-              );
-              // Fade in over the first ~40% of this stat's segment.
-              const opacity = Math.max(0, Math.min(1, local / 0.4));
-              const translate = (1 - opacity) * 24;
-              return (
-                <li
-                  key={s.label}
-                  className="flex flex-col items-center text-center transition-[opacity,transform] duration-300 ease-out"
-                  style={{
-                    opacity,
-                    transform: `translateY(${translate}px)`,
-                  }}
-                >
-                  <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-8xl md:text-9xl">
-                    <CountUp
-                      value={s.value}
-                      progress={statsProgress}
-                      index={i}
-                      total={stats.length}
-                    />
-                  </p>
-                  <p className="mt-5 max-w-md text-lg text-muted-foreground sm:mt-6 sm:text-xl">
-                    {s.label}
-                  </p>
-                </li>
-              );
-            })}
+          <ol className="grid gap-10 sm:grid-cols-3 sm:gap-6 md:gap-10">
+            {stats.map((s, i) => (
+              <Reveal
+                key={s.label}
+                as="li"
+                delay={i * 120}
+                className="flex flex-col items-center text-center"
+              >
+                <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-6xl md:text-7xl lg:text-8xl">
+                  <CountUp
+                    value={s.value}
+                    progress={statsProgress >= 0.1 ? 1 : 0}
+                  />
+                </p>
+                <p className="mt-5 max-w-[14ch] text-lg text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
+                  {s.label}
+                </p>
+              </Reveal>
+            ))}
           </ol>
         </div>
       </section>
