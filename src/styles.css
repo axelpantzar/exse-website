@@ -80,3 +80,13 @@
     font-weight: 400;
   }
 }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee-x 22s linear infinite;
+}
+
