@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { ComponentProps, ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
-type Variant = "primary" | "outline";
+type Variant = "primary" | "outline" | "light";
 
 const base =
   "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all";
@@ -11,6 +11,8 @@ const variants: Record<Variant, string> = {
     "bg-primary text-primary-foreground hover:bg-primary/90 hover:gap-3",
   outline:
     "border border-border bg-background text-foreground hover:bg-accent",
+  light:
+    "bg-white text-foreground hover:bg-white/90 hover:gap-3",
 };
 
 type InternalProps = {
