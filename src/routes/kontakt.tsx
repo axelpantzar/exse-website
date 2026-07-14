@@ -85,7 +85,8 @@ function telHref(v: string) {
 }
 
 function directionsHref(address: string) {
-  return `geo:0,0?q=${encodeURIComponent(address)}`;
+  const encoded = encodeURIComponent(address);
+  return `https://www.google.com/maps/dir/?api=1&destination=${encoded}`;
 }
 
 function openNativeDirections(address: string) {
@@ -95,7 +96,7 @@ function openNativeDirections(address: string) {
   if (isIOS) {
     window.location.href = `https://maps.apple.com/?daddr=${encoded}`;
   } else {
-    window.location.href = `geo:0,0?q=${encoded}`;
+    window.location.href = `https://www.google.com/maps/dir/?api=1&destination=${encoded}`;
   }
 }
 
