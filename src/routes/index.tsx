@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroAsset from "../assets/hero-tv.jpg.asset.json";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -72,7 +71,7 @@ function Index() {
 
         <Reveal delay={200} className="mt-16 overflow-hidden rounded-3xl">
           <img
-            src={heroAsset.url}
+            src="/exse-home-hero.jpg"
             alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
             width={1600}
             height={1000}
