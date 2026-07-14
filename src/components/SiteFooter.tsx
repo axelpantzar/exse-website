@@ -5,7 +5,7 @@ import { useT } from "../i18n/LanguageContext";
 export function SiteFooter() {
   const t = useT();
   return (
-    <footer className="mt-24 border-t border-border/60 bg-background sm:mt-32">
+    <footer className="mt-32 border-t border-border/60 bg-background sm:mt-44">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-6 sm:py-16 md:grid-cols-3 lg:px-8">
         <div>
           <Logo />

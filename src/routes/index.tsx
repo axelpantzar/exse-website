@@ -81,7 +81,7 @@ function Index() {
       </section>
 
       {/* Stats */}
-      <section className="mt-16 sm:mt-20 md:mt-24">
+      <section className="mt-24 sm:mt-32 md:mt-40">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 md:gap-10">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 120} className="text-center">
@@ -95,7 +95,7 @@ function Index() {
       </section>
 
       {/* About */}
-      <section className="mt-20 grid gap-8 sm:mt-24 md:mt-28 md:grid-cols-12 md:gap-10">
+      <section className="mt-28 grid gap-8 sm:mt-36 md:mt-44 md:grid-cols-12 md:gap-10">
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({
@@ -121,7 +121,7 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section className="mt-20 sm:mt-24 md:mt-28">
+      <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Vad vi gör", en: "What we do" })}
         </Reveal>
@@ -147,7 +147,7 @@ function Index() {
       <Certifications />
 
       {/* Paired cards: Miljö (light) + Excellent Floorball (dark) */}
-      <section className="mt-20 grid gap-6 sm:mt-24 sm:gap-8 md:mt-28 md:grid-cols-2">
+      <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:mt-44 md:grid-cols-2">
         <Reveal
           as="article"
           className="rounded-3xl border border-border/70 bg-card p-7 shadow transition-transform duration-300 hover:-translate-y-1 sm:p-10 md:p-12"

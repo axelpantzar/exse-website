@@ -91,7 +91,7 @@ function MiljoPage() {
         </Reveal>
       </section>
 
-      <section className="mt-20 sm:mt-24 md:mt-28">
+      <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
         </Reveal>
@@ -115,7 +115,7 @@ function MiljoPage() {
 
 
       {/* Arboga facility */}
-      <section className="mt-20 sm:mt-24 md:mt-28">
+      <section className="mt-28 sm:mt-36 md:mt-44">
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
           <Reveal>
             <img
@@ -150,7 +150,7 @@ function MiljoPage() {
       </section>
 
       {/* Recycling chain timeline */}
-      <section className="mt-20 sm:mt-24 md:mt-28">
+      <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Så fungerar återvinningskedjan", en: "How the recycling chain works" })}
         </Reveal>
@@ -178,7 +178,7 @@ function MiljoPage() {
         </ol>
       </section>
 
-      <section className="mt-20 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-24 sm:p-10 md:mt-28 md:p-16">
+      <section className="mt-28 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-16">
         <Reveal as="h2" className="max-w-3xl font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
           {t({ sv: "Vill du veta hur vi kan hantera ert material?", en: "Want to know how we can handle your material?" })}
         </Reveal>

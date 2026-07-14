@@ -50,7 +50,7 @@ function SportPage() {
         </Reveal>
       </section>
 
-      <section className="mt-20 grid gap-8 sm:mt-24 md:mt-28 md:grid-cols-12 md:gap-10">
+      <section className="mt-28 grid gap-8 sm:mt-36 md:mt-44 md:grid-cols-12 md:gap-10">
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({ sv: "En egen profil, samma engagemang", en: "A separate profile, the same commitment" })}
