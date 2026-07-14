@@ -33,7 +33,7 @@ function FlagGB({ className = "" }: { className?: string }) {
   );
 }
 
-const options: { code: Lang; label: string; Flag: (p: { className?: string }) => JSX.Element }[] = [
+const options: { code: Lang; label: string; Flag: (p: { className?: string }) => ReactElement }[] = [
   { code: "sv", label: "SV", Flag: FlagSE },
   { code: "en", label: "EN", Flag: FlagGB },
 ];
