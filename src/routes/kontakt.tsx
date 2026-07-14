@@ -193,10 +193,8 @@ function KontaktPage() {
           </div>
           <a
             href={directionsHref("Strängen 13, 732 31 Arboga, Sweden")}
-            onClick={(e) => {
-              e.preventDefault();
-              openNativeDirections("Strängen 13, 732 31 Arboga, Sweden");
-            }}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-auto inline-flex items-center gap-2 self-start rounded-full bg-white px-4 py-2 text-sm font-medium text-foreground transition hover:bg-white/90"
           >
             <Navigation className="h-4 w-4" />
