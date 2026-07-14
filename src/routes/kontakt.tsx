@@ -109,7 +109,7 @@ function KontaktPage() {
                 </dd>
               </div>
             </dl>
-          </article>
+          </Reveal>
         ))}
       </section>
 
