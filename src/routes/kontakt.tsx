@@ -161,7 +161,7 @@ function KontaktPage() {
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <div className="flex-1">
             <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
-            <address className="mt-3 not-italic text-primary-foreground/80">
+            <address className="mt-3 mb-6 not-italic text-primary-foreground/80">
               Kyrkvägen 17<br />
               703 75 Örebro
             </address>
