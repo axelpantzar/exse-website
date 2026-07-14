@@ -61,11 +61,67 @@ function MiljoPage() {
   ];
 
   const chain = [
-    { n: "01", title: t({ sv: "Mottagning", en: "Intake" }), body: t({ sv: "Material tas emot, vägs och registreras.", en: "Material is received, weighed and registered." }) },
-    { n: "02", title: t({ sv: "Sortering", en: "Sorting" }), body: t({ sv: "Fraktioner separeras och märks upp.", en: "Fractions are separated and labelled." }) },
-    { n: "03", title: t({ sv: "Analys", en: "Analysis" }), body: t({ sv: "Tester och statistik genomförs i Arboga.", en: "Tests and statistics are performed in Arboga." }) },
-    { n: "04", title: t({ sv: "Återföring", en: "Return to loop" }), body: t({ sv: "Materialet återförs till kretsloppet.", en: "The material is returned to the loop." }) },
+    {
+      n: "01",
+      title: t({ sv: "Mottagning", en: "Intake" }),
+      body: t({
+        sv: "Material tas emot, vägs in och registreras i vårt system. Varje leverans får ett spårbart ID så att ursprung, vikt och fraktion kan följas hela vägen genom kedjan.",
+        en: "Material is received, weighed in and registered in our system. Every delivery gets a traceable ID so origin, weight and fraction can be followed all the way through the chain.",
+      }),
+    },
+    {
+      n: "02",
+      title: t({ sv: "Sortering", en: "Sorting" }),
+      body: t({
+        sv: "Fraktioner separeras manuellt och maskinellt utifrån materialtyp och kvalitet. Rätt sortering är grunden för att så mycket som möjligt ska kunna materialåtervinnas.",
+        en: "Fractions are separated manually and mechanically based on material type and quality. Correct sorting is the foundation for recovering as much material as possible.",
+      }),
+    },
+    {
+      n: "03",
+      title: t({ sv: "Analys", en: "Analysis" }),
+      body: t({
+        sv: "På anläggningen i Arboga genomförs tester, demontering och statistiska analyser. Data omvandlas till kunskap om sammansättning, värde och utveckling över tid.",
+        en: "At our Arboga facility we run tests, dismantling and statistical analyses. Data is turned into knowledge about composition, value and how the flow changes over time.",
+      }),
+    },
+    {
+      n: "04",
+      title: t({ sv: "Återföring", en: "Return to loop" }),
+      body: t({
+        sv: "Materialet återförs till kretsloppet som råvara till nya produkter. Rapporter och spårbarhet ger uppdragsgivarna trygghet i att avfallet hanteras korrekt.",
+        en: "The material is returned to the loop as raw material for new products. Reports and traceability give clients confidence that the waste is handled correctly.",
+      }),
+    },
   ];
+
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const el = timelineRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // Start filling when the top of the timeline reaches ~70% down the viewport,
+      // finish when the bottom reaches ~30% up.
+      const start = vh * 0.7;
+      const end = vh * 0.3;
+      const total = rect.height + (start - end);
+      const scrolled = start - rect.top;
+      const p = Math.max(0, Math.min(1, scrolled / total));
+      setProgress(p);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
 
   return (
     <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
