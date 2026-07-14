@@ -25,6 +25,7 @@ export function SiteFooter() {
             <li><Link to="/miljo" className="hover:text-copper">{t({ sv: "Miljö", en: "Environment" })}</Link></li>
             <li><Link to="/sport" className="hover:text-copper">{t({ sv: "Sport", en: "Sport" })}</Link></li>
             <li><Link to="/kontakt" className="hover:text-copper">{t({ sv: "Kontakt", en: "Contact" })}</Link></li>
+            <li><Link to="/integritetspolicy" className="hover:text-copper">{t({ sv: "Integritetspolicy", en: "Privacy policy" })}</Link></li>
           </ul>
         </div>
         <div className="text-sm">
