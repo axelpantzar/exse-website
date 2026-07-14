@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "../components/Reveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT, type Bilingual } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/integritetspolicy")({
   head: () => ({
@@ -43,8 +43,6 @@ function Section({
     </Reveal>
   );
 }
-
-import type { Bilingual } from "../i18n/LanguageContext";
 
 function IntegritetspolicyPage() {
   const t = useT();
