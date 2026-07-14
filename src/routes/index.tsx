@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -12,36 +11,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const t = useT();
-
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [statsProgress, setStatsProgress] = useState(0);
-  const statsDone = useRef(false);
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-    const onScroll = () => {
-      if (statsDone.current) return;
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh * 0.7;
-      const end = vh * 0.3;
-      const total = rect.height + (start - end);
-      const scrolled = start - rect.top;
-      const p = Math.max(0, Math.min(1, scrolled / total));
-      setStatsProgress(p);
-      if (p >= 0.999) {
-        statsDone.current = true;
-      }
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
 
 
   const stats = [
