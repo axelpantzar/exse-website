@@ -26,7 +26,7 @@ export function PillLink({ to, variant = "primary", children, showArrow = true }
   return (
     <Link to={to} className={`${base} ${variants[variant]}`}>
       {children}
-      {showArrow && variant === "primary" && <ArrowRight className="h-4 w-4" />}
+      {showArrow && (variant === "primary" || variant === "light") && <ArrowRight className="h-4 w-4" />}
     </Link>
   );
 }
@@ -51,7 +51,7 @@ export function PillAnchor({
       {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
     >
       {children}
-      {showArrow && variant === "primary" && <ArrowRight className="h-4 w-4" />}
+      {showArrow && (variant === "primary" || variant === "light") && <ArrowRight className="h-4 w-4" />}
     </a>
   );
 }
