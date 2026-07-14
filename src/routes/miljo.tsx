@@ -132,8 +132,8 @@ function MiljoPage() {
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från analysanläggningen i Arboga, byggd på över 18 års insamlad data.",
-              en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from the analysis facility in Arboga, built on more than 18 years of collected data.",
+              sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från El-Kretsens analysanläggning i Arboga, byggd på över 18 års insamlad data.",
+              en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from El-Kretsen's analysis facility in Arboga, built on more than 18 years of collected data.",
             })}
           </Reveal>
         </div>
