@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -11,34 +11,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [statsProgress, setStatsProgress] = useState(0);
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      // Start filling when the section top reaches ~70% down the viewport,
-      // finish when the section bottom reaches ~30% up.
-      const start = vh * 0.7;
-      const end = vh * 0.3;
-      const total = rect.height + (start - end);
-      const scrolled = start - rect.top;
-      const p = Math.max(0, Math.min(1, scrolled / total));
-      setStatsProgress(p);
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
   const t = useT();
 
   const stats = [
@@ -110,25 +82,21 @@ function Index() {
       </section>
 
       {/* Stats */}
-      <section ref={statsRef} className="mt-24 sm:mt-32 md:mt-40">
-        <ol className="relative">
-          {stats.map((s, i) => (
-            <li
+      <section className="mt-24 sm:mt-32 md:mt-40">
+        <ol className="grid gap-14 sm:gap-20 md:grid-cols-3 md:gap-10">
+          {stats.map((s) => (
+            <Reveal
+              as="li"
               key={s.label}
-              className="flex min-h-[100dvh] flex-col items-center justify-center py-20 text-center"
+              className="flex flex-col items-center text-center"
             >
               <p className="font-display text-7xl tracking-tight text-copper sm:text-8xl md:text-9xl">
-                <CountUp
-                  value={s.value}
-                  progress={statsProgress}
-                  index={i}
-                  total={stats.length}
-                />
+                <CountUp value={s.value} />
               </p>
-              <p className="mt-5 max-w-md text-lg text-muted-foreground sm:mt-6 sm:text-xl">
+              <p className="mt-4 max-w-md text-lg text-muted-foreground sm:mt-5 sm:text-xl">
                 {s.label}
               </p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </section>
