@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
+import { useEffect, useRef, useState } from "react";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -12,6 +12,32 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const t = useT();
+
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsProgress, setStatsProgress] = useState(0);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const start = vh * 0.7;
+      const end = vh * 0.3;
+      const total = rect.height + (start - end);
+      const scrolled = start - rect.top;
+      const p = Math.max(0, Math.min(1, scrolled / total));
+      setStatsProgress(p);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
 
   const stats = [
     { value: "25+", label: t({ sv: "År inom elektronikåtervinning", en: "Years in electronics recycling" }) },
@@ -83,23 +109,55 @@ function Index() {
 
       {/* Stats */}
       <section className="mt-24 sm:mt-32 md:mt-40">
-        <ol className="grid gap-14 sm:gap-20 md:grid-cols-3 md:gap-10">
-          {stats.map((s) => (
-            <Reveal
-              as="li"
-              key={s.label}
-              className="flex flex-col items-center text-center"
-            >
-              <p className="font-display text-7xl tracking-tight text-copper sm:text-8xl md:text-9xl">
-                <CountUp value={s.value} />
-              </p>
-              <p className="mt-4 max-w-md text-lg text-muted-foreground sm:mt-5 sm:text-xl">
-                {s.label}
-              </p>
-            </Reveal>
-          ))}
-        </ol>
+        <div ref={statsRef} className="relative">
+          {/* Base vertical line */}
+          <div
+            aria-hidden
+            className="absolute left-8 top-0 bottom-0 w-px bg-copper/20 sm:left-10 md:left-14"
+          />
+          {/* Filled progress line, follows scroll */}
+          <div
+            aria-hidden
+            className="absolute left-8 top-0 w-px bg-copper transition-[height] duration-150 ease-out sm:left-10 md:left-14"
+            style={{ height: `${statsProgress * 100}%` }}
+          />
+
+          <ol className="relative">
+            {stats.map((s, i) => (
+              <Reveal
+                key={s.label}
+                as="li"
+                delay={i * 80}
+                className="relative py-10 sm:py-14 md:py-16"
+              >
+                {/* Marker */}
+                <span
+                  aria-hidden
+                  className="absolute left-8 top-10 z-10 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background shadow-sm sm:left-10 sm:top-14 sm:h-16 sm:w-16 md:left-14 md:top-16 md:h-20 md:w-20"
+                >
+                  <span className="h-2.5 w-2.5 rounded-full bg-copper sm:h-3 sm:w-3" />
+                </span>
+
+                {/* Content */}
+                <div className="pl-20 sm:pl-28 md:pl-40">
+                  <p className="font-display text-6xl leading-none tracking-tight text-copper sm:text-7xl md:text-8xl lg:text-9xl">
+                    <CountUp
+                      value={s.value}
+                      progress={statsProgress}
+                      index={i}
+                      total={stats.length}
+                    />
+                  </p>
+                  <p className="mt-4 max-w-md text-base text-muted-foreground sm:mt-5 sm:text-lg md:text-xl">
+                    {s.label}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </section>
+
 
       {/* About */}
       <section className="mt-28 grid gap-8 sm:mt-36 md:mt-44 md:grid-cols-12 md:gap-10">
