@@ -61,7 +61,7 @@ function KontaktPage() {
         </div>
       </section>
 
-      <section className="mt-12 grid gap-5 sm:mt-16 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-20 grid gap-5 sm:mt-28 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {people.map((p, i) => (
           <Reveal
             key={p.email}
@@ -113,7 +113,7 @@ function KontaktPage() {
         ))}
       </section>
 
-      <section className="mt-20 grid gap-6 sm:mt-24 sm:gap-8 md:grid-cols-2">
+      <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
         <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
           <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
           <address className="mt-3 not-italic text-foreground/80">

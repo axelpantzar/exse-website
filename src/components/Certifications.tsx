@@ -13,7 +13,7 @@ export function Certifications() {
   ];
 
   return (
-    <section className="mt-20 sm:mt-24 md:mt-28">
+    <section className="mt-28 sm:mt-36 md:mt-44">
       <div className="grid gap-6 sm:gap-10 md:grid-cols-12 md:items-end">
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
