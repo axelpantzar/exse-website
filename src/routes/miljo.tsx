@@ -97,23 +97,30 @@ function MiljoPage() {
         <Reveal as="h2" className="max-w-2xl font-display text-4xl md:text-5xl">
           {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+
+        <ol className="relative mt-14 border-l border-copper/30 pl-8 md:pl-12">
           {services.map((s, i) => (
             <Reveal
               key={s.title}
-              as="article"
-              delay={i * 100}
-              className="rounded-3xl border border-border/70 bg-card p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow"
+              as="li"
+              delay={i * 120}
+              className="relative pb-14 last:pb-0"
             >
-              <p className="font-display text-sm text-copper">0{i + 1}</p>
-              <h3 className="mt-3 text-2xl">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <span
+                aria-hidden
+                className="absolute -left-[41px] md:-left-[57px] top-1 flex h-10 w-10 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-sm text-copper"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-display text-2xl md:text-3xl">{s.title}</h3>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 {s.body}
               </p>
             </Reveal>
           ))}
-        </div>
+        </ol>
       </section>
+
 
       {/* Arboga facility */}
       <section className="mt-28">
