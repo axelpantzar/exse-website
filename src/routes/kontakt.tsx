@@ -62,11 +62,9 @@ function KontaktPage() {
       </section>
 
       <section className="mt-20 grid gap-5 sm:mt-28 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {people.map((p, i) => (
-          <Reveal
+        {people.map((p) => (
+          <article
             key={p.email}
-            as="article"
-            delay={i * 80}
             className="rounded-3xl border border-border/70 bg-card p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow sm:p-8"
           >
             <h2 className="font-display text-xl sm:text-2xl">{p.name}</h2>
@@ -109,9 +107,10 @@ function KontaktPage() {
                 </dd>
               </div>
             </dl>
-          </Reveal>
+          </article>
         ))}
       </section>
+
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
         <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
