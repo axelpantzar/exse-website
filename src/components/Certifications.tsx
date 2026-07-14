@@ -28,9 +28,9 @@ export function Certifications() {
         </Reveal>
       </div>
 
-      {/* Mobile: infinite marquee */}
+      {/* Infinite marquee on all screen sizes */}
       <div
-        className="relative mt-10 overflow-hidden md:hidden"
+        className="relative mt-10 overflow-hidden md:mt-12"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -38,50 +38,28 @@ export function Certifications() {
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        <ul className="flex w-max animate-marquee gap-6">
+        <ul className="flex w-max animate-marquee gap-6 md:gap-10">
           {[...items, ...items].map((c, i) => (
             <li
               key={`${c.label}-${i}`}
               className="flex shrink-0 flex-col items-center text-center"
               aria-hidden={i >= items.length ? true : undefined}
             >
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3">
+              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3 md:h-32 md:w-32">
                 <img
                   src={c.src}
                   alt={c.label}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain opacity-90"
+                  className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
                 />
               </div>
-              <p className="mt-3 w-24 text-xs leading-snug text-muted-foreground">
+              <p className="mt-3 w-24 text-xs leading-snug text-muted-foreground md:mt-4 md:w-32 md:text-sm">
                 {c.label}
               </p>
             </li>
           ))}
         </ul>
       </div>
-
-      {/* Tablet + desktop: static grid */}
-      <ul className="mt-12 hidden grid-cols-3 gap-6 md:grid md:grid-cols-5">
-        {items.map((c, i) => (
-          <Reveal
-            key={c.label}
-            as="li"
-            delay={i * 80}
-            className="flex flex-col items-center text-center"
-          >
-            <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-muted/40 p-3 md:h-28 md:w-28">
-              <img
-                src={c.src}
-                alt={c.label}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
-              />
-            </div>
-            <p className="mt-4 text-xs leading-snug text-muted-foreground">{c.label}</p>
-          </Reveal>
-        ))}
-      </ul>
 
     </section>
   );
