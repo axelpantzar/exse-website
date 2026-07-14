@@ -15,11 +15,13 @@ function Index() {
 
   const statsRef = useRef<HTMLDivElement>(null);
   const [statsProgress, setStatsProgress] = useState(0);
+  const statsDone = useRef(false);
 
   useEffect(() => {
     const el = statsRef.current;
     if (!el) return;
     const onScroll = () => {
+      if (statsDone.current) return;
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
       const start = vh * 0.7;
@@ -28,6 +30,9 @@ function Index() {
       const scrolled = start - rect.top;
       const p = Math.max(0, Math.min(1, scrolled / total));
       setStatsProgress(p);
+      if (p >= 0.999) {
+        statsDone.current = true;
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
