@@ -181,7 +181,7 @@ function KontaktPage() {
               Strängen 13<br />
               732 31 Arboga
             </address>
-            <p className="mt-4 text-sm">
+            <p className="mt-4 mb-6 text-sm">
               <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
               <a href="tel:+460103300080" className="hover:text-copper">
                 +46 (0)10-330 00 80
