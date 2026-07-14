@@ -83,28 +83,23 @@ function Index() {
 
       {/* Stats */}
       <section className="mt-24 sm:mt-32 md:mt-40">
-        <div ref={statsRef}>
-          <ol className="grid gap-10 sm:grid-cols-3 sm:gap-6 md:gap-10">
-            {stats.map((s, i) => (
-              <Reveal
-                key={s.label}
-                as="li"
-                delay={i * 120}
-                className="flex flex-col items-center text-center"
-              >
-                <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-6xl md:text-7xl lg:text-8xl">
-                  <CountUp
-                    value={s.value}
-                    progress={statsProgress >= 0.1 ? 1 : 0}
-                  />
-                </p>
-                <p className="mt-5 max-w-[14ch] text-lg text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
-                  {s.label}
-                </p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
+        <ol className="grid gap-10 sm:grid-cols-3 sm:gap-6 md:gap-10">
+          {stats.map((s, i) => (
+            <Reveal
+              key={s.label}
+              as="li"
+              delay={i * 120}
+              className="flex flex-col items-center text-center"
+            >
+              <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-6xl md:text-7xl lg:text-8xl">
+                <CountUp value={s.value} />
+              </p>
+              <p className="mt-5 max-w-[14ch] text-lg text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
+                {s.label}
+              </p>
+            </Reveal>
+          ))}
+        </ol>
       </section>
 
 
