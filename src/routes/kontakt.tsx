@@ -89,17 +89,6 @@ function directionsHref(address: string) {
   return `https://www.google.com/maps/dir/?api=1&destination=${encoded}`;
 }
 
-function openNativeDirections(address: string) {
-  const encoded = encodeURIComponent(address);
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-  if (isIOS) {
-    window.location.href = `https://maps.apple.com/?daddr=${encoded}`;
-  } else {
-    window.location.href = `https://www.google.com/maps/dir/?api=1&destination=${encoded}`;
-  }
-}
-
 function KontaktPage() {
   const t = useT();
   return (
