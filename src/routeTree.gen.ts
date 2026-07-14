@@ -13,6 +13,7 @@ import { Route as SportRouteImport } from './routes/sport'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MiljoRouteImport } from './routes/miljo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as IntegritetspolicyRouteImport } from './routes/integritetspolicy'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SportRoute = SportRouteImport.update({
@@ -35,6 +36,11 @@ const KontaktRoute = KontaktRouteImport.update({
   path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IntegritetspolicyRoute = IntegritetspolicyRouteImport.update({
+  id: '/integritetspolicy',
+  path: '/integritetspolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -65,14 +74,34 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
+  fullPaths:
+    | '/'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/miljo'
+    | '/sitemap.xml'
+    | '/sport'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
-  id: '__root__' | '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
+  to:
+    | '/'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/miljo'
+    | '/sitemap.xml'
+    | '/sport'
+  id:
+    | '__root__'
+    | '/'
+    | '/integritetspolicy'
+    | '/kontakt'
+    | '/miljo'
+    | '/sitemap.xml'
+    | '/sport'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IntegritetspolicyRoute: typeof IntegritetspolicyRoute
   KontaktRoute: typeof KontaktRoute
   MiljoRoute: typeof MiljoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -109,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/integritetspolicy': {
+      id: '/integritetspolicy'
+      path: '/integritetspolicy'
+      fullPath: '/integritetspolicy'
+      preLoaderRoute: typeof IntegritetspolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IntegritetspolicyRoute: IntegritetspolicyRoute,
   KontaktRoute: KontaktRoute,
   MiljoRoute: MiljoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
