@@ -158,35 +158,35 @@ function KontaktPage() {
 
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
-        <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
+        <div className="rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
-          <address className="mt-3 not-italic text-foreground/80">
+          <address className="mt-3 not-italic text-primary-foreground/80">
             Kyrkvägen 17<br />
             703 75 Örebro
           </address>
           <a
             href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-copper bg-copper px-4 py-2 text-sm font-medium text-white transition hover:bg-copper/90"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-foreground transition hover:bg-white/90"
           >
             <Navigation className="h-4 w-4" />
             {t({ sv: "Vägbeskrivning", en: "Directions" })}
           </a>
         </div>
-        <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
+        <div className="rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <h3 className="font-display text-xl sm:text-2xl">Arboga</h3>
-          <address className="mt-3 not-italic text-foreground/80">
+          <address className="mt-3 not-italic text-primary-foreground/80">
             Strängen 13<br />
             732 31 Arboga
           </address>
           <p className="mt-4 text-sm">
-            <span className="text-muted-foreground">{t({ sv: "Tel: ", en: "Tel: " })}</span>
+            <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
             <a href="tel:+460103300080" className="hover:text-copper">
               +46 (0)10-330 00 80
             </a>
           </p>
           <a
             href={directionsHref("Strängen 13, 732 31 Arboga, Sweden")}
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-copper bg-copper px-4 py-2 text-sm font-medium text-white transition hover:bg-copper/90"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-foreground transition hover:bg-white/90"
           >
             <Navigation className="h-4 w-4" />
             {t({ sv: "Vägbeskrivning", en: "Directions" })}
