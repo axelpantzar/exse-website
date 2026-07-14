@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
 import { PillLink } from "../components/ui/PillButton";
 import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
@@ -12,36 +11,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const t = useT();
-
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [statsProgress, setStatsProgress] = useState(0);
-  const statsDone = useRef(false);
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-    const onScroll = () => {
-      if (statsDone.current) return;
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh * 0.7;
-      const end = vh * 0.3;
-      const total = rect.height + (start - end);
-      const scrolled = start - rect.top;
-      const p = Math.max(0, Math.min(1, scrolled / total));
-      setStatsProgress(p);
-      if (p >= 0.999) {
-        statsDone.current = true;
-      }
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
 
 
   const stats = [
@@ -114,42 +83,23 @@ function Index() {
 
       {/* Stats */}
       <section className="mt-24 sm:mt-32 md:mt-40">
-        <div ref={statsRef}>
-          <ol className="space-y-16 sm:space-y-24 md:space-y-32">
-            {stats.map((s, i) => {
-              const segment = 1 / stats.length;
-              const local = Math.max(
-                0,
-                Math.min(1, (statsProgress - i * segment) / segment)
-              );
-              // Fade in over the first ~40% of this stat's segment.
-              const opacity = Math.max(0, Math.min(1, local / 0.4));
-              const translate = (1 - opacity) * 24;
-              return (
-                <li
-                  key={s.label}
-                  className="flex flex-col items-center text-center transition-[opacity,transform] duration-300 ease-out"
-                  style={{
-                    opacity,
-                    transform: `translateY(${translate}px)`,
-                  }}
-                >
-                  <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-8xl md:text-9xl">
-                    <CountUp
-                      value={s.value}
-                      progress={statsProgress}
-                      index={i}
-                      total={stats.length}
-                    />
-                  </p>
-                  <p className="mt-5 max-w-md text-lg text-muted-foreground sm:mt-6 sm:text-xl">
-                    {s.label}
-                  </p>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+        <ol className="grid gap-10 sm:grid-cols-3 sm:gap-6 md:gap-10">
+          {stats.map((s, i) => (
+            <Reveal
+              key={s.label}
+              as="li"
+              delay={i * 120}
+              className="flex flex-col items-center text-center"
+            >
+              <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-6xl md:text-7xl lg:text-8xl">
+                <CountUp value={s.value} />
+              </p>
+              <p className="mt-5 max-w-[14ch] text-lg text-muted-foreground sm:mt-6 sm:text-base md:text-lg">
+                {s.label}
+              </p>
+            </Reveal>
+          ))}
+        </ol>
       </section>
 
 
