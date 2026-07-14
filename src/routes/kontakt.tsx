@@ -158,8 +158,8 @@ function KontaktPage() {
 
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
-        <div className="flex flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
-          <div>
+        <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
+          <div className="flex-1">
             <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
             <address className="mt-3 not-italic text-primary-foreground/80">
               Kyrkvägen 17<br />
@@ -174,8 +174,8 @@ function KontaktPage() {
             {t({ sv: "Vägbeskrivning", en: "Directions" })}
           </a>
         </div>
-        <div className="flex flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
-          <div>
+        <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
+          <div className="flex-1">
             <h3 className="font-display text-xl sm:text-2xl">El-Kretsens Analysanläggning i Arboga</h3>
             <address className="mt-3 not-italic text-primary-foreground/80">
               Strängen 13<br />
