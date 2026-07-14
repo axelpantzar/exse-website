@@ -165,7 +165,7 @@ function MiljoPage() {
             >
               <span
                 aria-hidden
-                className="absolute -left-[41px] md:-left-[57px] top-1 flex h-10 w-10 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-sm text-copper"
+                className="absolute -left-[52px] md:-left-[68px] top-1 flex h-10 w-10 items-center justify-center rounded-full border border-copper/40 bg-background font-display text-sm text-copper"
               >
                 {step.n}
               </span>
