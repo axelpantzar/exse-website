@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SportRouteImport } from './routes/sport'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MiljoRouteImport } from './routes/miljo'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SportRoute = SportRouteImport.update({
   id: '/sport',
   path: '/sport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MiljoRoute = MiljoRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sport': typeof SportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sport': typeof SportRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/miljo': typeof MiljoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sport': typeof SportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontakt' | '/miljo' | '/sport'
+  fullPaths: '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontakt' | '/miljo' | '/sport'
-  id: '__root__' | '/' | '/kontakt' | '/miljo' | '/sport'
+  to: '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
+  id: '__root__' | '/' | '/kontakt' | '/miljo' | '/sitemap.xml' | '/sport'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KontaktRoute: typeof KontaktRoute
   MiljoRoute: typeof MiljoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SportRoute: typeof SportRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/sport'
       fullPath: '/sport'
       preLoaderRoute: typeof SportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/miljo': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KontaktRoute: KontaktRoute,
   MiljoRoute: MiljoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SportRoute: SportRoute,
 }
 export const routeTree = rootRouteImport

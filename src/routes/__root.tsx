@@ -99,7 +99,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "EXSE AB",
+          url: "https://radiant-rebuild-bot.lovable.app",
+          logo: "https://radiant-rebuild-bot.lovable.app/exse-logo.png",
+          description:
+            "EXSE AB förvandlar metallavfall till mätbart, hållbart värde. Sortering, analys och återföring med full spårbarhet.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "EXSE AB",
+          url: "https://radiant-rebuild-bot.lovable.app",
+        }),
+      },
+    ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

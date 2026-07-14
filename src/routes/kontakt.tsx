@@ -16,8 +16,48 @@ export const Route = createFileRoute("/kontakt")({
         property: "og:description",
         content: "Kontakta rätt person i EXSE-teamet.",
       },
+      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/kontakt" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/kontakt" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "EXSE AB",
+            telephone: "+46-76-803-44-00",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Kyrkvägen 17",
+              postalCode: "703 75",
+              addressLocality: "Örebro",
+              addressCountry: "SE",
+            },
+            url: "https://radiant-rebuild-bot.lovable.app/kontakt",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "EXSE AB — Arboga",
+            telephone: "+46-10-330-00-80",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Strängen 13",
+              postalCode: "732 31",
+              addressLocality: "Arboga",
+              addressCountry: "SE",
+            },
+            url: "https://radiant-rebuild-bot.lovable.app/kontakt",
+          },
+        ]),
+      },
     ],
   }),
+
   component: KontaktPage,
 });
 
@@ -49,7 +89,7 @@ function KontaktPage() {
     <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
-          <Reveal as="h1" className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
+          <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl">
             {t({ sv: "Kontakta oss", en: "Contact us" })}
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
@@ -62,11 +102,9 @@ function KontaktPage() {
       </section>
 
       <section className="mt-20 grid gap-5 sm:mt-28 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {people.map((p, i) => (
-          <Reveal
+        {people.map((p) => (
+          <article
             key={p.email}
-            as="article"
-            delay={i * 80}
             className="rounded-3xl border border-border/70 bg-card p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow sm:p-8"
           >
             <h2 className="font-display text-xl sm:text-2xl">{p.name}</h2>
@@ -109,9 +147,10 @@ function KontaktPage() {
                 </dd>
               </div>
             </dl>
-          </Reveal>
+          </article>
         ))}
       </section>
+
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
         <div className="rounded-3xl border border-border/70 bg-card p-7 sm:p-10">
