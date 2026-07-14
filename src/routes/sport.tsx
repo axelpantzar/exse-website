@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import floorballHero from "../assets/floorball-hero.webp.asset.json";
 const heroImg = floorballHero.url;
 import { PillAnchor } from "../components/ui/PillButton";
+import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/sport")({
   head: () => ({
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/sport")({
 });
 
 function SportPage() {
+  const t = useT();
   return (
     <div className="mx-auto max-w-6xl px-6">
       <section className="pt-8 md:pt-16">
@@ -31,16 +33,17 @@ function SportPage() {
             Excellent Floorball
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Vid sidan av återvinning och analys driver EXSE en egen sportprofil
-            inom innebandy. Det är en separat verksamhetsdel, men ett uttryck
-            för samma värderingar: laganda, uthållighet och vilja att prestera.
+            {t({
+              sv: "Vid sidan av återvinning och analys driver EXSE en egen sportprofil inom innebandy. Det är en separat verksamhetsdel, men ett uttryck för samma värderingar: laganda, uthållighet och vilja att prestera.",
+              en: "Alongside recycling and analysis, EXSE runs its own floorball venture. It's a separate part of the business, but an expression of the same values: teamwork, endurance and the will to perform.",
+            })}
           </p>
         </div>
 
         <div className="mt-16 overflow-hidden rounded-3xl">
           <img
             src={heroImg}
-            alt="Innebandyspelare i aktion under en match"
+            alt={t({ sv: "Innebandyspelare i aktion under en match", en: "Floorball player in action during a match" })}
             width={1600}
             height={1000}
             className="h-[420px] w-full object-cover md:h-[560px]"
@@ -51,29 +54,26 @@ function SportPage() {
       <section className="mt-24 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
-            En egen profil, samma engagemang
+            {t({ sv: "En egen profil, samma engagemang", en: "A separate profile, the same commitment" })}
           </h2>
         </div>
         <div className="space-y-6 text-lg text-foreground/80 md:col-span-7 md:pt-2">
           <p>
-            Excellent Floorball står på egna ben som sportverksamhet, men delar
-            EXSE:s grundvärderingar. Vi tror på långsiktigt arbete, tydliga mål
-            och glädjen i att utvecklas tillsammans.
+            {t({
+              sv: "Excellent Floorball står på egna ben som sportverksamhet, men delar EXSE:s grundvärderingar. Vi tror på långsiktigt arbete, tydliga mål och glädjen i att utvecklas tillsammans.",
+              en: "Excellent Floorball stands on its own as a sports venture, but shares EXSE's core values. We believe in long-term work, clear goals and the joy of growing together.",
+            })}
           </p>
           <p>
-            Med en djup förankring inom sporten innebandy, med över 40 år av
-            engagemang och erfarenheter. Vår passion för innebandy har inte
-            bara gett oss omfattande erfarenhet utan också en djup förståelse
-            för sportens krav och behov. Detta gör oss till en pålitlig partner
-            för alla som söker högkvalitativa tjänster inom innebandy.
+            {t({
+              sv: "Med en djup förankring inom innebandy och över 40 år av engagemang har vi byggt både omfattande erfarenhet och en djup förståelse för sportens krav — vilket gör oss till en pålitlig partner för den som söker kvalitet inom innebandy.",
+              en: "With deep roots in floorball and more than 40 years of dedication, we've built both extensive experience and a deep understanding of the sport's demands — making us a reliable partner for anyone seeking quality within floorball.",
+            })}
           </p>
-          <p>Besök gärna vår separata hemsida för att läsa mer.</p>
+          <p>{t({ sv: "Besök gärna vår separata hemsida för att läsa mer.", en: "Visit our dedicated website to read more." })}</p>
           <div className="pt-2">
-            <PillAnchor
-              href="http://www.excellentfloorball.com/"
-              external
-            >
-              Besök Excellent Floorball
+            <PillAnchor href="http://www.excellentfloorball.com/" external>
+              {t({ sv: "Besök Excellent Floorball", en: "Visit Excellent Floorball" })}
             </PillAnchor>
           </div>
         </div>
