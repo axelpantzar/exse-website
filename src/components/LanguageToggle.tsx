@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactElement } from "react";
 import { ChevronDown } from "lucide-react";
 import { useLang, type Lang } from "../i18n/LanguageContext";
 
