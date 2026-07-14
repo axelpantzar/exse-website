@@ -109,38 +109,27 @@ function Index() {
 
       {/* Stats */}
       <section className="mt-24 sm:mt-32 md:mt-40">
-        <div ref={statsRef} className="relative">
-          {/* Base vertical line */}
-          <div
-            aria-hidden
-            className="absolute left-8 top-0 bottom-0 w-px bg-copper/20 sm:left-10 md:left-14"
-          />
-          {/* Filled progress line, follows scroll */}
-          <div
-            aria-hidden
-            className="absolute left-8 top-0 w-px bg-copper transition-[height] duration-150 ease-out sm:left-10 md:left-14"
-            style={{ height: `${statsProgress * 100}%` }}
-          />
-
-          <ol className="relative">
-            {stats.map((s, i) => (
-              <Reveal
-                key={s.label}
-                as="li"
-                delay={i * 80}
-                className="relative py-10 sm:py-14 md:py-16"
-              >
-                {/* Marker */}
-                <span
-                  aria-hidden
-                  className="absolute left-8 top-10 z-10 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-copper/40 bg-background shadow-sm sm:left-10 sm:top-14 sm:h-16 sm:w-16 md:left-14 md:top-16 md:h-20 md:w-20"
+        <div ref={statsRef}>
+          <ol className="space-y-16 sm:space-y-24 md:space-y-32">
+            {stats.map((s, i) => {
+              const segment = 1 / stats.length;
+              const local = Math.max(
+                0,
+                Math.min(1, (statsProgress - i * segment) / segment)
+              );
+              // Fade in over the first ~40% of this stat's segment.
+              const opacity = Math.max(0, Math.min(1, local / 0.4));
+              const translate = (1 - opacity) * 24;
+              return (
+                <li
+                  key={s.label}
+                  className="flex flex-col items-center text-center transition-[opacity,transform] duration-300 ease-out"
+                  style={{
+                    opacity,
+                    transform: `translateY(${translate}px)`,
+                  }}
                 >
-                  <span className="h-2.5 w-2.5 rounded-full bg-copper sm:h-3 sm:w-3" />
-                </span>
-
-                {/* Content */}
-                <div className="pl-20 sm:pl-28 md:pl-40">
-                  <p className="font-display text-6xl leading-none tracking-tight text-copper sm:text-7xl md:text-8xl lg:text-9xl">
+                  <p className="font-display text-7xl leading-none tracking-tight text-copper sm:text-8xl md:text-9xl">
                     <CountUp
                       value={s.value}
                       progress={statsProgress}
@@ -148,15 +137,16 @@ function Index() {
                       total={stats.length}
                     />
                   </p>
-                  <p className="mt-4 max-w-md text-base text-muted-foreground sm:mt-5 sm:text-lg md:text-xl">
+                  <p className="mt-5 max-w-md text-lg text-muted-foreground sm:mt-6 sm:text-xl">
                     {s.label}
                   </p>
-                </div>
-              </Reveal>
-            ))}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
+
 
 
       {/* About */}
