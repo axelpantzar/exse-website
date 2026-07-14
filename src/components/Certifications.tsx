@@ -45,7 +45,7 @@ export function Certifications() {
               className="flex shrink-0 flex-col items-center text-center"
               aria-hidden={i >= items.length ? true : undefined}
             >
-              <div className="flex h-44 w-44 items-center justify-center rounded-2xl bg-muted/40 p-4 md:h-56 md:w-56">
+              <div className="flex h-56 w-56 items-center justify-center rounded-2xl bg-muted/40 p-5 md:h-80 md:w-80 lg:h-96 lg:w-96">
                 <img
                   src={c.src}
                   alt={c.label}
@@ -53,7 +53,7 @@ export function Certifications() {
                   className="max-h-full max-w-full object-contain opacity-90 transition-opacity duration-300 hover:opacity-100"
                 />
               </div>
-              <p className="mt-4 w-44 text-sm leading-snug text-muted-foreground md:mt-5 md:w-56 md:text-base">
+              <p className="mt-4 w-56 text-sm leading-snug text-muted-foreground md:mt-5 md:w-80 md:text-base lg:w-96">
                 {c.label}
               </p>
             </li>
