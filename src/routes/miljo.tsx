@@ -173,7 +173,7 @@ function MiljoPage() {
 
 
       {/* Arboga facility */}
-      <section className="mt-28 sm:mt-36 md:mt-44">
+      <section className="mt-28 bg-primary p-6 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-12">
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
           <Reveal>
             <img
@@ -187,9 +187,9 @@ function MiljoPage() {
           </Reveal>
           <div>
             <Reveal as="h2" className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
-              {t({ sv: "Analysanläggningen i Arboga", en: "The Arboga analysis facility" })}
+              {t({ sv: "El-Kretsens Analysanläggning i Arboga", en: "El-Kretsen's Analysis Facility in Arboga" })}
             </Reveal>
-            <div className="mt-5 space-y-4 text-base text-foreground/80 sm:mt-6 sm:space-y-5 sm:text-lg">
+            <div className="mt-5 space-y-4 text-base text-primary-foreground/80 sm:mt-6 sm:space-y-5 sm:text-lg">
               <Reveal as="p" delay={120}>
                 {t({
                   sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
@@ -203,6 +203,11 @@ function MiljoPage() {
                 })}
               </Reveal>
             </div>
+            <Reveal delay={320} className="mt-6 sm:mt-8">
+              <PillAnchor href="https://www.el-kretsen.se" variant="light" external>
+                {t({ sv: "Läs mer om El-Kretsen", en: "Read more about El-Kretsen" })}
+              </PillAnchor>
+            </Reveal>
           </div>
         </div>
       </section>
