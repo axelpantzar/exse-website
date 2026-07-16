@@ -76,6 +76,8 @@ function Index() {
             alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
             width={1600}
             height={1000}
+            fetchPriority="high"
+            decoding="async"
             className="h-[260px] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02] sm:h-[380px] md:h-[520px] lg:h-[600px]"
           />
         </Reveal>
