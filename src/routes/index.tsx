@@ -7,6 +7,11 @@ import { useT } from "../i18n/LanguageContext";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    links: [
+      { rel: "preload", as: "image", href: "/exse-home-hero.jpg", fetchpriority: "high" },
+    ],
+  }),
 });
 
 function Index() {
