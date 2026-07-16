@@ -13,7 +13,7 @@ export const Route = createFileRoute("/miljo")({
       {
         name: "description",
         content:
-          "På El-Kretsens analysanläggning i Arboga blir elavfall till statistik. Sortering, revision, tester och full spårbarhet.",
+          "På El-Kretsens analysanläggning i Arboga blir elavfall till statistik. Sortering, revision, tester och cirkulära flöden.",
       },
       { property: "og:title", content: "Miljö | EXSE AB" },
       {
@@ -65,8 +65,8 @@ function MiljoPage() {
       n: "01",
       title: t({ sv: "Mottagning", en: "Intake" }),
       body: t({
-        sv: "Material tas emot, vägs in och registreras i vårt system. Varje leverans får ett spårbart ID så att ursprung, vikt och fraktion kan följas hela vägen genom kedjan.",
-        en: "Material is received, weighed in and registered in our system. Every delivery gets a traceable ID so origin, weight and fraction can be followed all the way through the chain.",
+        sv: "Material tas emot, vägs in och registreras i vårt system. Varje leverans kontrolleras noggrant så att rätt fraktion och kvalitet säkerställs från start.",
+        en: "Material is received, weighed and registered in our system. Every delivery is carefully checked so the right fraction and quality is secured from the start.",
       }),
     },
     {
@@ -89,8 +89,8 @@ function MiljoPage() {
       n: "04",
       title: t({ sv: "Återföring", en: "Return to loop" }),
       body: t({
-        sv: "Materialet återförs till kretsloppet som råvara till nya produkter. Rapporter och spårbarhet ger uppdragsgivarna trygghet i att avfallet hanteras korrekt.",
-        en: "The material is returned to the loop as raw material for new products. Reports and traceability give clients confidence that the waste is handled correctly.",
+        sv: "Materialet återförs till kretsloppet som råvara till nya produkter. Tydliga rapporter och dokumentation ger uppdragsgivarna trygghet i att avfallet hanteras korrekt.",
+        en: "The material is returned to the loop as raw material for new products. Clear reports and documentation give clients confidence that the waste is handled correctly.",
       }),
     },
   ];
@@ -128,7 +128,7 @@ function MiljoPage() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Återvinning med full spårbarhet", en: "Recycling with full traceability" })}
+            {t({ sv: "Cirkulär återvinning med ansvar", en: "Circular recycling with responsibility" })}
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
