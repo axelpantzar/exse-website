@@ -143,7 +143,7 @@ function Index() {
               as="article"
               className="group rounded-3xl border border-border/70 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-copper/50 hover:shadow-lg sm:p-8"
             >
-              <p className="font-display text-4xl text-copper/80 transition-colors group-hover:text-copper sm:text-5xl">{s.n}</p>
+              <p className="font-display text-4xl text-copper transition-colors group-hover:text-copper sm:text-5xl">{s.n}</p>
               <h3 className="mt-5 text-lg sm:mt-6 sm:text-xl">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {s.body}
