@@ -152,6 +152,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
+        <IntroLoader />
         <SiteNav />
         <main className="pt-24 sm:pt-28">
           <Outlet />
@@ -159,5 +160,6 @@ function RootComponent() {
         <SiteFooter />
       </LanguageProvider>
     </QueryClientProvider>
+
   );
 }
