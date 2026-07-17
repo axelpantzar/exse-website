@@ -90,60 +90,67 @@
   animation: marquee-x 22s linear infinite;
 }
 
-/* Intro loader animations */
-@keyframes intro-draw {
-  0% { stroke-dashoffset: 1; opacity: 1; }
-  40% { stroke-dashoffset: 0; opacity: 1; }
-  55% { opacity: 1; }
-  70% { opacity: 0; }
-  100% { opacity: 0; }
+/* Intro loader — falling e-waste */
+@keyframes intro-fall {
+  0% {
+    transform: translate3d(0, -20vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translate3d(var(--drift, 0), 100vh, 0) rotate(var(--rot, 360deg));
+    opacity: 0.9;
+  }
 }
-.intro-draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: intro-draw 1600ms ease-out forwards;
-}
-
-@keyframes intro-part {
-  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0; }
-  15% { opacity: 1; }
-  40% { transform: translate(var(--tx), var(--ty)) rotate(var(--r)) scale(1); opacity: 1; }
-  75% { transform: translate(0, 0) rotate(0deg) scale(0.15); opacity: 0.6; }
-  100% { transform: translate(0, 0) rotate(0deg) scale(0); opacity: 0; }
-}
-.intro-part {
-  transform-origin: center;
-  transform-box: fill-box;
-  opacity: 0;
-  animation: intro-part 1100ms cubic-bezier(0.6, 0, 0.2, 1) forwards;
+.intro-fall {
+  animation-name: intro-fall;
+  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 1);
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
 }
 
-@keyframes intro-sphere {
-  0%, 60% { transform: scale(0); opacity: 0; }
-  75% { transform: scale(1.15); opacity: 1; }
-  90% { transform: scale(0.95); }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes intro-pile {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
 }
-.intro-sphere {
-  transform-origin: center;
-  transform-box: fill-box;
+.intro-pile {
+  animation: intro-pile 2400ms ease-out forwards;
+}
+
+@keyframes intro-logo {
+  0%, 20% { opacity: 0; transform: scale(0.6); }
+  60% { opacity: 1; transform: scale(1.08); }
+  80% { transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.intro-logo {
   opacity: 0;
-  animation: intro-sphere 1800ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  filter: drop-shadow(0 8px 24px oklch(0.58 0.14 40 / 0.35));
+  animation: intro-logo 2200ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes intro-word {
-  0%, 80% { opacity: 0; transform: translateY(6px); }
+  0%, 55% { opacity: 0; transform: translateY(8px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 .intro-word {
   opacity: 0;
-  animation: intro-word 1800ms ease-out forwards;
+  animation: intro-word 2200ms ease-out forwards;
+}
+
+@keyframes intro-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+.intro-bar-fill {
+  transform: translateX(-100%);
+  animation: intro-bar 2400ms ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-draw, .intro-part { animation: none; opacity: 0; }
-  .intro-sphere, .intro-word { animation-duration: 200ms; }
+  .intro-fall, .intro-pile, .intro-bar-fill { animation: none; opacity: 0; }
+  .intro-logo, .intro-word { animation-duration: 250ms; }
 }
+
 
 
