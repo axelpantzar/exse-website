@@ -6,17 +6,22 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/sport")({
   head: () => ({
     meta: [
-      { title: "Sport | Excellent Floorball | EXSE AB" },
+      { title: "Excellent Floorball | Innebandy sedan 1985 | EXSE AB" },
       {
         name: "description",
         content:
-          "Excellent Floorball | EXSE:s sportprofil inom innebandy med över 40 års engagemang.",
+          "Excellent Floorball är EXSE AB:s innebandyvarumärke med över 40 års erfarenhet. Klubbor, utrustning och engagemang för svensk innebandy.",
       },
-      { property: "og:title", content: "Excellent Floorball | EXSE AB" },
+      { property: "og:title", content: "Excellent Floorball | Innebandy sedan 1985 | EXSE AB" },
       {
         property: "og:description",
-        content: "En egen profil, samma engagemang. Över 40 år inom innebandy.",
+        content:
+          "Innebandy med hjärta och historia. Excellent Floorball, EXSE:s sportprofil med över 40 års engagemang för svensk innebandy.",
       },
+      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/sport" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/sport" },
     ],
   }),
   component: SportPage,
