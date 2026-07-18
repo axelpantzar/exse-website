@@ -9,18 +9,22 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/miljo")({
   head: () => ({
     meta: [
-      { title: "Miljö | EXSE AB" },
+      { title: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
       {
         name: "description",
         content:
-          "På El-Kretsens analysanläggning i Arboga blir elavfall till statistik. Sortering, revision, tester och cirkulära flöden.",
+          "Elektronikåtervinning med full spårbarhet: mottagning, sortering, analys och återföring av elavfall vid El-Kretsens analysanläggning i Arboga.",
       },
-      { property: "og:title", content: "Miljö | EXSE AB" },
+      { property: "og:title", content: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
       {
         property: "og:description",
         content:
-          "Här blir skrot till statistik. Kunskap från över 18 års insamlad data om elavfall i Sverige.",
+          "Så återvinner vi elavfall i Sverige, från mottagning till statistik. Cirkulär elektronikåtervinning i samarbete med El-Kretsen i Arboga.",
       },
+      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/miljo" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/miljo" },
     ],
   }),
   component: MiljoPage,
