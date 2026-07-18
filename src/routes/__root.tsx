@@ -82,34 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EXSE AB | Elektronikåtervinning, elavfall & statistik i Sverige" },
-      {
-        name: "description",
-        content:
-          "EXSE AB är experter på elektronikåtervinning och hantering av elavfall i Sverige. Sortering, revision, analys och statistik med full spårbarhet, i samarbete med El-Kretsens analysanläggning i Arboga.",
-      },
-      {
-        name: "keywords",
-        content:
-          "elektronikåtervinning, elavfall, återvinning av elektronik, WEEE, El-Kretsen, Arboga, cirkulär ekonomi, hållbar återvinning, statistik elavfall, EXSE AB",
-      },
       { property: "og:site_name", content: "EXSE AB" },
       { property: "og:locale", content: "sv_SE" },
-      { property: "og:title", content: "EXSE AB | Elektronikåtervinning, elavfall & statistik" },
-      {
-        property: "og:description",
-        content:
-          "Cirkulär elektronikåtervinning med full spårbarhet. Sortering, analys och statistik på elavfall, i samarbete med El-Kretsens analysanläggning i Arboga.",
-      },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "EXSE AB | Elektronikåtervinning & elavfall i Sverige" },
-      {
-        name: "twitter:description",
-        content:
-          "Elektronikåtervinning, sortering och statistik på elavfall, med full spårbarhet i varje led.",
-      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
