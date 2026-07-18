@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
-import { IntroLoader } from "../components/IntroLoader";
+
 import { LanguageProvider } from "../i18n/LanguageContext";
 
 
@@ -152,7 +152,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        <IntroLoader />
+        
         <SiteNav />
         <main className="pt-24 sm:pt-28">
           <Outlet />
