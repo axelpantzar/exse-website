@@ -8,7 +8,23 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
+    meta: [
+      { title: "EXSE AB | Elektronikåtervinning & elavfallshantering i Sverige" },
+      {
+        name: "description",
+        content:
+          "EXSE AB erbjuder elektronikåtervinning, sortering och statistik på elavfall med full spårbarhet. Över 25 års erfarenhet av cirkulär återvinning i Sverige.",
+      },
+      { property: "og:title", content: "EXSE AB | Elektronikåtervinning & elavfallshantering" },
+      {
+        property: "og:description",
+        content:
+          "Cirkulär elektronikåtervinning i Sverige. Sortering, analys och statistik på elavfall, med över 25 års erfarenhet.",
+      },
+      { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/" },
+    ],
     links: [
+      { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/" },
       { rel: "preload", as: "image", href: "/exse-home-hero.jpg", fetchpriority: "high" },
     ],
   }),
