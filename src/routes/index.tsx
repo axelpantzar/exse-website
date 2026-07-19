@@ -190,18 +190,18 @@ function Index() {
         >
           <div className="flex-1">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
-              {t({ sv: "Miljö & återvinning", en: "Environment & recycling" })}
+              {t({ sv: "Analys & kontroll", en: "Analysis & control" })}
             </h2>
             <p className="mt-5 text-base text-foreground/80 sm:mt-6 sm:text-lg">
               {t({
-                sv: "Med över 25 år i elektronikåtervinningsbranschen hanterar, kontrollerar och analyserar vi elektronikskrot på ett ansvarsfullt sätt. Vår långa närvaro är en garant för hög standard inom miljövänlig återvinning.",
-                en: "With more than 25 years in the electronics recycling industry, we handle, control and analyse electronic scrap responsibly. Our long standing presence is a guarantee for high standards in sustainable recycling.",
+                sv: "Vi kvalitetssäkrar och analyserar Sveriges insamlade elektronik åt El-Kretsen. Genom revisioner och kontroller följer vi materialet från insamling till end of waste, så att data, flöden och regelverk hänger ihop.",
+                en: "We quality-assure and analyse Sweden's collected electronics for El-Kretsen. Through audits and controls we follow the material from collection to end of waste, so that data, flows and regulations stay aligned.",
               })}
             </p>
           </div>
           <div className="mt-auto pt-6">
             <PillLink to="/miljo" showArrow={false}>
-              {t({ sv: "Läs mer om miljöarbetet →", en: "Read about our environmental work →" })}
+              {t({ sv: "Läs mer om verksamheten →", en: "Read more about our work →" })}
             </PillLink>
           </div>
         </Reveal>
@@ -215,10 +215,11 @@ function Index() {
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">Excellent Floorball</h2>
             <p className="mt-5 text-base text-background/80 sm:mt-6 sm:text-lg">
               {t({
-                sv: "Vid sidan av återvinningen driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
-                en: "Alongside recycling, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
+                sv: "Vid sidan av analysverksamheten driver vi en egen sportprofil inom innebandy, med över 40 års engagemang, erfarenhet och passion för sporten.",
+                en: "Alongside the analysis business, we run a dedicated floorball venture, with more than 40 years of commitment, experience and passion for the sport.",
               })}
             </p>
+
           </div>
           <div className="mt-auto pt-6">
             <PillLink to="/sport" variant="light">
