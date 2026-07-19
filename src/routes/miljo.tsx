@@ -9,18 +9,19 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/miljo")({
   head: () => ({
     meta: [
-      { title: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
+      { title: "Vår verksamhet | Analys av elektronik | EXSE AB" },
       {
         name: "description",
         content:
-          "Elektronikåtervinning med full spårbarhet: mottagning, sortering, analys och återföring av elavfall vid El-Kretsens analysanläggning i Arboga.",
+          "EXSE analyserar, sorterar och reviderar Sveriges insamlade elektronik på uppdrag av El-Kretsen. Från registrering och analys till statistik och end of waste.",
       },
-      { property: "og:title", content: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
+      { property: "og:title", content: "Vår verksamhet | Analys av elektronik | EXSE AB" },
       {
         property: "og:description",
         content:
-          "Så återvinner vi elavfall i Sverige, från mottagning till statistik. Cirkulär elektronikåtervinning i samarbete med El-Kretsen i Arboga.",
+          "Så arbetar vi med analys, sortering, revision och statistik åt El-Kretsen, från insamlad produkt till end of waste.",
       },
+
       { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/miljo" },
     ],
     links: [
