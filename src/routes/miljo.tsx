@@ -208,16 +208,17 @@ function MiljoPage() {
             <div className="mt-5 space-y-4 text-base text-foreground/80 sm:mt-6 sm:space-y-5 sm:text-lg">
               <Reveal as="p" delay={120}>
                 {t({
-                  sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
-                  en: "Here we run the tests and analyses that turn scrap into statistics. The results give our clients confidence in the material's composition, quality and value.",
+                  sv: "På anläggningen genomför vi de tester, demonteringar och analyser som omvandlar insamlad elektronik till kunskap. Resultaten ligger till grund för nationell statistik, ersättning till producenter och identifiering av farligt avfall.",
+                  en: "At the facility we run the tests, dismantling and analyses that turn collected electronics into knowledge. The results underpin national statistics, compensation to producers and identification of hazardous waste.",
                 })}
               </Reveal>
               <Reveal as="p" delay={220}>
                 {t({
-                  sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja, från första vägning till slutgiltig rapport.",
-                  en: "By combining measurement data with audit, we create a transparent chain, from the first weighing to the final report.",
+                  sv: "Ser du statistik på elavfall i Sverige är chansen stor att den kommer härifrån, byggd på över 18 års insamlad data.",
+                  en: "If you see statistics on e-waste in Sweden, chances are they come from here, built on more than 18 years of collected data.",
                 })}
               </Reveal>
+
             </div>
             <Reveal delay={320} className="mt-6 sm:mt-8">
               <PillAnchor href="https://www.el-kretsen.se" external>
