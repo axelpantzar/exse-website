@@ -142,14 +142,15 @@ function MiljoPage() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Cirkulär återvinning med ansvar", en: "Circular recycling with responsibility" })}
+            {t({ sv: "Analys, inte återvinning", en: "Analysis, not recycling" })}
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från El-Kretsens analysanläggning i Arboga, byggd på över 18 års insamlad data.",
-              en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from El-Kretsen's analysis facility in Arboga, built on more than 18 years of collected data.",
+              sv: "EXSE är analys- och kontrollpartner till El-Kretsen. Vi återvinner inte själva, vi säkerställer att Sveriges insamlade elektronik klassificeras rätt, dokumenteras korrekt och att statistiken bakom systemet är att lita på.",
+              en: "EXSE is analysis and control partner to El-Kretsen. We don't recycle ourselves; we make sure Sweden's collected electronics is correctly classified, properly documented and that the statistics behind the system can be trusted.",
             })}
           </Reveal>
+
         </div>
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
