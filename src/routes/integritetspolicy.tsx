@@ -70,8 +70,8 @@ function IntegritetspolicyPage() {
         >
           <p>
             {t({
-              sv: "EXSE AB, org.nr 556802-7931, är ansvarig för den här webbplatsen. Adress: Kyrkvägen 17, 703 75 Örebro.",
-              en: "EXSE AB, org.no 556802-7931, is responsible for this website. Address: Kyrkvägen 17, 703 75 Örebro, Sweden.",
+              sv: "EXSE AB, org.nr 556682-9734, är ansvarig för den här webbplatsen. Adress: Kyrkvägen 17, 703 75 Örebro.",
+              en: "EXSE AB, org.no 556682-9734, is responsible for this website. Address: Kyrkvägen 17, 703 75 Örebro, Sweden.",
             })}
           </p>
           <p>
