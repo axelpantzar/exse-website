@@ -134,25 +134,26 @@ function Index() {
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({
-              sv: "En gedigen historia inom miljö och sport",
-              en: "A solid history in environment and sport",
+              sv: "Vi analyserar, vi återvinner inte",
+              en: "We analyse, we don't recycle",
             })}
           </h2>
         </Reveal>
         <div className="space-y-5 text-base text-foreground/80 sm:text-lg md:col-span-7 md:space-y-6 md:pt-2">
           <Reveal as="p" delay={120}>
             {t({
-              sv: "EXSE AB är en framstående aktör med en gedigen historia inom miljö och sport. Över 25 år inom elektronikåtervinning och över 40 år inom innebandy har gett oss pålitlighet, kvalitet och långsiktighet.",
-              en: "EXSE AB is a leading player with a solid history in both environment and sport. Over 25 years in electronics recycling and more than 40 years in floorball have given us reliability, quality and a long-term perspective.",
+              sv: "EXSE arbetar på uppdrag av El-Kretsen, producenternas organisation för insamling av elektronik i Sverige. Vår roll är att analysera, sortera och dokumentera uttjänt elektronik, så att hela återvinningssystemet fungerar korrekt, transparent och effektivt.",
+              en: "EXSE works on behalf of El-Kretsen, the producers' organisation for electronics collection in Sweden. Our role is to analyse, sort and document end-of-life electronics, so the entire recycling system works correctly, transparently and efficiently.",
             })}
           </Reveal>
           <Reveal as="p" delay={220}>
             {t({
-              sv: "Vi arbetar på uppdrag av externa verksamhetsutövare med sortering, analyser, revisioner och statistik för elektriska och elektroniska produkter. I varje del av arbetet står kvalitet och miljömedvetenhet i centrum.",
-              en: "We work on behalf of external operators with sorting, analyses, audits and statistics for electrical and electronic products. Quality and environmental awareness stay at the centre of everything we do.",
+              sv: "Genom vårt arbete säkerställs korrekt klassificering, tillförlitlig statistik för hela Sverige, underlag för ersättning till producenter och återvinnare, samt identifiering av farligt avfall och kritiska komponenter.",
+              en: "Our work ensures correct classification, reliable statistics for all of Sweden, the basis for compensation to producers and recyclers, and the identification of hazardous waste and critical components.",
             })}
           </Reveal>
         </div>
+
       </section>
 
       {/* Services */}
