@@ -1,12 +1,12 @@
 # EXSE AB
 
-> Erfarenhet som gör skillnad i hela återvinningskedjan. Över 25 år inom elektronik- och metallåtervinning med full spårbarhet, samt 40 år inom innebandy via Excellent Floorball.
+> Analys- och kontrollpartner till El-Kretsen. EXSE analyserar, sorterar och reviderar Sveriges insamlade elektronik, från registrering till end of waste. Vid sidan av verksamheten: 40 år inom innebandy via Excellent Floorball.
 
-EXSE AB förvandlar metallavfall till mätbart, hållbart värde genom mottagning, sortering, analys och återföring med full spårbarhet. Analysanläggning i Arboga, huvudkontor i Örebro.
+EXSE återvinner inte själva utan säkerställer att elektronikflödena i Sverige klassificeras rätt, dokumenteras korrekt och att statistiken bakom systemet är att lita på. Analysanläggning i Arboga, huvudkontor i Örebro.
 
 ## Pages
 
-- [Start](/): Översikt över EXSE, statistik och verksamheten.
-- [Miljö](/miljo): Återvinningskedjan, analysanläggningen i Arboga och miljöarbete.
+- [Start](/): Översikt över EXSE, analysverksamheten och statistiken.
+- [Miljö](/miljo): Analys, sortering, revision och statistik åt El-Kretsen.
 - [Excellent Floorball](/sport): Innebandyverksamheten och 40 år i sporten.
 - [Kontakt](/kontakt): Kontaktpersoner och adresser i Örebro och Arboga.
