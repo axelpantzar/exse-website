@@ -36,31 +36,31 @@ function MiljoPage() {
 
   const services = [
     {
-      title: t({ sv: "Sortering", en: "Sorting" }),
+      title: t({ sv: "Sortering & klassificering", en: "Sorting & classification" }),
       body: t({
-        sv: "Omkring två procent av all insamlad småelektronik tar omvägen via vår anläggning för att bli statistik och kunskap. Kunskapen används för att förbehandlare ska få rätt ersättning för sitt arbete och för att se hur elavfallet förändras över tid.",
-        en: "Around two percent of all collected small electronics takes the detour through our facility to become statistics and knowledge. The insight is used to give pre treatment partners the right compensation for their work and to see how e waste changes over time.",
+        sv: "Omkring två procent av all insamlad småelektronik tar omvägen via vår anläggning för att bli statistik och kunskap. Här klassificeras materialet korrekt, så att förbehandlare får rätt ersättning och elavfallets utveckling kan följas över tid.",
+        en: "Around two percent of all collected small electronics takes the detour through our facility to become statistics and knowledge. Here the material is correctly classified so pre-treatment partners get the right compensation and the development of e-waste can be tracked over time.",
       }),
     },
     {
       title: t({ sv: "Statistik & revision", en: "Statistics & audit" }),
       body: t({
-        sv: "Statistiksamordnarens uppdrag är att kontrollera, sammanställa och förtydliga den data som uppstår i olika datasystem. Våra revisioner av återvinnare bidrar till förbättrad lagefterlevnad och tydligare återvinningsmål i Sverige.",
-        en: "Our statistics coordinator controls, compiles and clarifies the data that emerges from different systems. Our audits of recyclers contribute to improved legal compliance and clearer recycling goals in Sweden.",
+        sv: "Statistiksamordnaren kontrollerar, sammanställer och förtydligar data från olika system. Våra revisioner av återvinnare bidrar till förbättrad lagefterlevnad och tydligare återvinningsmål i Sverige.",
+        en: "Our statistics coordinator controls, compiles and clarifies data from different systems. Our audits of recyclers contribute to improved legal compliance and clearer recycling goals in Sweden.",
       }),
     },
     {
       title: t({ sv: "Tester & analyser", en: "Testing & analysis" }),
       body: t({
-        sv: "På anläggningen gör vi djupare studier av enskilda produkter och produktgrupper. Vi utför tester, analyser och demontering av elavfall för att förstå produkternas sammansättning och värde i återvinningskedjan.",
-        en: "At the facility we make deeper studies of single products and product groups. We run tests, analyses and dismantling of e waste to understand product composition and value in the recycling chain.",
+        sv: "På anläggningen gör vi djupare studier av enskilda produkter och produktgrupper. Vi utför tester, analyser och demontering för att fastställa innehåll, farligt avfall och kritiska komponenter.",
+        en: "At the facility we make deeper studies of single products and product groups. We run tests, analyses and dismantling to determine content, hazardous waste and critical components.",
       }),
     },
     {
-      title: t({ sv: "Elektronikåtervinning", en: "Electronics recycling" }),
+      title: t({ sv: "Kontroll & end of waste", en: "Control & end of waste" }),
       body: t({
-        sv: "Uttjänt elektronik demonteras och materialåtervinns säkert, med fokus på att återföra värdefulla metaller till kretsloppet.",
-        en: "End of life electronics are safely dismantled and recycled, with a focus on returning valuable metals to the loop.",
+        sv: "Genom oberoende granskning verifierar vi att material klassificeras och hanteras enligt gällande regelverk, att flöden är spårbara och att rapporterad data överensstämmer med faktiskt utfall.",
+        en: "Through independent review we verify that material is classified and handled according to current regulations, that flows are traceable, and that reported data matches actual outcomes.",
       }),
     },
   ];
@@ -68,37 +68,46 @@ function MiljoPage() {
   const chain = [
     {
       n: "01",
-      title: t({ sv: "Mottagning", en: "Intake" }),
+      title: t({ sv: "Registrering & sortering", en: "Registration & sorting" }),
       body: t({
-        sv: "Material tas emot, vägs in och registreras i vårt system. Varje leverans kontrolleras noggrant så att rätt fraktion och kvalitet säkerställs från start.",
-        en: "Material is received, weighed and registered in our system. Every delivery is carefully checked so the right fraction and quality is secured from the start.",
+        sv: "Inkommande elektronik vägs in, registreras och klassificeras. Rätt sortering från start är grunden för tillförlitlig statistik och korrekt ersättning i systemet.",
+        en: "Incoming electronics are weighed, registered and classified. Correct sorting from the start is the foundation for reliable statistics and correct compensation in the system.",
       }),
     },
     {
       n: "02",
-      title: t({ sv: "Sortering", en: "Sorting" }),
+      title: t({ sv: "Analys", en: "Analysis" }),
       body: t({
-        sv: "Fraktioner separeras manuellt och maskinellt utifrån materialtyp och kvalitet. Rätt sortering är grunden för att så mycket som möjligt ska kunna materialåtervinnas.",
-        en: "Fractions are separated manually and mechanically based on material type and quality. Correct sorting is the foundation for recovering as much material as possible.",
+        sv: "Produkterna undersöks för att fastställa innehåll och kategori. Analyserna ger underlag för statistik, ersättning och identifiering av farligt avfall.",
+        en: "Products are examined to determine content and category. The analyses provide the basis for statistics, compensation and identification of hazardous waste.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Analys", en: "Analysis" }),
+      title: t({ sv: "Demontering", en: "Dismantling" }),
       body: t({
-        sv: "På anläggningen i Arboga genomförs tester, demontering och statistiska analyser. Data omvandlas till kunskap om sammansättning, värde och utveckling över tid.",
-        en: "At our Arboga facility we run tests, dismantling and statistical analyses. Data is turned into knowledge about composition, value and how the flow changes over time.",
+        sv: "Utvalda produkter plockas isär komponent för komponent för fördjupad kunskap om sammansättning, materialvärden och kritiska komponenter.",
+        en: "Selected products are taken apart piece by piece for deeper knowledge of composition, material value and critical components.",
       }),
     },
     {
       n: "04",
-      title: t({ sv: "Återföring", en: "Return to loop" }),
+      title: t({ sv: "Datainsamling", en: "Data collection" }),
       body: t({
-        sv: "Materialet återförs till kretsloppet som råvara till nya produkter. Tydliga rapporter och dokumentation ger uppdragsgivarna trygghet i att avfallet hanteras korrekt.",
-        en: "The material is returned to the loop as raw material for new products. Clear reports and documentation give clients confidence that the waste is handled correctly.",
+        sv: "Resultatet registreras och används i nationell statistik. Vår data är underlag för producenter, återvinnare, myndigheter och framtida regelverk.",
+        en: "Results are recorded and used in national statistics. Our data forms the basis for producers, recyclers, authorities and future regulations.",
+      }),
+    },
+    {
+      n: "05",
+      title: t({ sv: "Vidare flöde", en: "Onward flow" }),
+      body: t({
+        sv: "Materialet går vidare till godkända återvinnare. Vi följer flödet med revision och kontroll fram till end of waste, då avfallet upphör att vara avfall.",
+        en: "The material moves on to approved recyclers. We follow the flow with audits and controls all the way to end of waste, when the waste is no longer classed as waste.",
       }),
     },
   ];
+
 
   const timelineRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
