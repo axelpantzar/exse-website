@@ -9,19 +9,20 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "EXSE AB | Elektronikåtervinning & elavfallshantering i Sverige" },
+      { title: "EXSE AB | Analys och kontroll av elektronikflöden" },
       {
         name: "description",
         content:
-          "EXSE AB erbjuder elektronikåtervinning, sortering och statistik på elavfall med full spårbarhet. Över 25 års erfarenhet av cirkulär återvinning i Sverige.",
+          "EXSE AB analyserar, sorterar och kvalitetssäkrar Sveriges insamlade elektronik på uppdrag av El-Kretsen. Statistik, revision och kontroll från insamling till end of waste.",
       },
-      { property: "og:title", content: "EXSE AB | Elektronikåtervinning & elavfallshantering" },
+      { property: "og:title", content: "EXSE AB | Analys och kontroll av elektronikflöden" },
       {
         property: "og:description",
         content:
-          "Cirkulär elektronikåtervinning i Sverige. Sortering, analys och statistik på elavfall, med över 25 års erfarenhet.",
+          "Analys, sortering och statistik på uppdrag av El-Kretsen. Spårbarhet från insamling till end of waste.",
       },
       { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/" },
+
     ],
     links: [
       { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/" },
