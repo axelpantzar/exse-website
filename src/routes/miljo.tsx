@@ -166,8 +166,9 @@ function MiljoPage() {
 
       <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
-          {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
+          {t({ sv: "Så arbetar vi med elektronikflöden", en: "How we work with electronics flows" })}
         </Reveal>
+
 
         <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {services.map((s, i) => (
