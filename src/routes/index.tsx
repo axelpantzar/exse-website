@@ -74,14 +74,15 @@ function Index() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Här blir skrot till statistik", en: "Where scrap becomes statistics" })}
+            {t({ sv: "Kontroll och analys av elektronikflöden", en: "Control and analysis of electronics flows" })}
           </Reveal>
           <Reveal delay={120} as="p" className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "EXSE AB förvandlar elavfall till mätbart, hållbart värde. Med decennier av erfarenhet och en modern analysanläggning i Arboga levererar vi spårbarhet i varje led.",
-              en: "EXSE AB turns electronic waste into measurable, sustainable value. With decades of experience and a modern analysis facility in Arboga, we deliver traceability at every step.",
+              sv: "EXSE AB säkerställer korrekt sortering, data och kunskap om Sveriges insamlade elektronik. Med decennier av erfarenhet och en modern analysanläggning levererar vi spårbarhet i varje led, från insamling till end of waste.",
+              en: "EXSE AB ensures correct sorting, data and knowledge about Sweden's collected electronics. With decades of experience and a modern analysis facility, we deliver traceability at every step, from collection to end of waste.",
             })}
           </Reveal>
+
           <Reveal delay={240} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
             <PillLink to="/miljo">
               {t({ sv: "Utforska miljöarbetet", en: "Explore our environmental work" })}
