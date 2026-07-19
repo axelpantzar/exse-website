@@ -103,7 +103,7 @@ function KontaktPage() {
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
               sv: "Har du frågor om analys, revision eller statistik på insamlad elektronik? Hör av dig till rätt person i teamet nedan.",
-              en: "Questions about recycling, analysis or statistics? Reach out to the right person on the team below.",
+              en: "Questions about analysis, audits or statistics on collected electronics? Reach out to the right person on the team below.",
             })}
           </Reveal>
         </div>
