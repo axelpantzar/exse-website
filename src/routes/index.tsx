@@ -85,7 +85,7 @@ function Index() {
 
           <Reveal delay={240} className="mt-8 flex flex-wrap gap-3 sm:mt-10">
             <PillLink to="/miljo">
-              {t({ sv: "Utforska miljöarbetet", en: "Explore our environmental work" })}
+              {t({ sv: "Läs mer om vår verksamhet", en: "Learn about what we do" })}
             </PillLink>
             <PillLink to="/kontakt" variant="outline" showArrow={false}>
               {t({ sv: "Kontakta oss", en: "Contact us" })}
