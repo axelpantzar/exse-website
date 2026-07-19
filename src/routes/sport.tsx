@@ -38,7 +38,7 @@ function SportPage() {
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "Vid sidan av återvinning och analys driver EXSE en egen sportprofil inom innebandy. Det är en separat verksamhetsdel, men ett uttryck för samma värderingar: laganda, uthållighet och vilja att prestera.",
+              sv: "Vid sidan av analysverksamheten driver EXSE en egen sportprofil inom innebandy. Det är en separat verksamhetsdel, men ett uttryck för samma värderingar: laganda, uthållighet och vilja att prestera.",
               en: "Alongside recycling and analysis, EXSE runs its own floorball venture. It's a separate part of the business, but an expression of the same values: teamwork, endurance and the will to perform.",
             })}
           </Reveal>
