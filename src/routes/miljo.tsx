@@ -9,18 +9,19 @@ import { useT } from "../i18n/LanguageContext";
 export const Route = createFileRoute("/miljo")({
   head: () => ({
     meta: [
-      { title: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
+      { title: "Vår verksamhet | Analys av elektronik | EXSE AB" },
       {
         name: "description",
         content:
-          "Elektronikåtervinning med full spårbarhet: mottagning, sortering, analys och återföring av elavfall vid El-Kretsens analysanläggning i Arboga.",
+          "EXSE analyserar, sorterar och reviderar Sveriges insamlade elektronik på uppdrag av El-Kretsen. Från registrering och analys till statistik och end of waste.",
       },
-      { property: "og:title", content: "Miljö | Elektronikåtervinning & elavfall | EXSE AB" },
+      { property: "og:title", content: "Vår verksamhet | Analys av elektronik | EXSE AB" },
       {
         property: "og:description",
         content:
-          "Så återvinner vi elavfall i Sverige, från mottagning till statistik. Cirkulär elektronikåtervinning i samarbete med El-Kretsen i Arboga.",
+          "Så arbetar vi med analys, sortering, revision och statistik åt El-Kretsen, från insamlad produkt till end of waste.",
       },
+
       { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/miljo" },
     ],
     links: [
@@ -35,31 +36,31 @@ function MiljoPage() {
 
   const services = [
     {
-      title: t({ sv: "Sortering", en: "Sorting" }),
+      title: t({ sv: "Sortering & klassificering", en: "Sorting & classification" }),
       body: t({
-        sv: "Omkring två procent av all insamlad småelektronik tar omvägen via vår anläggning för att bli statistik och kunskap. Kunskapen används för att förbehandlare ska få rätt ersättning för sitt arbete och för att se hur elavfallet förändras över tid.",
-        en: "Around two percent of all collected small electronics takes the detour through our facility to become statistics and knowledge. The insight is used to give pre treatment partners the right compensation for their work and to see how e waste changes over time.",
+        sv: "Omkring två procent av all insamlad småelektronik tar omvägen via vår anläggning för att bli statistik och kunskap. Här klassificeras materialet korrekt, så att förbehandlare får rätt ersättning och elavfallets utveckling kan följas över tid.",
+        en: "Around two percent of all collected small electronics takes the detour through our facility to become statistics and knowledge. Here the material is correctly classified so pre-treatment partners get the right compensation and the development of e-waste can be tracked over time.",
       }),
     },
     {
       title: t({ sv: "Statistik & revision", en: "Statistics & audit" }),
       body: t({
-        sv: "Statistiksamordnarens uppdrag är att kontrollera, sammanställa och förtydliga den data som uppstår i olika datasystem. Våra revisioner av återvinnare bidrar till förbättrad lagefterlevnad och tydligare återvinningsmål i Sverige.",
-        en: "Our statistics coordinator controls, compiles and clarifies the data that emerges from different systems. Our audits of recyclers contribute to improved legal compliance and clearer recycling goals in Sweden.",
+        sv: "Statistiksamordnaren kontrollerar, sammanställer och förtydligar data från olika system. Våra revisioner av återvinnare bidrar till förbättrad lagefterlevnad och tydligare återvinningsmål i Sverige.",
+        en: "Our statistics coordinator controls, compiles and clarifies data from different systems. Our audits of recyclers contribute to improved legal compliance and clearer recycling goals in Sweden.",
       }),
     },
     {
       title: t({ sv: "Tester & analyser", en: "Testing & analysis" }),
       body: t({
-        sv: "På anläggningen gör vi djupare studier av enskilda produkter och produktgrupper. Vi utför tester, analyser och demontering av elavfall för att förstå produkternas sammansättning och värde i återvinningskedjan.",
-        en: "At the facility we make deeper studies of single products and product groups. We run tests, analyses and dismantling of e waste to understand product composition and value in the recycling chain.",
+        sv: "På anläggningen gör vi djupare studier av enskilda produkter och produktgrupper. Vi utför tester, analyser och demontering för att fastställa innehåll, farligt avfall och kritiska komponenter.",
+        en: "At the facility we make deeper studies of single products and product groups. We run tests, analyses and dismantling to determine content, hazardous waste and critical components.",
       }),
     },
     {
-      title: t({ sv: "Elektronikåtervinning", en: "Electronics recycling" }),
+      title: t({ sv: "Kontroll & end of waste", en: "Control & end of waste" }),
       body: t({
-        sv: "Uttjänt elektronik demonteras och materialåtervinns säkert, med fokus på att återföra värdefulla metaller till kretsloppet.",
-        en: "End of life electronics are safely dismantled and recycled, with a focus on returning valuable metals to the loop.",
+        sv: "Genom oberoende granskning verifierar vi att material klassificeras och hanteras enligt gällande regelverk, att flöden är spårbara och att rapporterad data överensstämmer med faktiskt utfall.",
+        en: "Through independent review we verify that material is classified and handled according to current regulations, that flows are traceable, and that reported data matches actual outcomes.",
       }),
     },
   ];
@@ -67,37 +68,46 @@ function MiljoPage() {
   const chain = [
     {
       n: "01",
-      title: t({ sv: "Mottagning", en: "Intake" }),
+      title: t({ sv: "Registrering & sortering", en: "Registration & sorting" }),
       body: t({
-        sv: "Material tas emot, vägs in och registreras i vårt system. Varje leverans kontrolleras noggrant så att rätt fraktion och kvalitet säkerställs från start.",
-        en: "Material is received, weighed and registered in our system. Every delivery is carefully checked so the right fraction and quality is secured from the start.",
+        sv: "Inkommande elektronik vägs in, registreras och klassificeras. Rätt sortering från start är grunden för tillförlitlig statistik och korrekt ersättning i systemet.",
+        en: "Incoming electronics are weighed, registered and classified. Correct sorting from the start is the foundation for reliable statistics and correct compensation in the system.",
       }),
     },
     {
       n: "02",
-      title: t({ sv: "Sortering", en: "Sorting" }),
+      title: t({ sv: "Analys", en: "Analysis" }),
       body: t({
-        sv: "Fraktioner separeras manuellt och maskinellt utifrån materialtyp och kvalitet. Rätt sortering är grunden för att så mycket som möjligt ska kunna materialåtervinnas.",
-        en: "Fractions are separated manually and mechanically based on material type and quality. Correct sorting is the foundation for recovering as much material as possible.",
+        sv: "Produkterna undersöks för att fastställa innehåll och kategori. Analyserna ger underlag för statistik, ersättning och identifiering av farligt avfall.",
+        en: "Products are examined to determine content and category. The analyses provide the basis for statistics, compensation and identification of hazardous waste.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Analys", en: "Analysis" }),
+      title: t({ sv: "Demontering", en: "Dismantling" }),
       body: t({
-        sv: "På anläggningen i Arboga genomförs tester, demontering och statistiska analyser. Data omvandlas till kunskap om sammansättning, värde och utveckling över tid.",
-        en: "At our Arboga facility we run tests, dismantling and statistical analyses. Data is turned into knowledge about composition, value and how the flow changes over time.",
+        sv: "Utvalda produkter plockas isär komponent för komponent för fördjupad kunskap om sammansättning, materialvärden och kritiska komponenter.",
+        en: "Selected products are taken apart piece by piece for deeper knowledge of composition, material value and critical components.",
       }),
     },
     {
       n: "04",
-      title: t({ sv: "Återföring", en: "Return to loop" }),
+      title: t({ sv: "Datainsamling", en: "Data collection" }),
       body: t({
-        sv: "Materialet återförs till kretsloppet som råvara till nya produkter. Tydliga rapporter och dokumentation ger uppdragsgivarna trygghet i att avfallet hanteras korrekt.",
-        en: "The material is returned to the loop as raw material for new products. Clear reports and documentation give clients confidence that the waste is handled correctly.",
+        sv: "Resultatet registreras och används i nationell statistik. Vår data är underlag för producenter, återvinnare, myndigheter och framtida regelverk.",
+        en: "Results are recorded and used in national statistics. Our data forms the basis for producers, recyclers, authorities and future regulations.",
+      }),
+    },
+    {
+      n: "05",
+      title: t({ sv: "Vidare flöde", en: "Onward flow" }),
+      body: t({
+        sv: "Materialet går vidare till godkända återvinnare. Vi följer flödet med revision och kontroll fram till end of waste, då avfallet upphör att vara avfall.",
+        en: "The material moves on to approved recyclers. We follow the flow with audits and controls all the way to end of waste, when the waste is no longer classed as waste.",
       }),
     },
   ];
+
 
   const timelineRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -132,14 +142,15 @@ function MiljoPage() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Cirkulär återvinning med ansvar", en: "Circular recycling with responsibility" })}
+            {t({ sv: "Analys, inte återvinning", en: "Analysis, not recycling" })}
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "På vår anläggning analyseras avfallet för att effektivisera insamlingssystemet. Ser du statistik på elavfall i Sverige är chansen stor att den kommer från El-Kretsens analysanläggning i Arboga, byggd på över 18 års insamlad data.",
-              en: "At our facility, waste is analysed to make the collection system more efficient. If you see statistics on e waste in Sweden, chances are they come from El-Kretsen's analysis facility in Arboga, built on more than 18 years of collected data.",
+              sv: "EXSE är analys- och kontrollpartner till El-Kretsen. Vi återvinner inte själva, vi säkerställer att Sveriges insamlade elektronik klassificeras rätt, dokumenteras korrekt och att statistiken bakom systemet är att lita på.",
+              en: "EXSE is analysis and control partner to El-Kretsen. We don't recycle ourselves; we make sure Sweden's collected electronics is correctly classified, properly documented and that the statistics behind the system can be trusted.",
             })}
           </Reveal>
+
         </div>
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
@@ -155,8 +166,9 @@ function MiljoPage() {
 
       <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
-          {t({ sv: "Tjänster genom hela återvinningskedjan", en: "Services across the recycling chain" })}
+          {t({ sv: "Så arbetar vi med elektronikflöden", en: "How we work with electronics flows" })}
         </Reveal>
+
 
         <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 md:grid-cols-2">
           {services.map((s, i) => (
@@ -196,16 +208,17 @@ function MiljoPage() {
             <div className="mt-5 space-y-4 text-base text-foreground/80 sm:mt-6 sm:space-y-5 sm:text-lg">
               <Reveal as="p" delay={120}>
                 {t({
-                  sv: "Här genomför vi de tester och analyser som omvandlar skrot till statistik. Resultaten ger våra uppdragsgivare trygghet i materialets sammansättning, kvalitet och värde.",
-                  en: "Here we run the tests and analyses that turn scrap into statistics. The results give our clients confidence in the material's composition, quality and value.",
+                  sv: "På anläggningen genomför vi de tester, demonteringar och analyser som omvandlar insamlad elektronik till kunskap. Resultaten ligger till grund för nationell statistik, ersättning till producenter och identifiering av farligt avfall.",
+                  en: "At the facility we run the tests, dismantling and analyses that turn collected electronics into knowledge. The results underpin national statistics, compensation to producers and identification of hazardous waste.",
                 })}
               </Reveal>
               <Reveal as="p" delay={220}>
                 {t({
-                  sv: "Genom att kombinera mätdata med revision skapar vi en transparent kedja, från första vägning till slutgiltig rapport.",
-                  en: "By combining measurement data with audit, we create a transparent chain, from the first weighing to the final report.",
+                  sv: "Ser du statistik på elavfall i Sverige är chansen stor att den kommer härifrån, byggd på över 18 års insamlad data.",
+                  en: "If you see statistics on e-waste in Sweden, chances are they come from here, built on more than 18 years of collected data.",
                 })}
               </Reveal>
+
             </div>
             <Reveal delay={320} className="mt-6 sm:mt-8">
               <PillAnchor href="https://www.el-kretsen.se" external>
@@ -219,8 +232,9 @@ function MiljoPage() {
       {/* Recycling chain timeline */}
       <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
-          {t({ sv: "Så fungerar återvinningskedjan", en: "How the recycling chain works" })}
+          {t({ sv: "Från insamling till end of waste", en: "From collection to end of waste" })}
         </Reveal>
+
 
         <div ref={timelineRef} className="relative mt-14 sm:mt-20 md:mt-24">
           {/* Base vertical line */}

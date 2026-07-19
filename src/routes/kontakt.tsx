@@ -6,18 +6,19 @@ import { Navigation } from "lucide-react";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt | Elektronikåtervinning & elavfall | EXSE AB" },
+      { title: "Kontakt | Analys & kontroll av elektronik | EXSE AB" },
       {
         name: "description",
         content:
-          "Kontakta EXSE AB om elektronikåtervinning, elavfall, analys eller statistik. Huvudkontor och El-Kretsens analysanläggning i Arboga.",
+          "Kontakta EXSE AB om analys, sortering, revision och statistik för elektronik. Huvudkontor i Örebro och El-Kretsens analysanläggning i Arboga.",
       },
       { property: "og:title", content: "Kontakt | EXSE AB" },
       {
         property: "og:description",
         content:
-          "Kontakta rätt person hos EXSE AB, för elektronikåtervinning, elavfall och analys.",
+          "Kontakta rätt person hos EXSE AB, för analys, revision och statistik på insamlad elektronik.",
       },
+
       { property: "og:url", content: "https://radiant-rebuild-bot.lovable.app/kontakt" },
     ],
     links: [
@@ -101,8 +102,8 @@ function KontaktPage() {
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
-              sv: "Har du frågor om återvinning, analys eller statistik? Hör av dig till rätt person i teamet nedan.",
-              en: "Questions about recycling, analysis or statistics? Reach out to the right person on the team below.",
+              sv: "Har du frågor om analys, revision eller statistik på insamlad elektronik? Hör av dig till rätt person i teamet nedan.",
+              en: "Questions about analysis, audits or statistics on collected electronics? Reach out to the right person on the team below.",
             })}
           </Reveal>
         </div>
