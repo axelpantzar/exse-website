@@ -35,7 +35,7 @@ function Index() {
 
 
   const stats = [
-    { value: "25+", label: t({ sv: "År inom elektronikåtervinning", en: "Years in electronics recycling" }) },
+    { value: "25+", label: t({ sv: "År inom analys av elektronik", en: "Years in electronics analysis" }) },
     { value: "40+", label: t({ sv: "År inom innebandy", en: "Years in floorball" }) },
     { value: "18+", label: t({ sv: "År av insamlad data", en: "Years of collected data" }) },
   ];
@@ -43,29 +43,30 @@ function Index() {
   const services = [
     {
       n: "01",
-      title: t({ sv: "Sortering & insamling", en: "Sorting & intake" }),
+      title: t({ sv: "Registrering & sortering", en: "Registration & sorting" }),
       body: t({
-        sv: "Vi tar emot och sorterar elavfall och metallskrot med precision. Varje fraktion vägs, märks och förbereds för återvinning.",
-        en: "We receive and sort electronic waste and metal scrap with precision. Every fraction is weighed, labelled and prepared for recycling.",
+        sv: "Inkommande elektronik vägs in, registreras och klassificeras. Rätt sortering från start är grunden för tillförlitlig statistik och korrekt ersättning i systemet.",
+        en: "Incoming electronics are weighed, registered and classified. Correct sorting from the start is the foundation for reliable statistics and correct compensation in the system.",
       }),
     },
     {
       n: "02",
-      title: t({ sv: "Statistik & revision", en: "Statistics & audit" }),
+      title: t({ sv: "Analys & demontering", en: "Analysis & dismantling" }),
       body: t({
-        sv: "Vi kontrollerar, sammanställer och förtydligar data från olika system. Revisionerna bidrar till bättre lagefterlevnad och tydligare återvinningsmål.",
-        en: "We control, compile and clarify data from different systems. Our audits contribute to better legal compliance and clearer recycling goals.",
+        sv: "På analysanläggningen i Arboga undersöks och demonteras produkter för att fastställa innehåll, kategori och kritiska komponenter, komponent för komponent.",
+        en: "At the Arboga facility, products are examined and dismantled to determine content, category and critical components, piece by piece.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Tester & analyser", en: "Testing & analysis" }),
+      title: t({ sv: "Statistik, revision & kontroll", en: "Statistics, audit & control" }),
       body: t({
-        sv: "I analysanläggningen i Arboga demonteras och vägs produkter komponent för komponent, så att vi kan se sammansättning och värde i återvinningskedjan.",
-        en: "At the Arboga facility products are dismantled and weighed component by component, giving a clear picture of composition and value in the recycling chain.",
+        sv: "Vi kontrollerar, sammanställer och reviderar data genom hela kedjan, från insamling till end of waste. Resultatet är transparent, verifierad statistik för hela Sverige.",
+        en: "We control, compile and audit data across the entire chain, from collection to end of waste. The result is transparent, verified statistics for all of Sweden.",
       }),
     },
   ];
+
 
   return (
     <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
