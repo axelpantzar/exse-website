@@ -224,7 +224,7 @@ function MiljoPage() {
       {/* Recycling chain timeline */}
       <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
-          {t({ sv: "Från insamling till end of waste", en: "From collection to end of waste" })}
+          {t({ sv: "Från insamlad produkt till analyserad data", en: "From collected product to analysed data" })}
         </Reveal>
 
 
