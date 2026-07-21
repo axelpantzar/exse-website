@@ -70,40 +70,32 @@ function MiljoPage() {
       n: "01",
       title: t({ sv: "Registrering & sortering", en: "Registration & sorting" }),
       body: t({
-        sv: "Inkommande elektronik vägs in, registreras och klassificeras. Rätt sortering från start är grunden för tillförlitlig statistik och korrekt ersättning i systemet.",
-        en: "Incoming electronics are weighed, registered and classified. Correct sorting from the start is the foundation for reliable statistics and correct compensation in the system.",
+        sv: "Inkommande elektronik registreras, vägs och klassificeras utifrån produkttyp och innehåll.",
+        en: "Incoming electronics are registered, weighed and classified by product type and content.",
       }),
     },
     {
       n: "02",
-      title: t({ sv: "Analys", en: "Analysis" }),
+      title: t({ sv: "Demontering & analys", en: "Dismantling & analysis" }),
       body: t({
-        sv: "Produkterna undersöks för att fastställa innehåll och kategori. Analyserna ger underlag för statistik, ersättning och identifiering av farligt avfall.",
-        en: "Products are examined to determine content and category. The analyses provide the basis for statistics, compensation and identification of hazardous waste.",
+        sv: "Utvalda produkter demonteras och delas upp i komponenter för fördjupad analys. Specifika delar undersöks för att fastställa material- och innehållsdata.",
+        en: "Selected products are dismantled and separated into components for deeper analysis. Specific parts are examined to determine material and content data.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Demontering", en: "Dismantling" }),
+      title: t({ sv: "Datainsamling", en: "Data collection" }),
       body: t({
-        sv: "Utvalda produkter plockas isär komponent för komponent för fördjupad kunskap om sammansättning, materialvärden och kritiska komponenter.",
-        en: "Selected products are taken apart piece by piece for deeper knowledge of composition, material value and critical components.",
+        sv: "Resultaten dokumenteras systematiskt och används som underlag för nationell statistik och uppföljning.",
+        en: "Results are systematically documented and used as the basis for national statistics and follow-up.",
       }),
     },
     {
       n: "04",
-      title: t({ sv: "Datainsamling", en: "Data collection" }),
-      body: t({
-        sv: "Resultatet registreras och används i nationell statistik. Vår data är underlag för producenter, återvinnare, myndigheter och framtida regelverk.",
-        en: "Results are recorded and used in national statistics. Our data forms the basis for producers, recyclers, authorities and future regulations.",
-      }),
-    },
-    {
-      n: "05",
       title: t({ sv: "Vidare flöde", en: "Onward flow" }),
       body: t({
-        sv: "Materialet går vidare till godkända återvinnare. Vi följer flödet med revision och kontroll fram till end of waste, då avfallet upphör att vara avfall.",
-        en: "The material moves on to approved recyclers. We follow the flow with audits and controls all the way to end of waste, when the waste is no longer classed as waste.",
+        sv: "Farligt avfall skickas till godkända mottagare, medan resterande material går vidare till certifierade återvinnare för fortsatt behandling.",
+        en: "Hazardous waste is sent to approved recipients, while remaining material moves on to certified recyclers for further treatment.",
       }),
     },
   ];
@@ -232,7 +224,7 @@ function MiljoPage() {
       {/* Recycling chain timeline */}
       <section className="mt-28 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-2xl font-display text-3xl sm:text-4xl md:text-5xl">
-          {t({ sv: "Från insamling till end of waste", en: "From collection to end of waste" })}
+          {t({ sv: "Från insamlad produkt till analyserad data", en: "From collected product to analysed data" })}
         </Reveal>
 
 
@@ -281,9 +273,65 @@ function MiljoPage() {
 
       </section>
 
+      {/* Quality & environmental policy */}
+      <section className="mt-28 sm:mt-36 md:mt-44">
+        <Reveal as="h2" className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl">
+          {t({ sv: "Vår kvalitets- och miljöpolicy", en: "Our quality and environmental policy" })}
+        </Reveal>
+        <div className="mt-8 max-w-3xl space-y-5 text-base text-foreground/80 sm:mt-10 sm:text-lg">
+          <Reveal as="p" delay={100}>
+            {t({
+              sv: "Exse arbetar på uppdrag av externa verksamhetsutövare med statistik, revisioner, sortering, analyser av elektriska & elektroniska produkter, svetsning samt genom utveckling av datasystem.",
+              en: "Exse works on behalf of external operators with statistics, audits, sorting, analyses of electrical & electronic products, welding and through development of data systems.",
+            })}
+          </Reveal>
+          <Reveal as="p" delay={160}>
+            {t({
+              sv: "I all vår verksamhet arbetar vi aktivt med kvalitets- och miljöfrågor. Exse ska tillhandahålla produkter och tjänster som väl motsvarar uppdragsgivarens krav och förväntningar. Vidare ska Exse arbeta med kvalitet och miljömedvetenhet genom kompetens och utbildning i samtliga delar av verksamheten.",
+              en: "In all our operations we work actively with quality and environmental matters. Exse shall provide products and services that well meet the client's requirements and expectations. Furthermore, Exse shall work with quality and environmental awareness through competence and training in all parts of the business.",
+            })}
+          </Reveal>
+          <Reveal as="p" delay={220} className="pt-2 font-medium text-foreground">
+            {t({ sv: "Detta gör vi genom att:", en: "We achieve this by:" })}
+          </Reveal>
+          <Reveal as="ul" delay={280} className="list-disc space-y-3 pl-5 marker:text-copper">
+            <li>
+              {t({
+                sv: "Ständigt arbeta med att uppfylla de legala och andra bindande krav som ställs på vår verksamhet.",
+                en: "Continuously working to meet the legal and other binding requirements placed on our operations.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Utföra våra uppgifter med hög kvalitets- och miljömedvetenhet, vårt arbete präglas av kompetens, vilket medför en trygghet för våra kunder.",
+                en: "Performing our tasks with high quality and environmental awareness; our work is characterised by competence, which gives our clients confidence.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Påverka våra leverantörer och kunder att aktivt bedriva kvalitets- och miljöarbete.",
+                en: "Encouraging our suppliers and clients to actively pursue quality and environmental work.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Vår verksamhets kvalitets- och miljöarbete är under ständig förbättring och vår policy och våra mål ska årligen utvärderas.",
+                en: "Our quality and environmental work is under continuous improvement, and our policy and goals are evaluated annually.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "För uppdrag där EXSE verkar inom områden som omfattas av producentansvar för el utrustning ska verksamheten bedrivas i linje med El-Kretsens gällande policyer och riktlinjer, i den utsträckning de är tillämpliga för uppdraget.",
+                en: "For assignments where EXSE operates within areas covered by producer responsibility for electrical equipment, activities shall be conducted in line with El-Kretsen's applicable policies and guidelines, to the extent they apply to the assignment.",
+              })}
+            </li>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="mt-28 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-16">
         <Reveal as="h2" className="max-w-3xl font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
-          {t({ sv: "Vill du veta hur vi kan hantera ert material?", en: "Want to know how we can handle your material?" })}
+          {t({ sv: "Vill du veta mer om vårt arbete?", en: "Want to know more about our work?" })}
         </Reveal>
         <Reveal delay={120} className="mt-6 sm:mt-8">
           <PillLink to="/kontakt" variant="light">{t({ sv: "Kontakta oss", en: "Contact us" })}</PillLink>

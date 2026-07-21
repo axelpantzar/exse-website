@@ -32,7 +32,7 @@ export const Route = createFileRoute("/kontakt")({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "EXSE AB",
-            telephone: "+46-76-803-44-00",
+            telephone: "+46-19-12-07-20",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Kyrkvägen 17",
@@ -75,11 +75,20 @@ type Person = {
 
 const people: Person[] = [
   { name: "Christer Olsson", roleSv: "VD", roleEn: "CEO", mobile: "+46 76 803 44 00", email: "christer@exse.se" },
-  { name: "Haidar Ali", roleSv: "Statistiksamordnare, Arboga", roleEn: "Statistics Coordinator, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
+  { name: "Haidar Ali", roleSv: "RepTool & Statistiksamordnare, Arboga", roleEn: "RepTool & Statistics Coordinator, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
   { name: "Mikael Ahlén", roleSv: "Systemcontroller, Arboga", roleEn: "Systems Controller, Arboga", mobile: "+46 70 965 11 40", email: "mikael@exse.se" },
   { name: "Camilla Nordlund", roleSv: "Teknisk Controller, Arboga", roleEn: "Technical Controller, Arboga", tel: "+46 76 803 69 59", email: "camilla@exse.se" },
   { name: "Sebastian Pettersson", roleSv: "Test- & miljösamordningscontroller, Arboga", roleEn: "Test & Environmental Coordination Controller, Arboga", tel: "+46 70 757 52 13", email: "sebastian@exse.se" },
   { name: "Doaa Al-Rahmani", roleSv: "Assistent statistiksamordnare, Arboga", roleEn: "Assistant Statistics Coordinator, Arboga", email: "doaa@exse.se" },
+  { name: "Erik Olsson Wennlöf", roleSv: "Ansvarig Testcontroller, Arboga", roleEn: "Head Test Controller, Arboga", email: "erik@exse.se" },
+  { name: "Conny Lassila", roleSv: "Anläggningsansvarig och miljösamordnare, Arboga", roleEn: "Facility Manager and Environmental Coordinator, Arboga", email: "conny@exse.se" },
+];
+
+const otherStaff: { name: string; roleSv: string; roleEn: string }[] = [
+  { name: "Mudher Flaih", roleSv: "Sorteringsförman, Arboga", roleEn: "Sorting Foreman, Arboga" },
+  { name: "Tewelde Habteab", roleSv: "Svets & reparation, Arboga", roleEn: "Welding & repair, Arboga" },
+  { name: "Saban Karamani", roleSv: "Testtekniker, Arboga", roleEn: "Test Technician, Arboga" },
+  { name: "Anton Hertze", roleSv: "Testtekniker, Arboga", roleEn: "Test Technician, Arboga" },
 ];
 
 function telHref(v: string) {
@@ -159,15 +168,39 @@ function KontaktPage() {
         ))}
       </section>
 
+      <section className="mt-20 sm:mt-28">
+        <Reveal as="h2" className="font-display text-2xl sm:text-3xl md:text-4xl">
+          {t({ sv: "Övriga anställda", en: "Other staff" })}
+        </Reveal>
+        <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
+          {otherStaff.map((s) => (
+            <li key={s.name} className="rounded-2xl border border-border/70 bg-card p-5">
+              <p className="font-display text-lg">{s.name}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t({ sv: s.roleSv, en: s.roleEn })}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+
+
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <div className="flex-1">
             <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
-            <address className="mt-3 mb-6 not-italic text-primary-foreground/80">
+            <address className="mt-3 not-italic text-primary-foreground/80">
               Kyrkvägen 17<br />
               703 75 Örebro
             </address>
+            <p className="mt-4 mb-6 text-sm">
+              <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
+              <a href="tel:+46191207200" className="hover:text-copper">
+                019-12 07 20
+              </a>
+            </p>
           </div>
           <a
             href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
