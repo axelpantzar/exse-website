@@ -135,7 +135,7 @@ function MiljoPage() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Analys, inte återvinning", en: "Analysis, not recycling" })}
+            {t({ sv: "Precision genom hela elektronikkedjan", en: "Precision across the electronics chain" })}
           </Reveal>
           <Reveal as="p" delay={120} className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
@@ -148,8 +148,8 @@ function MiljoPage() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src="/exse-miljo-hero.jpg"
-            alt={t({ sv: "Sorteringsanläggning för metallåtervinning", en: "Metal recycling sorting facility" })}
+            src={miljoHero.url}
+            alt={t({ sv: "Testtekniker demonterar och analyserar mobiltelefon", en: "Test technician dismantling and analysing a mobile phone" })}
             width={1600}
             height={1000}
             className="h-[260px] w-full object-cover sm:h-[380px] md:h-[520px] lg:h-[600px]"
