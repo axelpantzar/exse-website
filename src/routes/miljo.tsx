@@ -70,40 +70,32 @@ function MiljoPage() {
       n: "01",
       title: t({ sv: "Registrering & sortering", en: "Registration & sorting" }),
       body: t({
-        sv: "Inkommande elektronik vägs in, registreras och klassificeras. Rätt sortering från start är grunden för tillförlitlig statistik och korrekt ersättning i systemet.",
-        en: "Incoming electronics are weighed, registered and classified. Correct sorting from the start is the foundation for reliable statistics and correct compensation in the system.",
+        sv: "Inkommande elektronik registreras, vägs och klassificeras utifrån produkttyp och innehåll.",
+        en: "Incoming electronics are registered, weighed and classified by product type and content.",
       }),
     },
     {
       n: "02",
-      title: t({ sv: "Analys", en: "Analysis" }),
+      title: t({ sv: "Demontering & analys", en: "Dismantling & analysis" }),
       body: t({
-        sv: "Produkterna undersöks för att fastställa innehåll och kategori. Analyserna ger underlag för statistik, ersättning och identifiering av farligt avfall.",
-        en: "Products are examined to determine content and category. The analyses provide the basis for statistics, compensation and identification of hazardous waste.",
+        sv: "Utvalda produkter demonteras och delas upp i komponenter för fördjupad analys. Specifika delar undersöks för att fastställa material- och innehållsdata.",
+        en: "Selected products are dismantled and separated into components for deeper analysis. Specific parts are examined to determine material and content data.",
       }),
     },
     {
       n: "03",
-      title: t({ sv: "Demontering", en: "Dismantling" }),
+      title: t({ sv: "Datainsamling", en: "Data collection" }),
       body: t({
-        sv: "Utvalda produkter plockas isär komponent för komponent för fördjupad kunskap om sammansättning, materialvärden och kritiska komponenter.",
-        en: "Selected products are taken apart piece by piece for deeper knowledge of composition, material value and critical components.",
+        sv: "Resultaten dokumenteras systematiskt och används som underlag för nationell statistik och uppföljning.",
+        en: "Results are systematically documented and used as the basis for national statistics and follow-up.",
       }),
     },
     {
       n: "04",
-      title: t({ sv: "Datainsamling", en: "Data collection" }),
-      body: t({
-        sv: "Resultatet registreras och används i nationell statistik. Vår data är underlag för producenter, återvinnare, myndigheter och framtida regelverk.",
-        en: "Results are recorded and used in national statistics. Our data forms the basis for producers, recyclers, authorities and future regulations.",
-      }),
-    },
-    {
-      n: "05",
       title: t({ sv: "Vidare flöde", en: "Onward flow" }),
       body: t({
-        sv: "Materialet går vidare till godkända återvinnare. Vi följer flödet med revision och kontroll fram till end of waste, då avfallet upphör att vara avfall.",
-        en: "The material moves on to approved recyclers. We follow the flow with audits and controls all the way to end of waste, when the waste is no longer classed as waste.",
+        sv: "Farligt avfall skickas till godkända mottagare, medan resterande material går vidare till certifierade återvinnare för fortsatt behandling.",
+        en: "Hazardous waste is sent to approved recipients, while remaining material moves on to certified recyclers for further treatment.",
       }),
     },
   ];
