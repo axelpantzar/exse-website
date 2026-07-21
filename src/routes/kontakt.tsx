@@ -168,6 +168,24 @@ function KontaktPage() {
         ))}
       </section>
 
+      <section className="mt-20 sm:mt-28">
+        <Reveal as="h2" className="font-display text-2xl sm:text-3xl md:text-4xl">
+          {t({ sv: "Övriga anställda", en: "Other staff" })}
+        </Reveal>
+        <ul className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
+          {otherStaff.map((s) => (
+            <li key={s.name} className="rounded-2xl border border-border/70 bg-card p-5">
+              <p className="font-display text-lg">{s.name}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t({ sv: s.roleSv, en: s.roleEn })}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+
+
 
       <section className="mt-28 grid gap-6 sm:mt-36 sm:gap-8 md:grid-cols-2">
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
