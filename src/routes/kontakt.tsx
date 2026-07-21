@@ -75,11 +75,20 @@ type Person = {
 
 const people: Person[] = [
   { name: "Christer Olsson", roleSv: "VD", roleEn: "CEO", mobile: "+46 76 803 44 00", email: "christer@exse.se" },
-  { name: "Haidar Ali", roleSv: "Statistiksamordnare, Arboga", roleEn: "Statistics Coordinator, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
+  { name: "Haidar Ali", roleSv: "RepTool & Statistiksamordnare, Arboga", roleEn: "RepTool & Statistics Coordinator, Arboga", mobile: "+46 76 803 57 87", email: "haidar@exse.se" },
   { name: "Mikael Ahlén", roleSv: "Systemcontroller, Arboga", roleEn: "Systems Controller, Arboga", mobile: "+46 70 965 11 40", email: "mikael@exse.se" },
   { name: "Camilla Nordlund", roleSv: "Teknisk Controller, Arboga", roleEn: "Technical Controller, Arboga", tel: "+46 76 803 69 59", email: "camilla@exse.se" },
   { name: "Sebastian Pettersson", roleSv: "Test- & miljösamordningscontroller, Arboga", roleEn: "Test & Environmental Coordination Controller, Arboga", tel: "+46 70 757 52 13", email: "sebastian@exse.se" },
   { name: "Doaa Al-Rahmani", roleSv: "Assistent statistiksamordnare, Arboga", roleEn: "Assistant Statistics Coordinator, Arboga", email: "doaa@exse.se" },
+  { name: "Erik Olsson Wennlöf", roleSv: "Ansvarig Testcontroller, Arboga", roleEn: "Head Test Controller, Arboga", email: "erik@exse.se" },
+  { name: "Conny Lassila", roleSv: "Anläggningsansvarig och miljösamordnare, Arboga", roleEn: "Facility Manager and Environmental Coordinator, Arboga", email: "conny@exse.se" },
+];
+
+const otherStaff: { name: string; roleSv: string; roleEn: string }[] = [
+  { name: "Mudher Flaih", roleSv: "Sorteringsförman, Arboga", roleEn: "Sorting Foreman, Arboga" },
+  { name: "Tewelde Habteab", roleSv: "Svets & reparation, Arboga", roleEn: "Welding & repair, Arboga" },
+  { name: "Saban Karamani", roleSv: "Testtekniker, Arboga", roleEn: "Test Technician, Arboga" },
+  { name: "Anton Hertze", roleSv: "Testtekniker, Arboga", roleEn: "Test Technician, Arboga" },
 ];
 
 function telHref(v: string) {
