@@ -32,7 +32,7 @@ export const Route = createFileRoute("/kontakt")({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "EXSE AB",
-            telephone: "+46-76-803-44-00",
+            telephone: "+46-19-12-07-20",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Kyrkvägen 17",

@@ -1,53 +1,47 @@
+## Ändringar
 
-## Bakgrund
+### 1. Kontaktsidan (`src/routes/kontakt.tsx`)
+- Lägg till EXSE AB:s växelnummer **019-12 07 20** på Örebro-kortet (mobilnummer visas inte där, bara i personallistan).
+- Uppdatera personallistan enligt dokumentet:
+  - **Haidar Ali**: titel ändras till "RepTool & Statistiksamordnare, Arboga".
+  - Lägg till **Erik Olsson Wennlöf** – Ansvarig Testcontroller, Arboga (endast e-post: erik@exse.se).
+  - Lägg till **Conny Lassila** – Anläggningsansvarig och miljösamordnare, Arboga (endast e-post: conny@exse.se).
+- Ny sektion "Övriga anställda" under personkorten med namn och roll (inga kontaktuppgifter):
+  - Mudher Flaih – Sorteringsförman, Arboga
+  - Tewelde Habteab – Svets & reparation, Arboga
+  - Saban Karamani – Testtekniker, Arboga
+  - Anton Hertze – Testtekniker, Arboga
+- Uppdatera JSON-LD `telephone` för Örebro-kontoret till `+46-19-12-07-20`.
 
-Kundens text gör en viktig korrigering: **EXSE återvinner inte själva**. De analyserar, sorterar, dokumenterar och reviderar uttjänt elektronik på uppdrag av **El-Kretsen** – från insamling till "end of waste". Nuvarande sida beskriver EXSE som en återvinnare, vilket behöver skrivas om. Struktur, design, färger, typsnitt, animationer och sidor behålls som de är.
+### 2. Miljösidan tidslinje (`src/routes/miljo.tsx`)
+Ersätt rubrik och steg med kundens exakta struktur:
+- Ny rubrik: **"Från insamlad produkt till analyserad data"** (nuvarande: "Från insamling till end of waste").
+- Reducera från 5 till 4 steg:
+  1. **Registrering & sortering** – "Inkommande elektronik registreras, vägs och klassificeras utifrån produkttyp och innehåll."
+  2. **Demontering & analys** – "Utvalda produkter demonteras och delas upp i komponenter för fördjupad analys. Specifika delar undersöks för att fastställa material- och innehållsdata."
+  3. **Datainsamling** – "Resultaten dokumenteras systematiskt och används som underlag för nationell statistik och uppföljning."
+  4. **Vidare flöde** – "Farligt avfall skickas till godkända mottagare, medan resterande material går vidare till certifierade återvinnare för fortsatt behandling."
+- Engelska översättningar uppdateras parallellt.
 
-## Vad som ändras (endast text/innehåll)
+### 3. CTA-text på miljösidan (`src/routes/miljo.tsx`)
+Byt rubriken i den mörka CTA-boxen längst ned från "Vill du veta hur vi kan hantera ert material?" till **"Vill du veta mer om vårt arbete?"** (för att signalera seriositet, inte kundvärvning). Engelska: "Want to know more about our work?"
 
-### 1. Startsidan (`src/routes/index.tsx`)
-- **Hero-rubrik** → "Kontroll och analys av elektronikflöden – från insamling till end of waste"
-- **Hero-ingress** → omskrivning som betonar sortering, data och kunskap om Sveriges insamlade elektronik (kundens text).
-- **About-sektionen** ("En gedigen historia…") → ny rubrik och text som förklarar rollen: analys, inte återvinning. Behåller ändå kort nämnande av 25+ års erfarenhet och sportspåret.
-- **Services (01/02/03)** → skrivs om till:
-  1. Registrering & sortering
-  2. Analys & demontering
-  3. Statistik, revision & kontroll
-- **Parade kort längst ner**: "Miljö & återvinning"-kortet döps om till "Analys & miljöarbete" med text om deras faktiska roll. Excellent Floorball-kortet behålls oförändrat.
+### 4. Ny sektion: Kvalitets- och miljöpolicy
+Lägg till en ny sektion på miljösidan (före CTA:n) med rubrik **"Vår kvalitets- och miljöpolicy"** och exakt den text kunden angav:
 
-### 2. Miljösidan (`src/routes/miljo.tsx`)
-- **Hero-rubrik** → "På uppdrag av El-Kretsen" eller "Analys, inte återvinning" (väljs slutgiltigt vid implementation, håller tonen från kundens text).
-- **Ingress** och brödtext skrivs om så det står tydligt att EXSE analyserar och kvalitetssäkrar material för El-Kretsen.
-- **Arboga-sektionen** → beskrivs som analysanläggning där produkter registreras, undersöks och demonteras (utan att låta som återvinningsverk).
-- **Tidslinjen** uppdateras till kundens fem steg:
-  1. Registrering & sortering
-  2. Analys
-  3. Demontering
-  4. Datainsamling
-  5. Vidare flöde till godkända återvinnare
-- Lägger till kort/sektion om **revision & kontroll** ("från in till end of waste") med kundens fyra punkter.
+> Exse arbetar på uppdrag av externa verksamhetsutövare med statistik, revisioner, sortering, analyser av elektriska & elektroniska produkter, svetsning samt genom utveckling av datasystem.
+>
+> I all vår verksamhet arbetar vi aktivt med kvalitets- och miljöfrågor. Exse ska tillhandahålla produkter och tjänster som väl motsvarar uppdragsgivarens krav och förväntningar. Vidare ska Exse arbeta med kvalitet och miljömedvetenhet genom kompetens och utbildning i samtliga delar av verksamheten.
+>
+> **Detta gör vi genom att:**
+> - Ständigt arbeta med att uppfylla de legala och andra bindande krav som ställs på vår verksamhet.
+> - Utföra våra uppgifter med hög kvalitets- och miljömedvetenhet, vårt arbete präglas av kompetens, vilket medför en trygghet för våra kunder.
+> - Påverka våra leverantörer och kunder att aktivt bedriva kvalitets- och miljöarbete.
+> - Vår verksamhets kvalitets- och miljöarbete är under ständig förbättring och vår policy och våra mål ska årligen utvärderas.
+> - För uppdrag där EXSE verkar inom områden som omfattas av producentansvar för el utrustning ska verksamheten bedrivas i linje med El-Kretsens gällande policyer och riktlinjer, i den utsträckning de är tillämpliga för uppdraget.
 
-### 3. Sportsidan (`src/routes/sport.tsx`)
-- Ingen förändring i sak. Ev. mindre justering i intro så det inte krockar med den nya positioneringen ("vid sidan av analysverksamheten" istället för "vid sidan av återvinningen").
+Engelsk översättning läggs till parallellt. Sektionen använder samma Reveal-mönster som resten av sidan (rubrik + brödtext + punktlista, ingen kort-container så det smälter in i sidflödet).
 
-### 4. Kontaktsidan (`src/routes/kontakt.tsx`)
-- **Hero-ingress** → "Vill du veta mer om vårt uppdrag eller hur vi arbetar inom analys av elektronik?" (kundens ton).
-- Behåller personer, adresser och vägbeskrivningsknappar.
-
-### 5. Global copy
-- **Footer** (`SiteFooter.tsx`) → tagline uppdateras från "återvinningskedjan" till formulering om analys och kontroll av elektronikflöden.
-- **`llms.txt`** → uppdateras med samma positionering (analys på uppdrag av El-Kretsen).
-- **Meta/OG-taggar** per route: title och description skrivs om så nyckelord speglar analys, kontroll, statistik, El-Kretsen, end of waste – inte "elektronikåtervinning" som huvudsak. Sitemap oförändrad.
-- **i18n**: alla ändringar görs både på svenska och engelska via befintliga `t({ sv, en })`-strängar.
-
-## Vad som INTE ändras
-
-- Layout, komponenter, färger, typsnitt, animationer, spacing.
-- Sidstruktur och routing.
-- Bilder, certifikat-loop, kontaktkort, integritetspolicy, statistiksiffror.
-- Excellent Floorball-innehåll (utöver ev. mikrojustering av övergångstext).
-
-## Öppna frågor jag löser vid implementation
-
-- Exakta rubriker där kundens text ger flera alternativ (t.ex. miljösidans hero) väljs så de matchar befintlig visuell hierarki.
-- Statistiksiffrorna (25+, 40+, 18+) behålls men "År inom elektronikåtervinning" byts till t.ex. "År inom analys av elektronik".
+### Ej ändrat
+- Övriga sidor (start, sport, integritetspolicy) rörs inte.
+- Färgpalett, layoutstruktur, animationer och komponentbibliotek bevaras.
