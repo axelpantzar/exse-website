@@ -273,9 +273,65 @@ function MiljoPage() {
 
       </section>
 
+      {/* Quality & environmental policy */}
+      <section className="mt-28 sm:mt-36 md:mt-44">
+        <Reveal as="h2" className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl">
+          {t({ sv: "Vår kvalitets- och miljöpolicy", en: "Our quality and environmental policy" })}
+        </Reveal>
+        <div className="mt-8 max-w-3xl space-y-5 text-base text-foreground/80 sm:mt-10 sm:text-lg">
+          <Reveal as="p" delay={100}>
+            {t({
+              sv: "Exse arbetar på uppdrag av externa verksamhetsutövare med statistik, revisioner, sortering, analyser av elektriska & elektroniska produkter, svetsning samt genom utveckling av datasystem.",
+              en: "Exse works on behalf of external operators with statistics, audits, sorting, analyses of electrical & electronic products, welding and through development of data systems.",
+            })}
+          </Reveal>
+          <Reveal as="p" delay={160}>
+            {t({
+              sv: "I all vår verksamhet arbetar vi aktivt med kvalitets- och miljöfrågor. Exse ska tillhandahålla produkter och tjänster som väl motsvarar uppdragsgivarens krav och förväntningar. Vidare ska Exse arbeta med kvalitet och miljömedvetenhet genom kompetens och utbildning i samtliga delar av verksamheten.",
+              en: "In all our operations we work actively with quality and environmental matters. Exse shall provide products and services that well meet the client's requirements and expectations. Furthermore, Exse shall work with quality and environmental awareness through competence and training in all parts of the business.",
+            })}
+          </Reveal>
+          <Reveal as="p" delay={220} className="pt-2 font-medium text-foreground">
+            {t({ sv: "Detta gör vi genom att:", en: "We achieve this by:" })}
+          </Reveal>
+          <Reveal as="ul" delay={280} className="list-disc space-y-3 pl-5 marker:text-copper">
+            <li>
+              {t({
+                sv: "Ständigt arbeta med att uppfylla de legala och andra bindande krav som ställs på vår verksamhet.",
+                en: "Continuously working to meet the legal and other binding requirements placed on our operations.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Utföra våra uppgifter med hög kvalitets- och miljömedvetenhet, vårt arbete präglas av kompetens, vilket medför en trygghet för våra kunder.",
+                en: "Performing our tasks with high quality and environmental awareness; our work is characterised by competence, which gives our clients confidence.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Påverka våra leverantörer och kunder att aktivt bedriva kvalitets- och miljöarbete.",
+                en: "Encouraging our suppliers and clients to actively pursue quality and environmental work.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "Vår verksamhets kvalitets- och miljöarbete är under ständig förbättring och vår policy och våra mål ska årligen utvärderas.",
+                en: "Our quality and environmental work is under continuous improvement, and our policy and goals are evaluated annually.",
+              })}
+            </li>
+            <li>
+              {t({
+                sv: "För uppdrag där EXSE verkar inom områden som omfattas av producentansvar för el utrustning ska verksamheten bedrivas i linje med El-Kretsens gällande policyer och riktlinjer, i den utsträckning de är tillämpliga för uppdraget.",
+                en: "For assignments where EXSE operates within areas covered by producer responsibility for electrical equipment, activities shall be conducted in line with El-Kretsen's applicable policies and guidelines, to the extent they apply to the assignment.",
+              })}
+            </li>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="mt-28 rounded-3xl bg-primary p-7 text-primary-foreground sm:mt-36 sm:p-10 md:mt-44 md:p-16">
         <Reveal as="h2" className="max-w-3xl font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
-          {t({ sv: "Vill du veta hur vi kan hantera ert material?", en: "Want to know how we can handle your material?" })}
+          {t({ sv: "Vill du veta mer om vårt arbete?", en: "Want to know more about our work?" })}
         </Reveal>
         <Reveal delay={120} className="mt-6 sm:mt-8">
           <PillLink to="/kontakt" variant="light">{t({ sv: "Kontakta oss", en: "Contact us" })}</PillLink>
