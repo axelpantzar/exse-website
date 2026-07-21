@@ -173,10 +173,16 @@ function KontaktPage() {
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <div className="flex-1">
             <h3 className="font-display text-xl sm:text-2xl">EXSE AB</h3>
-            <address className="mt-3 mb-6 not-italic text-primary-foreground/80">
+            <address className="mt-3 not-italic text-primary-foreground/80">
               Kyrkvägen 17<br />
               703 75 Örebro
             </address>
+            <p className="mt-4 mb-6 text-sm">
+              <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
+              <a href="tel:+46191207200" className="hover:text-copper">
+                019-12 07 20
+              </a>
+            </p>
           </div>
           <a
             href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
