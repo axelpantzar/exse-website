@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
+import { PillLink } from "./ui/PillButton";
 
 export function Certifications() {
   const t = useT();
