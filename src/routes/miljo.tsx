@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { PillLink, PillAnchor } from "../components/ui/PillButton";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
-import miljoHero from "../assets/miljo-hero.jpg.asset.json";
+import analysisPhone from "../assets/analysis-phone-magnifier.jpg.asset.json";
 
 
 
@@ -148,7 +148,7 @@ function MiljoPage() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src={miljoHero.url}
+            src="/exse-miljo-hero.jpg"
             alt={t({ sv: "Testtekniker demonterar och analyserar mobiltelefon", en: "Test technician dismantling and analysing a mobile phone" })}
             width={1600}
             height={1000}
@@ -186,8 +186,8 @@ function MiljoPage() {
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16">
           <Reveal>
             <img
-              src="/exse-analysis-lab.jpg"
-              alt={t({ sv: "Analyslaboratorium där metallprover undersöks", en: "Analysis laboratory where metal samples are examined" })}
+              src={analysisPhone.url}
+              alt={t({ sv: "Testtekniker undersöker demonterad mobiltelefon under förstoringslampa", en: "Test technician examining a dismantled mobile phone under a magnifying lamp" })}
               width={1600}
               height={1000}
               loading="lazy"
