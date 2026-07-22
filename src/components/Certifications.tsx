@@ -30,6 +30,11 @@ export function Certifications() {
           })}
         </Reveal>
       </div>
+      <Reveal delay={180} className="mt-6 sm:mt-8">
+        <PillLink to="/miljo#policy" variant="outline">
+          {t({ sv: "Läs vår miljö- och kvalitetspolicy", en: "Read our environmental and quality policy" })}
+        </PillLink>
+      </Reveal>
 
       {/* Infinite marquee */}
       <div
