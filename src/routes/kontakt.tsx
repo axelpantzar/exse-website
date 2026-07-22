@@ -195,6 +195,15 @@ function KontaktPage() {
               Kyrkvägen 17<br />
               703 75 Örebro
             </address>
+            <a
+              href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 hidden items-center gap-2 text-sm text-primary-foreground/80 underline-offset-4 hover:text-copper hover:underline md:inline-flex"
+            >
+              <Car className="h-4 w-4" />
+              {t({ sv: "Kör vägbeskrivning", en: "Get driving directions" })}
+            </a>
             <p className="mt-4 mb-6 text-sm">
               <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
               <a href="tel:+46191207200" className="hover:text-copper">
