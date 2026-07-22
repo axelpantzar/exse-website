@@ -275,7 +275,7 @@ function MiljoPage() {
       </section>
 
       {/* Quality & environmental policy */}
-      <section className="mt-28 sm:mt-36 md:mt-44">
+      <section id="policy" className="mt-28 scroll-mt-24 sm:mt-36 md:mt-44">
         <Reveal as="h2" className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl">
           {t({ sv: "Vår kvalitets- och miljöpolicy", en: "Our quality and environmental policy" })}
         </Reveal>

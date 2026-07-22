@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
+import { PillLink } from "./ui/PillButton";
 
 export function Certifications() {
   const t = useT();
@@ -29,6 +30,11 @@ export function Certifications() {
           })}
         </Reveal>
       </div>
+      <Reveal delay={180} className="mt-6 sm:mt-8">
+        <PillLink to="/miljo#policy" variant="outline">
+          {t({ sv: "Läs vår miljö- och kvalitetspolicy", en: "Read our environmental and quality policy" })}
+        </PillLink>
+      </Reveal>
 
       {/* Infinite marquee */}
       <div
