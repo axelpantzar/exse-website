@@ -1,9 +1,9 @@
-import logoAsset from "../assets/exse-logo.png.asset.json";
+const logoSrc = "/exse-logo.png";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <img
-      src={logoAsset.url}
+      src={logoSrc}
       alt="EXSE AB | Sport · Miljö"
       width={140}
       height={32}

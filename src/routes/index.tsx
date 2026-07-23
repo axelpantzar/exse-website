@@ -4,7 +4,8 @@ import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
-import homeHero from "../assets/exse-home-hero.jpg.asset.json";
+
+const homeHero = "/exse-home-hero.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/" },
-      { rel: "preload", as: "image", href: homeHero.url, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: homeHero, fetchpriority: "high" },
     ],
   }),
 });
@@ -97,7 +98,7 @@ function Index() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src={homeHero.url}
+            src={homeHero}
             alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
             width={1600}
             height={1000}
