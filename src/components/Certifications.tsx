@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
-import { PillLink } from "./ui/PillButton";
 
 export function Certifications() {
   const t = useT();
