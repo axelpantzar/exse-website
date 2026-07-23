@@ -202,6 +202,15 @@ function KontaktPage() {
               </a>
             </p>
           </div>
+          <a
+            href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-auto inline-flex items-center gap-2 self-start rounded-full bg-white px-4 py-2 text-sm font-medium text-foreground transition hover:bg-white/90"
+          >
+            <Navigation className="h-4 w-4" />
+            {t({ sv: "Vägbeskrivning", en: "Directions" })}
+          </a>
         </div>
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <div className="flex-1">
