@@ -58,7 +58,15 @@ function SportPage() {
       </section>
 
       <section className="mt-28 grid gap-8 sm:mt-36 md:mt-44 md:grid-cols-12 md:gap-10">
-        <Reveal as="div" className="md:col-span-5">
+        <Reveal as="div" delay={80} className="md:col-span-5">
+          <img
+            src="/excellent-floorball-logo.png"
+            alt="Excellent Floorball"
+            width={1000}
+            height={300}
+            loading="lazy"
+            className="mb-6 h-auto w-full max-w-sm sm:mb-8"
+          />
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({ sv: "En egen profil, samma engagemang", en: "A separate profile, the same commitment" })}
           </h2>
