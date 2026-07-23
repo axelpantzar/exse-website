@@ -68,7 +68,7 @@ function SportPage() {
             width={1000}
             height={300}
             loading="lazy"
-            className="mt-6 h-auto w-full max-w-sm sm:mt-8"
+            className="mt-6 h-auto w-full max-w-[14rem] sm:mt-8 md:max-w-[16rem]"
           />
         </Reveal>
         <div className="space-y-5 text-base text-foreground/80 sm:space-y-6 sm:text-lg md:col-span-7 md:pt-2">
