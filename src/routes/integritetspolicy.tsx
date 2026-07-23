@@ -70,21 +70,15 @@ function IntegritetspolicyPage() {
         >
           <p>
             {t({
-              sv: "EXSE AB, org.nr 556682-9734, är ansvarig för den här webbplatsen. Adress: Kyrkvägen 17, 703 75 Örebro.",
-              en: "EXSE AB, org.no 556682-9734, is responsible for this website. Address: Kyrkvägen 17, 703 75 Örebro, Sweden.",
-            })}
-          </p>
-          <p>
-            {t({
-              sv: "Om du har frågor om hur vi hanterar personuppgifter är du välkommen att ",
-              en: "If you have questions about how we handle personal data, you are welcome to ",
+              sv: "EXSE AB, org.nr 556682-9734, är ansvarig för den här webbplatsen. Om du har frågor om hur vi hanterar personuppgifter är du välkommen att ",
+              en: "EXSE AB, org.no 556682-9734, is responsible for this website. If you have questions about how we handle personal data, you are welcome to ",
             })}
             <Link to="/kontakt" className="text-copper underline underline-offset-4 hover:no-underline">
               {t({ sv: "kontakta oss", en: "contact us" })}
             </Link>
             {t({
-              sv: " via e-post eller telefon som anges på kontaktsidan.",
-              en: " by email or phone as shown on the contact page.",
+              sv: " via kontaktsidan.",
+              en: " via the contact page.",
             })}
           </p>
         </Section>
@@ -189,8 +183,8 @@ function IntegritetspolicyPage() {
               {t({ sv: "kontakta oss", en: "contact us" })}
             </Link>
             {t({
-              sv: " på kontaktuppgifterna ovan.",
-              en: " using the details above.",
+              sv: " via kontaktsidan.",
+              en: " via the contact page.",
             })}
           </p>
         </Section>
