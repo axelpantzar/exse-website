@@ -3,22 +3,25 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
-import certIso9001 from "../assets/cert-iso9001.png.asset.json";
-import certIso14001 from "../assets/cert-iso14001.png.asset.json";
-import certIso45001 from "../assets/cert-iso45001.png.asset.json";
-import certEn50625 from "../assets/cert-en50625.png.asset.json";
-import certUc from "../assets/cert-uc.png.asset.json";
+
+const certImages = {
+  iso9001: "/cert-iso9001.png",
+  iso14001: "/cert-iso14001.png",
+  iso45001: "/cert-iso45001.png",
+  en50625: "/cert-en50625.png",
+  uc: "/cert-uc.png",
+};
 
 export function Certifications() {
   const t = useT();
   const [hovered, setHovered] = useState(false);
 
   const items = [
-    { src: certIso9001.url, label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }) },
-    { src: certIso14001.url, label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
-    { src: certIso45001.url, label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
-    { src: certEn50625.url, label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
-    { src: certUc.url, label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
+    { src: certImages.iso9001, label: t({ sv: "ISO 9001, Kvalitet", en: "ISO 9001, Quality" }) },
+    { src: certImages.iso14001, label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
+    { src: certImages.iso45001, label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
+    { src: certImages.en50625, label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
+    { src: certImages.uc, label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
   ];
 
   return (
