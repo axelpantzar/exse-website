@@ -76,8 +76,15 @@ function IntegritetspolicyPage() {
           </p>
           <p>
             {t({
-              sv: "Om du har frågor om hur vi hanterar personuppgifter är du välkommen att kontakta oss via e-post eller telefon som anges på kontaktsidan.",
-              en: "If you have questions about how we handle personal data, you are welcome to contact us by email or phone as shown on the contact page.",
+              sv: "Om du har frågor om hur vi hanterar personuppgifter är du välkommen att ",
+              en: "If you have questions about how we handle personal data, you are welcome to ",
+            })}
+            <Link to="/kontakt" className="text-copper underline underline-offset-4 hover:no-underline">
+              {t({ sv: "kontakta oss", en: "contact us" })}
+            </Link>
+            {t({
+              sv: " via e-post eller telefon som anges på kontaktsidan.",
+              en: " by email or phone as shown on the contact page.",
             })}
           </p>
         </Section>
