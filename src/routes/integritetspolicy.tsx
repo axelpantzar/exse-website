@@ -183,8 +183,8 @@ function IntegritetspolicyPage() {
               {t({ sv: "kontakta oss", en: "contact us" })}
             </Link>
             {t({
-              sv: " på kontaktuppgifterna ovan.",
-              en: " using the details above.",
+              sv: " via kontaktsidan.",
+              en: " via the contact page.",
             })}
           </p>
         </Section>
