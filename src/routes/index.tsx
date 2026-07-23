@@ -4,6 +4,7 @@ import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
+import homeHero from "../assets/exse-home-hero.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
