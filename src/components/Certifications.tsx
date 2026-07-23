@@ -24,18 +24,22 @@ export function Certifications() {
             {t({ sv: "Certifieringar & kvalitet", en: "Certifications & quality" })}
           </h2>
         </Reveal>
-        <Reveal as="p" delay={120} className="text-base text-foreground/80 sm:text-lg md:col-span-7">
-          {t({
-            sv: "Vi arbetar systematiskt med kvalitet, miljö och arbetsmiljö i varje del av verksamheten, från mottagning och sortering till analys och rapportering.",
-            en: "We work systematically with quality, environmental and occupational health management across every part of the operation, from intake and sorting to analysis and reporting.",
-          })}
+        <Reveal as="div" delay={120} className="text-base text-foreground/80 sm:text-lg md:col-span-7">
+          <p>
+            {t({
+              sv: "Vi arbetar systematiskt med kvalitet, miljö och arbetsmiljö i varje del av verksamheten, från mottagning och sortering till analys och rapportering.",
+              en: "We work systematically with quality, environmental and occupational health management across every part of the operation, from intake and sorting to analysis and reporting.",
+            })}
+          </p>
+          <Link
+            to="/miljo#policy"
+            className="group mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:text-copper hover:underline sm:mt-6"
+          >
+            {t({ sv: "Läs vår miljö- och kvalitetspolicy", en: "Read our environmental and quality policy" })}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </Reveal>
       </div>
-      <Reveal delay={180} className="mt-6 sm:mt-8">
-        <PillLink to="/miljo#policy" variant="outline">
-          {t({ sv: "Läs vår miljö- och kvalitetspolicy", en: "Read our environmental and quality policy" })}
-        </PillLink>
-      </Reveal>
 
       {/* Infinite marquee */}
       <div
