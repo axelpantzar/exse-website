@@ -135,8 +135,8 @@ function Index() {
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({
-              sv: "Vår roll i kedjan",
-              en: "Our role in the chain",
+              sv: "Kontroll och analys av elektronikflöden",
+              en: "Control and analysis of electronics flows",
             })}
           </h2>
         </Reveal>
