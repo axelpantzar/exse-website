@@ -182,8 +182,15 @@ function IntegritetspolicyPage() {
           </p>
           <p>
             {t({
-              sv: "Vill du utöva dina rättigheter, kontakta oss på kontaktuppgifterna ovan.",
-              en: "To exercise your rights, please contact us using the details above.",
+              sv: "Vill du utöva dina rättigheter, ",
+              en: "To exercise your rights, please ",
+            })}
+            <Link to="/kontakt" className="text-copper underline underline-offset-4 hover:no-underline">
+              {t({ sv: "kontakta oss", en: "contact us" })}
+            </Link>
+            {t({
+              sv: " på kontaktuppgifterna ovan.",
+              en: " using the details above.",
             })}
           </p>
         </Section>
