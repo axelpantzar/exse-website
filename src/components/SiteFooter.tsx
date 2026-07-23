@@ -41,7 +41,21 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-        © {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}
+        <p className="mb-2">
+          {t({
+            sv: "Vi behandlar personuppgifter med sekretess och största varsamhet.",
+            en: "We process personal data with confidentiality and the utmost care.",
+          })}{" "}
+          {t({
+            sv: "Vill du veta mer om GDPR, läs vår",
+            en: "Want to know more about GDPR? Read our",
+          })}{" "}
+          <Link to="/integritetspolicy" className="underline hover:text-copper">
+            {t({ sv: "Integritetspolicy", en: "Privacy Policy" })}
+          </Link>
+          .
+        </p>
+        <p>© {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}</p>
       </div>
     </footer>
   );
