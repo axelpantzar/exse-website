@@ -100,7 +100,7 @@ function Index() {
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
             src={homeHero}
-            alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
+            alt={t({ sv: "Gammal TV med blomma på skärmen, innebandyboll och EXSE AB-logotyp, symbol för sport och miljö", en: "Old TV with a flower on the screen, a floorball and the EXSE AB logo, symbolising sport and environment" })}
             width={1600}
             height={1000}
             fetchPriority="high"
