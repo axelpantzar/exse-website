@@ -68,7 +68,7 @@ function SportPage() {
             width={1000}
             height={300}
             loading="lazy"
-            className="mt-6 h-auto w-full max-w-[14rem] sm:mt-8 md:max-w-[16rem]"
+            className="mt-6 h-auto w-full max-w-[14rem] sm:mt-8 md:hidden"
           />
         </Reveal>
         <div className="space-y-5 text-base text-foreground/80 sm:space-y-6 sm:text-lg md:col-span-7 md:pt-2">
@@ -85,6 +85,16 @@ function SportPage() {
             })}
           </Reveal>
           <Reveal as="p" delay={280}>{t({ sv: "Besök gärna vår separata hemsida för att läsa mer.", en: "Visit our dedicated website to read more." })}</Reveal>
+          <Reveal delay={80} className="hidden md:block">
+            <img
+              src="/excellent-floorball-logo.png"
+              alt="Excellent Floorball"
+              width={1000}
+              height={300}
+              loading="lazy"
+              className="h-auto w-full max-w-[16rem]"
+            />
+          </Reveal>
           <Reveal delay={360} className="pt-2">
             <PillAnchor href="http://www.excellentfloorball.com/" external>
               {t({ sv: "Besök Excellent Floorball", en: "Visit Excellent Floorball" })}
