@@ -104,7 +104,7 @@ function Index() {
             height={1000}
             fetchPriority="high"
             decoding="async"
-            className="h-[260px] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02] sm:h-[380px] md:h-[520px] lg:h-[600px]"
+            className="h-[260px] w-full bg-card object-contain transition-transform duration-[1200ms] ease-out hover:scale-[1.02] sm:h-[380px] md:h-[520px] lg:h-[600px]"
           />
         </Reveal>
       </section>
