@@ -137,6 +137,12 @@ function IntegritetspolicyPage() {
               en: "We use Google Search Console to verify and monitor how the website is indexed by Google. The service gives us aggregated information about search traffic and any technical issues, but it does not set any cookies on visitors to this site.",
             })}
           </p>
+          <p>
+            {t({
+              sv: "Webbplatsen hostas via Vercel. Det innebär att teknisk trafikdata, såsom IP-adress och information om webbläsare och enhet, kan behandlas av Vercel för att kunna leverera och skydda sidan. Denna behandning sker inom ramen för Vercels egna villkor och säkerhetsrutiner.",
+              en: "The website is hosted via Vercel. This means that technical traffic data, such as IP address and information about the browser and device, may be processed by Vercel in order to deliver and protect the site. This processing takes place under Vercel's own terms and security routines.",
+            })}
+          </p>
         </Section>
 
         <Section
