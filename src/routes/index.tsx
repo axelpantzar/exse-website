@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "EXSE AB analyserar, sorterar och kvalitetssäkrar Sveriges insamlade elektronik på uppdrag av El-Kretsen. Statistik, revision och kontroll från insamling till end of waste.",
+          "EXSE AB analyserar och kvalitetssäkrar Sveriges insamlade elektronik på uppdrag av El-Kretsen. Statistik och kontroll från insamling till end of waste.",
       },
       { property: "og:title", content: "EXSE AB | Analys och kontroll av elektronikflöden" },
       {
