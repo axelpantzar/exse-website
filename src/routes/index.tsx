@@ -4,8 +4,9 @@ import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
+import homeHeroAsset from "../assets/rityta-1-hero.png.asset.json";
 
-const homeHero = "/exse-home-hero.jpg";
+const homeHero = homeHeroAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Index,
