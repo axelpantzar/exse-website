@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PillAnchor } from "../components/ui/PillButton";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
+import floorballHero from "../assets/floorball-hero.webp.asset.json";
 
 export const Route = createFileRoute("/sport")({
   head: () => ({
@@ -46,7 +47,7 @@ function SportPage() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src="/excellent-floorball-hero.webp"
+            src={floorballHero.url}
             alt={t({ sv: "Innebandyspelare i aktion under en match", en: "Floorball player in action during a match" })}
             width={1600}
             height={1000}

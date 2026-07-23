@@ -4,6 +4,7 @@ import { CountUp } from "../components/CountUp";
 import { Certifications } from "../components/Certifications";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
+import homeHero from "../assets/exse-home-hero.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -26,7 +27,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/" },
-      { rel: "preload", as: "image", href: "/exse-home-hero.jpg", fetchpriority: "high" },
+      { rel: "preload", as: "image", href: homeHero.url, fetchpriority: "high" },
     ],
   }),
 });
@@ -96,7 +97,7 @@ function Index() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src="/exse-home-hero.jpg"
+            src={homeHero.url}
             alt={t({ sv: "Gammal TV med krossad skärm och innebandyboll, symbol för sport och miljö", en: "Old TV with broken screen and a floorball, symbolising sport and environment" })}
             width={1600}
             height={1000}
@@ -135,8 +136,8 @@ function Index() {
         <Reveal as="div" className="md:col-span-5">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
             {t({
-              sv: "Vår roll i kedjan",
-              en: "Our role in the chain",
+              sv: "Kontroll och analys av elektronikflöden",
+              en: "Control and analysis of electronics flows",
             })}
           </h2>
         </Reveal>

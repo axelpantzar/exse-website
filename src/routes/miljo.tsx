@@ -4,6 +4,7 @@ import { PillLink, PillAnchor } from "../components/ui/PillButton";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
 import analysisPhone from "../assets/analysis-phone-magnifier.jpg.asset.json";
+import miljoHero from "../assets/miljo-hero.jpg.asset.json";
 
 
 
@@ -148,7 +149,7 @@ function MiljoPage() {
 
         <Reveal delay={200} className="mt-10 overflow-hidden rounded-2xl sm:mt-14 sm:rounded-3xl md:mt-16">
           <img
-            src="/exse-miljo-hero.jpg"
+            src={miljoHero.url}
             alt={t({ sv: "Testtekniker demonterar och analyserar mobiltelefon", en: "Test technician dismantling and analysing a mobile phone" })}
             width={1600}
             height={1000}
