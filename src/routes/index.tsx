@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://radiant-rebuild-bot.lovable.app/" },
-      { rel: "preload", as: "image", href: "/exse-home-hero.jpg", fetchpriority: "high" },
+      { rel: "preload", as: "image", href: homeHero.url, fetchpriority: "high" },
     ],
   }),
 });
