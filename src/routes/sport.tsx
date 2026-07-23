@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PillAnchor } from "../components/ui/PillButton";
 import { Reveal } from "../components/Reveal";
 import { useT } from "../i18n/LanguageContext";
+import floorballHero from "../assets/floorball-hero.webp.asset.json";
 
 export const Route = createFileRoute("/sport")({
   head: () => ({
