@@ -41,7 +41,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60 px-5 py-6 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-        <p className="mb-2">
+        <p className="mb-2">© {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}</p>
+        <p>
           {t({
             sv: "Vi behandlar personuppgifter med sekretess och största varsamhet.",
             en: "We process personal data with confidentiality and the utmost care.",
@@ -55,7 +56,6 @@ export function SiteFooter() {
           </Link>
           .
         </p>
-        <p>© {new Date().getFullYear()} EXSE AB. {t({ sv: "Alla rättigheter förbehållna.", en: "All rights reserved." })}</p>
       </div>
     </footer>
   );
