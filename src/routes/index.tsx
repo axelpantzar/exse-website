@@ -75,7 +75,7 @@ function Index() {
       <section className="pt-6 sm:pt-10 md:pt-16">
         <div className="max-w-3xl">
           <Reveal as="h1" className="font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl lg:text-7xl">
-            {t({ sv: "Kontroll och analys av elektronikflöden", en: "Control and analysis of electronics flows" })}
+            {t({ sv: "Vi förvandlar elektronikavfall till värdefull information", en: "We transform electronic waste into valuable information" })}
           </Reveal>
           <Reveal delay={120} as="p" className="mt-6 max-w-xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
             {t({
