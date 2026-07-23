@@ -195,15 +195,6 @@ function KontaktPage() {
               Kyrkvägen 17<br />
               703 75 Örebro
             </address>
-            <a
-              href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 hidden items-center gap-2 text-sm text-primary-foreground/80 underline-offset-4 hover:text-copper hover:underline md:inline-flex"
-            >
-              <Car className="h-4 w-4" />
-              {t({ sv: "Kör vägbeskrivning", en: "Get driving directions" })}
-            </a>
             <p className="mt-4 mb-6 text-sm">
               <span className="text-primary-foreground/60">{t({ sv: "Tel: ", en: "Tel: " })}</span>
               <a href="tel:+46191207200" className="hover:text-copper">
@@ -211,15 +202,6 @@ function KontaktPage() {
               </a>
             </p>
           </div>
-          <a
-            href={directionsHref("Kyrkvägen 17, 703 75 Örebro, Sweden")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center gap-2 self-start rounded-full bg-white px-4 py-2 text-sm font-medium text-foreground transition hover:bg-white/90"
-          >
-            <Navigation className="h-4 w-4" />
-            {t({ sv: "Vägbeskrivning", en: "Directions" })}
-          </a>
         </div>
         <div className="flex h-full flex-col rounded-3xl bg-primary p-7 text-primary-foreground sm:p-10">
           <div className="flex-1">
