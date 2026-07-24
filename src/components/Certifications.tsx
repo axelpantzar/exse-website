@@ -3,13 +3,14 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
+import certUcGold from "../assets/cert-uc-gold.png.asset.json";
 
 const certImages = {
   iso9001: "/cert-iso9001.png",
   iso14001: "/cert-iso14001.png",
   iso45001: "/cert-iso45001.png",
   en50625: "/cert-en50625.png",
-  uc: "/cert-uc.png",
+  uc: certUcGold.url,
 };
 
 export function Certifications() {
@@ -21,7 +22,7 @@ export function Certifications() {
     { src: certImages.iso14001, label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
     { src: certImages.iso45001, label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
     { src: certImages.en50625, label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
-    { src: certImages.uc, label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
+    { src: certImages.uc, label: t({ sv: "UC God kreditvärdighet", en: "UC Good credit rating" }) },
   ];
 
   return (
