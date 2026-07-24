@@ -22,7 +22,7 @@ export function Certifications() {
     { src: certImages.iso14001, label: t({ sv: "ISO 14001, Miljö", en: "ISO 14001, Environment" }) },
     { src: certImages.iso45001, label: t({ sv: "ISO 45001, Arbetsmiljö", en: "ISO 45001, Occupational H&S" }) },
     { src: certImages.en50625, label: t({ sv: "EN 50625-1, WEEE", en: "EN 50625-1, WEEE" }) },
-    { src: certImages.uc, label: t({ sv: "UC Högsta kreditvärdighet", en: "UC Highest credit rating" }) },
+    { src: certImages.uc, label: t({ sv: "UC God kreditvärdighet", en: "UC Good credit rating" }) },
   ];
 
   return (
