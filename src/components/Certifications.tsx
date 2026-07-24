@@ -3,13 +3,14 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useT } from "../i18n/LanguageContext";
+import certUcGold from "../assets/cert-uc-gold.png.asset.json";
 
 const certImages = {
   iso9001: "/cert-iso9001.png",
   iso14001: "/cert-iso14001.png",
   iso45001: "/cert-iso45001.png",
   en50625: "/cert-en50625.png",
-  uc: "/cert-uc.png",
+  uc: certUcGold.url,
 };
 
 export function Certifications() {
